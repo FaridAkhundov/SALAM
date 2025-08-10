@@ -36,9 +36,8 @@ export default function Hero() {
               Hi, I'm <span className="text-navy-light">Farid</span>
             </h1>
             <p className="text-xl text-charcoal mb-8 leading-relaxed">
-              IT Support Enthusiast exploring DevOps & System Administration. 
-              Certified in IT Essentials & Cybersecurity, passionate about creating 
-              secure digital solutions and innovative user experiences.
+              IT Support Enthusiast | Exploring DevOps & System Administration |
+              Certified in IT Essentials & Cybersecurity | Fast Learner
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a

@@ -1,18 +1,18 @@
 import { CheckCircle, Code, Layout, Smartphone, Monitor, Server, Database, GitBranch, Cloud } from "lucide-react";
 
 export default function Skills() {
-  const frontendSkills = [
+  const technicalSkills = [
     { name: "Python", icon: Code },
-    { name: "JavaScript", icon: Layout },
+    { name: "IT Essentials", icon: Monitor },
     { name: "Linux", icon: Smartphone },
-    { name: "Networking", icon: Monitor },
+    { name: "Networking", icon: Layout },
   ];
 
-  const backendSkills = [
+  const cybersecuritySkills = [
     { name: "Cybersecurity", icon: Server },
     { name: "System Admin", icon: Database },
     { name: "DevOps", icon: GitBranch },
-    { name: "Cloud Security", icon: Cloud },
+    { name: "Website Development", icon: Cloud },
   ];
 
   const strengths = [
@@ -56,7 +56,7 @@ export default function Skills() {
             <div>
               <h3 className="text-xl font-bold text-navy mb-6">Technical Skills</h3>
               <div className="grid grid-cols-2 gap-4">
-                {frontendSkills.map((skill, index) => {
+                {technicalSkills.map((skill, index) => {
                   const IconComponent = skill.icon;
                   return (
                     <div
@@ -74,7 +74,7 @@ export default function Skills() {
             <div>
               <h3 className="text-xl font-bold text-navy mb-6">Cybersecurity & Infrastructure</h3>
               <div className="grid grid-cols-2 gap-4">
-                {backendSkills.map((skill, index) => {
+                {cybersecuritySkills.map((skill, index) => {
                   const IconComponent = skill.icon;
                   return (
                     <div

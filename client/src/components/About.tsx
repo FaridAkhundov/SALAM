@@ -13,15 +13,15 @@ export default function About() {
           <div>
             <div className="space-y-6">
               <p className="text-lg text-charcoal leading-relaxed">
-                I'm a dedicated IT professional with expertise in system administration, cybersecurity, 
-                and DevOps practices. With certifications in IT Essentials and Cybersecurity, I enjoy 
-                tackling complex infrastructure challenges and implementing secure, scalable solutions.
+                I'm an IT Support Enthusiast currently exploring DevOps and System Administration. 
+                With certifications in IT Essentials and ongoing cybersecurity training, I specialize 
+                in designing secure server infrastructures and implementing industry-standard security protocols.
               </p>
               <p className="text-lg text-charcoal leading-relaxed">
-                My journey in technology has been driven by curiosity and a constant desire to learn. 
-                As a co-founder of cybersecurity initiatives, I believe in creating robust security 
-                protocols and following industry best practices to deliver high-quality solutions 
-                that make a real impact.
+                As a co-founder of multiple cybersecurity initiatives, I have hands-on experience in 
+                vulnerability assessments, system hardening, and collaborative project management. 
+                I'm a fast learner who actively pursues cybersecurity skills through platforms like 
+                TryHackMe, constantly staying updated with the latest security practices and technologies.
               </p>
               
               {/* Key Stats */}

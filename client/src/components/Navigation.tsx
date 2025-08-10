@@ -52,6 +52,7 @@ export default function Navigation() {
     { href: "#home", label: "Home" },
     { href: "#about", label: "About" },
     { href: "#experience", label: "Experience" },
+    { href: "#education", label: "Education" },
     { href: "#skills", label: "Skills" },
     { href: "#projects", label: "Projects" },
   ];

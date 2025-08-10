@@ -3,20 +3,14 @@ export default function Experience() {
     {
       period: "Jan 2022 - Aug 2023",
       title: "Co-Founder & Cybersecurity Specialist",
-      company: "ZControl.org",
-      description: "Co-founded a private cybersecurity initiative, specializing in secure server infrastructure design and ongoing maintenance. Implemented industry-standard security protocols and conducted continuous security evaluations.",
+      company: "ZControl.org • Self-employed",
+      description: "Co-founded a private cybersecurity initiative, specializing in secure server infrastructure design and ongoing maintenance. Implemented industry-standard security protocols, significantly enhancing system resilience against emerging cyber threats. Performed continuous security evaluations to strengthen system defenses and prevent breaches. Collaborated effectively with cross-functional teams to safeguard digital assets and support overall project objectives.",
     },
     {
       period: "Feb 2021 - Mar 2022",
       title: "Co-Founder & Cybersecurity Specialist",
-      company: "Dark Team",
-      description: "Co-founded a private cybersecurity initiative focusing on secure server infrastructure design and maintenance. Enhanced system resilience against emerging threats and collaborated with cross-functional teams.",
-    },
-    {
-      period: "Sep 2022 - Sep 2026",
-      title: "Information Technology Student",
-      company: "Azerbaijan Universiteti",
-      description: "Pursuing Bachelor's degree in Information Technology. Successfully completed 6 semesters at STEP IT Academy with certification. Actively improving cybersecurity skills via TryHackMe platform.",
+      company: "Dark Team • Self-employed",
+      description: "Co-founded a private cybersecurity initiative, focusing on secure server infrastructure design and maintenance. Implemented industry-standard security protocols, enhancing system resilience against emerging threats. Conducted regular vulnerability assessments, leading to a 30% reduction in security incidents. Collaborated with cross-functional teams to ensure the integrity of digital assets and support project objectives.",
     },
   ];
 

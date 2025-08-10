@@ -123,7 +123,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="font-medium text-navy">Location</p>
-                    <p className="text-charcoal">Baku, Azerbaijan • Available for remote work</p>
+                    <p className="text-charcoal">Baku, Baku Economic Zone, Azerbaijan • Available for remote work</p>
                   </div>
                 </div>
               </div>
