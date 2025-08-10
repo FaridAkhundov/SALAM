@@ -33,16 +33,28 @@ export default function Education() {
 
   const certifications = [
     {
-      name: "Cisco IT Essentials",
-      issuer: "Cisco",
-      date: "2021",
-      skills: ["IT Essentials", "System Administration", "Networking", "Cybersecurity"]
+      name: "Certified in Cybersecurity",
+      issuer: "IBM",
+      date: "Jul 2025",
+      skills: ["Cybersecurity Fundamentals", "Risk Management", "Security Operations", "Incident Response"]
     },
     {
-      name: "TryHackMe (RNB) - Hacker Rank",
-      issuer: "TryHackMe",
-      date: "Ongoing",
-      skills: ["Penetration Testing", "Vulnerability Assessment", "Ethical Hacking", "Cybersecurity"]
+      name: "Ethical Hacker",
+      issuer: "Cisco",
+      date: "Jul 2025",
+      skills: ["Penetration Testing", "Vulnerability Assessment", "Ethical Hacking", "Network Security"]
+    },
+    {
+      name: "Google Cybersecurity Professional Certificate",
+      issuer: "Google",
+      date: "Jul 2025",
+      skills: ["Security Analysis", "Risk Assessment", "Incident Response", "Network Security"]
+    },
+    {
+      name: "Introduction to Cybersecurity",
+      issuer: "Cisco",
+      date: "Jul 2025",
+      skills: ["Cybersecurity Fundamentals", "Threat Analysis", "Security Principles", "Risk Management"]
     }
   ];
 

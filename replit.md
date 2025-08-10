@@ -1,6 +1,6 @@
 # Overview
 
-This is a full-stack personal portfolio website for Farid Axundov, an IT professional and cybersecurity specialist. The application showcases professional experience, skills, projects, and provides a contact form for visitors. It's built as a modern web application with a React frontend and Express.js backend, featuring a clean, professional design with sections for about, experience, skills, projects, and contact information.
+This is a full-stack personal portfolio website for Farid Axundov, an IT professional and cybersecurity specialist. The application showcases professional experience, skills, projects, and provides a contact form for visitors. It's built as a modern web application with a React frontend and Express.js backend, featuring a clean, professional design with dark/light theme support and sections for about, experience, education, skills, projects, and contact information.
 
 # User Preferences
 
@@ -31,6 +31,12 @@ Preferred communication style: Simple, everyday language.
 - **Temporary Storage**: In-memory storage implementation for development/testing
 - **Session Management**: Connect-pg-simple for PostgreSQL session storage
 
+## Theme and User Experience
+- **Dark/Light Mode**: Complete theme switching functionality with ThemeProvider context
+- **Theme Toggle**: Sun/Moon icon toggle button in navigation (both desktop and mobile)
+- **Theme Persistence**: User preference saved to localStorage with system preference fallback
+- **Comprehensive Styling**: All components support both light and dark themes with proper contrast ratios
+
 ## Authentication and Authorization
 - Currently implements basic user schema structure but no active authentication system is in use for the contact form functionality.
 
@@ -43,4 +49,10 @@ Preferred communication style: Simple, everyday language.
 - **Fonts**: Google Fonts (Inter) for typography
 - **Development Tools**: Replit-specific plugins for development environment integration
 
-The architecture follows a clean separation between client and server code, with shared TypeScript types and schemas. The application uses modern web development practices including type safety, component composition, and responsive design principles.
+The architecture follows a clean separation between client and server code, with shared TypeScript types and schemas. The application uses modern web development practices including type safety, component composition, responsive design principles, and comprehensive theming support.
+
+## Recent Updates (August 2025)
+- **Dark Mode Implementation**: Added complete dark mode support across all components with theme toggle functionality
+- **Updated Certifications**: Integrated latest certifications from LinkedIn profile including IBM Certified in Cybersecurity, Cisco Ethical Hacker, Google Cybersecurity Professional Certificate, and Cisco Introduction to Cybersecurity (all issued Jul 2025)
+- **Enhanced Education Section**: Updated with comprehensive certification details and professional skill mappings
+- **Theme System**: Implemented robust light/dark theme switching with localStorage persistence and system preference detection
