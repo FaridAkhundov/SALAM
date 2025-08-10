@@ -25,21 +25,6 @@ export default function About() {
                 industry-standard security protocols to protect critical digital assets.
               </p>
               
-              {/* Server Infrastructure Expertise */}
-              <div className="bg-gradient-to-r from-navy/10 to-blue-600/10 dark:from-navy-light/20 dark:to-blue-500/20 p-6 rounded-xl mb-6">
-                <h3 className="text-lg font-bold text-navy dark:text-navy-light mb-3 flex items-center">
-                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
-                  </svg>
-                  Server Room Operations
-                </h3>
-                <p className="text-charcoal dark:text-gray-300 text-sm leading-relaxed">
-                  Hands-on experience managing enterprise server infrastructure, including rack configuration, 
-                  cooling systems optimization, power management, and 24/7 monitoring protocols. Specialized in 
-                  maintaining high-availability data center environments with 99.9% uptime requirements.
-                </p>
-              </div>
-
               {/* Key Stats */}
               <div className="grid grid-cols-2 gap-6 mt-8">
                 <div className="text-center p-6 bg-light-gray dark:bg-gray-800 rounded-xl">
