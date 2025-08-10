@@ -72,7 +72,7 @@ export default function Experience() {
                     <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl blur opacity-25 group-hover:opacity-50 transition duration-500"></div>
                     
                     {/* Main card */}
-                    <div className="relative bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-200 dark:border-gray-700 group-hover:border-blue-400 dark:group-hover:border-blue-500">
+                    <div className="relative bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm p-6 rounded shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-200 dark:border-gray-700 group-hover:border-blue-400 dark:group-hover:border-blue-500 aspect-square flex flex-col justify-center min-h-[300px] max-w-[300px]">
                       {/* Period badge */}
                       <div className="inline-flex items-center px-4 py-2 rounded text-sm bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium mb-4">
                         <div className="w-2 h-2 bg-white rounded-full mr-2 animate-pulse"></div>
@@ -93,7 +93,7 @@ export default function Experience() {
                       </p>
                       
                       {/* Decorative corner */}
-                      <div className="absolute top-4 right-4 w-8 h-8 border-2 border-blue-400 dark:border-blue-500 rounded-tr-xl opacity-20"></div>
+                      <div className="absolute top-4 right-4 w-6 h-6 border-2 border-blue-400 dark:border-blue-500 opacity-20"></div>
                     </div>
                   </div>
                 </div>
