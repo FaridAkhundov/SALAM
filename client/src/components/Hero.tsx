@@ -6,10 +6,10 @@ export default function Hero() {
   const [textIndex, setTextIndex] = useState(0);
   
   const roles = [
-    "IT Support Specialist",
-    "Cybersecurity Enthusiast",
-    "DevOps Explorer",
-    "System Administrator"
+    "IT Specialist",
+    "Cybersecurity Expert",
+    "System Administrator",
+    "Infrastructure Engineer"
   ];
 
   useEffect(() => {
@@ -107,8 +107,8 @@ export default function Hero() {
 
               <div className={`transition-all duration-700 delay-800 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
                 <p className="text-lg text-charcoal dark:text-gray-300 leading-relaxed max-w-xl">
-                  Passionate about cybersecurity, system administration, and creating secure digital solutions. 
-                  Currently exploring DevOps practices while building expertise in ethical hacking and infrastructure security.
+                  Experienced IT specialist with expertise in cybersecurity, system administration, and secure infrastructure design. 
+                  Certified professional focused on building resilient digital environments and implementing industry-standard security protocols.
                 </p>
               </div>
             </div>
