@@ -62,31 +62,39 @@ export default function Hero() {
         <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300/20 dark:bg-pink-500/20 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-xl animate-pulse animation-delay-4000"></div>
       </div>
 
-      {/* Floating Particles - Fixed positions */}
+      {/* Floating Particles - Fixed positions with enhanced animations */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Particle 1 */}
+        {/* Particle 1 - Top left */}
         <div className="absolute left-[15%] top-[20%] animate-float-slow">
-          <Sparkles className="w-4 h-4 text-navy-light dark:text-blue-300 opacity-70" />
+          <Sparkles className="w-4 h-4 text-navy-light dark:text-blue-300 drop-shadow-sm" />
         </div>
-        {/* Particle 2 */}
+        {/* Particle 2 - Top right */}
         <div className="absolute left-[75%] top-[15%] animate-float-medium">
-          <Sparkles className="w-3 h-3 text-purple-400 dark:text-purple-300 opacity-60" />
+          <Sparkles className="w-3 h-3 text-purple-400 dark:text-purple-300 drop-shadow-sm" />
         </div>
-        {/* Particle 3 */}
+        {/* Particle 3 - Bottom left */}
         <div className="absolute left-[25%] top-[70%] animate-float-fast">
-          <Sparkles className="w-5 h-5 text-blue-400 dark:text-blue-200 opacity-80" />
+          <Sparkles className="w-5 h-5 text-blue-400 dark:text-blue-200 drop-shadow-md" />
         </div>
-        {/* Particle 4 */}
+        {/* Particle 4 - Bottom right */}
         <div className="absolute left-[85%] top-[60%] animate-float-slow">
-          <Sparkles className="w-3 h-3 text-navy-light dark:text-blue-300 opacity-50" />
+          <Sparkles className="w-3 h-3 text-navy-light dark:text-blue-300 drop-shadow-sm" />
         </div>
-        {/* Particle 5 */}
+        {/* Particle 5 - Center top */}
         <div className="absolute left-[50%] top-[25%] animate-float-medium">
-          <Sparkles className="w-4 h-4 text-purple-300 dark:text-purple-200 opacity-70" />
+          <Sparkles className="w-4 h-4 text-purple-300 dark:text-purple-200 drop-shadow-sm" />
         </div>
-        {/* Particle 6 */}
+        {/* Particle 6 - Bottom far left */}
         <div className="absolute left-[10%] top-[85%] animate-float-fast">
-          <Sparkles className="w-3 h-3 text-blue-300 dark:text-blue-100 opacity-60" />
+          <Sparkles className="w-3 h-3 text-blue-300 dark:text-blue-100 drop-shadow-sm" />
+        </div>
+        {/* Particle 7 - Right center */}
+        <div className="absolute left-[90%] top-[35%] animate-float-slow">
+          <Sparkles className="w-2 h-2 text-pink-400 dark:text-pink-300 drop-shadow-sm" />
+        </div>
+        {/* Particle 8 - Left center */}
+        <div className="absolute left-[5%] top-[45%] animate-float-medium">
+          <Sparkles className="w-4 h-4 text-indigo-400 dark:text-indigo-300 drop-shadow-sm" />
         </div>
       </div>
 
