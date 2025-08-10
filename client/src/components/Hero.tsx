@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 export default function Hero() {
   const [isVisible, setIsVisible] = useState(false);
   const [textIndex, setTextIndex] = useState(0);
+  const [textFade, setTextFade] = useState(true);
   
   const roles = [
     "IT Specialist",
@@ -16,7 +17,11 @@ export default function Hero() {
     setIsVisible(true);
     
     const interval = setInterval(() => {
-      setTextIndex((prev) => (prev + 1) % roles.length);
+      setTextFade(false); // Start fade out
+      setTimeout(() => {
+        setTextIndex((prev) => (prev + 1) % roles.length);
+        setTextFade(true); // Fade in new text
+      }, 300); // Half of transition duration
     }, 3000);
     
     return () => clearInterval(interval);
@@ -98,7 +103,7 @@ export default function Hero() {
               <div className={`transition-all duration-700 delay-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
                 <div className="h-8 flex items-center">
                   <p className="text-xl md:text-2xl text-charcoal dark:text-gray-300 font-medium">
-                    <span className="text-navy-light dark:text-blue-400 transition-all duration-500">
+                    <span className={`text-navy-light dark:text-blue-400 transition-all duration-600 ${textFade ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-2'}`}>
                       {roles[textIndex]}
                     </span>
                   </p>
