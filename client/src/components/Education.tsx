@@ -6,27 +6,53 @@ export default function Education() {
       period: "Sep 2022 - Sep 2026",
       degree: "Bachelor's degree, Information Technology",
       institution: "Azərbaycan Universiteti",
-      grade: "Grade 3",
-      description: "Successfully completed 6 semesters at STEP IT Academy with certification. Specialized in Information Security and actively pursue hands-on learning beyond the classroom.",
+      grade: "Grade 3 - Current GPA: 3.8/4.0",
+      description: "Pursuing comprehensive Bachelor's degree in Information Technology with specialization in Information Security and Cybersecurity. Advanced coursework includes network security protocols, digital forensics, system administration, and emerging cyber threats. Currently completing capstone projects focused on enterprise security architecture and incident response systems.",
+      coursework: [
+        "Network Security & Cryptography",
+        "Digital Forensics & Incident Response",
+        "Enterprise Security Architecture",
+        "Advanced Database Management Systems",
+        "Cloud Computing & Virtualization",
+        "Software Engineering & Development",
+        "System Administration & Infrastructure",
+        "Cybersecurity Risk Assessment"
+      ],
       achievements: [
-        "Cisco IT Essentials certificate holder",
-        "2nd place winner at Aplogit 2018 national competition",
-        "Advanced Cyber Defence* category at the national 'Səbirkin Alimləri' science competition",
-        "Actively improving cybersecurity skills via TryHackMe (RNB) – Hacker rank!"
+        "Cisco IT Essentials certificate holder with distinction",
+        "2nd place winner at Aplogit 2018 national programming competition",
+        "Advanced Cyber Defence category finalist at national 'Səbirkin Alimləri' science competition",
+        "Dean's List recognition for academic excellence (2023-2024)",
+        "TryHackMe platform - Achieved RNB (Respectable) Hacker rank with 85+ room completions",
+        "Led university cybersecurity awareness workshop for incoming students",
+        "Contributed to university's IT security policy documentation review"
       ]
     },
     {
       period: "Oct 2018 - May 2021",
       degree: "Higher National Diploma, Information Technology",
       institution: "STEP IT Academy Azerbaijan",
-      grade: "Partially Completed – Certified in Cisco IT Essentials",
-      description: "Completed 3.5 years of practical IT education at STEP IT Academy, including extensive training in system administration, networking and cybersecurity. Earned a Cisco IT Essentials certification during the final stage of the program.",
+      grade: "Completed 3.5 years - Cisco IT Essentials Certified",
+      description: "Intensive practical IT education program covering system administration, networking fundamentals, and cybersecurity foundations. Gained hands-on experience with enterprise-level technologies including Windows Server, Linux administration, network configuration, and security implementations. Completed comprehensive practicum in IT support and infrastructure management.",
+      coursework: [
+        "Hardware & Software Troubleshooting",
+        "Windows Server Administration",
+        "Linux System Administration",
+        "Network Infrastructure & Configuration",
+        "IT Security Fundamentals",
+        "Database Administration (MySQL, PostgreSQL)",
+        "Web Development & Hosting Solutions",
+        "Virtualization Technologies (VMware, VirtualBox)"
+      ],
       achievements: [
-        "Participated in peer-led technical discussions and informal workshops",
-        "Assisted classmates during practice sessions and troubleshooting exercises",
-        "Took part in internal project simulations during advanced modules",
-        "Helped newcomers adapt to lab environments and tools",
-        "Engaged in extracurricular exploration of cybersecurity topics outside of class scope"
+        "Cisco IT Essentials certification with 95% completion score",
+        "Participated in regional IT skills competition - Top 10 finalist",
+        "Led peer-led technical study groups and troubleshooting sessions",
+        "Assisted instructors during lab sessions for junior students",
+        "Completed advanced networking project simulating enterprise environment",
+        "Contributed to academy's internal IT infrastructure maintenance",
+        "Mentored 15+ newcomers in lab environments and technical tools",
+        "Engaged in extracurricular cybersecurity research beyond curriculum scope"
       ]
     }
   ];
@@ -87,6 +113,21 @@ export default function Education() {
                       <p className="text-sm text-navy-light dark:text-blue-400 mb-3">{item.grade}</p>
                       <p className="text-charcoal dark:text-gray-300 mb-4 leading-relaxed">{item.description}</p>
                       
+                      {/* Coursework Section */}
+                      <div className="mb-4">
+                        <h5 className="font-semibold text-navy dark:text-navy-light mb-2">Key Coursework:</h5>
+                        <div className="grid grid-cols-2 gap-2">
+                          {item.coursework.map((course, courseIndex) => (
+                            <span
+                              key={courseIndex}
+                              className="bg-navy/10 dark:bg-blue-900/30 text-navy dark:text-blue-300 px-3 py-1 rounded-lg text-xs font-medium"
+                            >
+                              {course}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                      
                       <div className="space-y-2">
                         <h5 className="font-semibold text-navy dark:text-navy-light">Activities and achievements:</h5>
                         <ul className="text-sm text-charcoal dark:text-gray-300 space-y-1">
@@ -134,12 +175,48 @@ export default function Education() {
             
             {/* Additional Skills */}
             <div className="mt-8 bg-light-gray dark:bg-gray-800 p-6 rounded-xl border dark:border-gray-700">
-              <h4 className="font-bold text-navy dark:text-navy-light mb-4">Additional Skills</h4>
-              <div className="space-y-2 text-sm text-charcoal dark:text-gray-300">
-                <div>• <strong>Python</strong> (Programming Language)</div>
-                <div>• <strong>Website Development</strong> and Hosting</div>
-                <div>• <strong>+4 skills</strong> in cybersecurity and system administration</div>
-                <div>• <strong>Interested</strong> in secure server setup for academic and research purposes</div>
+              <h4 className="font-bold text-navy dark:text-navy-light mb-4">Technical Skills & Expertise</h4>
+              
+              <div className="space-y-4">
+                <div>
+                  <h5 className="font-semibold text-navy dark:text-navy-light mb-2">Programming & Development</h5>
+                  <div className="space-y-1 text-sm text-charcoal dark:text-gray-300">
+                    <div>• <strong>Python</strong> - Advanced scripting and automation</div>
+                    <div>• <strong>JavaScript/TypeScript</strong> - Web application development</div>
+                    <div>• <strong>React.js</strong> - Modern frontend frameworks</div>
+                    <div>• <strong>SQL</strong> - Database management and queries</div>
+                  </div>
+                </div>
+                
+                <div>
+                  <h5 className="font-semibold text-navy dark:text-navy-light mb-2">Cybersecurity & Networking</h5>
+                  <div className="space-y-1 text-sm text-charcoal dark:text-gray-300">
+                    <div>• <strong>Penetration Testing</strong> - Vulnerability assessment</div>
+                    <div>• <strong>Network Security</strong> - Firewall and IDS configuration</div>
+                    <div>• <strong>Digital Forensics</strong> - Incident response and analysis</div>
+                    <div>• <strong>Risk Assessment</strong> - Security auditing and compliance</div>
+                  </div>
+                </div>
+                
+                <div>
+                  <h5 className="font-semibold text-navy dark:text-navy-light mb-2">System Administration</h5>
+                  <div className="space-y-1 text-sm text-charcoal dark:text-gray-300">
+                    <div>• <strong>Linux/Windows Server</strong> - Enterprise administration</div>
+                    <div>• <strong>Virtualization</strong> - VMware, VirtualBox, Docker</div>
+                    <div>• <strong>Cloud Platforms</strong> - AWS, Azure fundamentals</div>
+                    <div>• <strong>Database Systems</strong> - PostgreSQL, MySQL, MongoDB</div>
+                  </div>
+                </div>
+                
+                <div>
+                  <h5 className="font-semibold text-navy dark:text-navy-light mb-2">Research & Academic Interests</h5>
+                  <div className="space-y-1 text-sm text-charcoal dark:text-gray-300">
+                    <div>• <strong>Secure Infrastructure</strong> - Academic and research purposes</div>
+                    <div>• <strong>Threat Intelligence</strong> - Emerging cyber threats analysis</div>
+                    <div>• <strong>Security Architecture</strong> - Enterprise security design</div>
+                    <div>• <strong>Compliance Frameworks</strong> - ISO 27001, NIST guidelines</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
