@@ -39,11 +39,11 @@ export default function About() {
             </div>
           </div>
           
-          <div>
+          <div className="h-full">
             <img
-              src="/data-center-corridor.png"
-              alt="Professional Data Center Infrastructure - Secure Server Environment"
-              className="rounded-2xl shadow-lg w-full h-full object-cover"
+              src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=900"
+              alt="Professional Server Infrastructure - Data Center Operations"
+              className="rounded-2xl shadow-lg w-full h-full object-cover min-h-[600px]"
             />
           </div>
         </div>
