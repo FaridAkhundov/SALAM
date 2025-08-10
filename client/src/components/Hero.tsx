@@ -88,7 +88,7 @@ export default function Hero() {
         })}
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 lg:px-6 py-12 lg:py-20">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 lg:px-6 py-12 lg:py-20 pb-20 lg:pb-24">
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
           {/* Profile Image Section - First on mobile */}
           <div className={`order-1 lg:order-2 relative transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
@@ -211,10 +211,10 @@ export default function Hero() {
         </div>
         
         {/* Scroll indicator */}
-        <div className={`absolute bottom-8 left-1/2 transform -translate-x-1/2 transition-all duration-1000 delay-1500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
-          <div className="flex flex-col items-center space-y-2">
-            <p className="text-sm text-charcoal dark:text-gray-400 animate-pulse">Scroll to explore</p>
-            <ChevronDown className="w-6 h-6 text-navy-light dark:text-blue-400 animate-bounce" />
+        <div className={`absolute bottom-4 lg:bottom-8 left-1/2 transform -translate-x-1/2 transition-all duration-1000 delay-1500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
+          <div className="flex flex-col items-center space-y-1 lg:space-y-2">
+            <p className="text-xs lg:text-sm text-charcoal dark:text-gray-400 animate-pulse">Scroll to explore</p>
+            <ChevronDown className="w-5 h-5 lg:w-6 lg:h-6 text-navy-light dark:text-blue-400 animate-bounce" />
           </div>
         </div>
       </div>
