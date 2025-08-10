@@ -78,17 +78,17 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-white dark:bg-gray-900">
-      <div className="max-w-4xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-navy dark:text-navy-light mb-4">Let's Work Together</h2>
-          <p className="text-xl text-charcoal dark:text-gray-300">Ready to bring your next project to life? Let's discuss how I can help.</p>
+    <section id="contact" className="py-12 lg:py-20 bg-white dark:bg-gray-900">
+      <div className="max-w-4xl mx-auto px-4 lg:px-6">
+        <div className="text-center mb-8 lg:mb-16">
+          <h2 className="text-2xl lg:text-4xl font-bold text-navy dark:text-navy-light mb-4">Let's Work Together</h2>
+          <p className="text-base lg:text-xl text-charcoal dark:text-gray-300">Ready to bring your next project to life? Let's discuss how I can help.</p>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-12">
-          <div className="space-y-8">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
+          <div className="space-y-6 lg:space-y-8">
             <div>
-              <h3 className="text-2xl font-bold text-navy dark:text-navy-light mb-6">Get In Touch</h3>
+              <h3 className="text-xl lg:text-2xl font-bold text-navy dark:text-navy-light mb-4 lg:mb-6">Get In Touch</h3>
               <div className="space-y-4">
                 <div className="flex items-center">
                   <div className="bg-light-gray dark:bg-gray-800 p-3 rounded-lg mr-4">
@@ -138,7 +138,7 @@ export default function Contact() {
           
           <div>
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid sm:grid-cols-2 gap-4 lg:gap-6">
                 <div>
                   <Label htmlFor="firstName" className="block text-sm font-medium text-navy dark:text-navy-light mb-2">
                     First Name

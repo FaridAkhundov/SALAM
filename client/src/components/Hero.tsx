@@ -88,18 +88,52 @@ export default function Hero() {
         })}
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 py-20">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          {/* Content Section */}
-          <div className={`space-y-6 lg:space-y-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+      <div className="relative z-10 max-w-6xl mx-auto px-4 lg:px-6 py-12 lg:py-20">
+        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
+          {/* Profile Image Section - First on mobile */}
+          <div className={`order-1 lg:order-2 relative transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
+            <div className="relative group">
+              {/* Glow effect behind image */}
+              <div className="absolute -inset-2 lg:-inset-4 bg-gradient-to-r from-navy-light/20 to-blue-500/20 dark:from-blue-400/30 dark:to-purple-500/30 rounded-3xl blur-lg group-hover:blur-xl transition-all duration-500"></div>
+              
+              {/* Main image container */}
+              <div className="relative">
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=800"
+                  alt="Farid Axundov - IT Professional & Cybersecurity Specialist"
+                  className="rounded-2xl shadow-2xl w-full max-w-xs lg:max-w-md mx-auto animate-float hover:scale-105 transition-transform duration-500"
+                />
+                
+                {/* Server status indicator */}
+                <div className="absolute -top-2 lg:-top-4 -left-2 lg:-left-4 bg-gradient-to-r from-green-400 to-green-500 dark:from-green-500 dark:to-green-400 text-white p-2 lg:p-3 rounded-xl shadow-lg animate-bounce">
+                  <div className="flex items-center gap-1 lg:gap-2">
+                    <div className="w-2 h-2 lg:w-3 lg:h-3 bg-white rounded-full animate-pulse"></div>
+                    <span className="text-xs font-bold">SECURE</span>
+                  </div>
+                </div>
+                
+                <div className="absolute -bottom-3 lg:-bottom-6 -right-3 lg:-right-6 bg-gradient-to-r from-navy-light to-blue-600 dark:from-blue-600 dark:to-purple-600 text-white p-3 lg:p-4 rounded-xl shadow-lg hover:scale-110 transition-transform duration-300 cursor-pointer">
+                  <Code className="w-6 h-6 lg:w-8 lg:h-8 animate-pulse" />
+                </div>
+                
+                {/* Infrastructure badges */}
+                <div className="absolute -top-1 lg:-top-2 -right-1 lg:-right-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-2 py-1 rounded-full shadow-lg animate-pulse">
+                  <span className="text-xs font-bold">24/7</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Content Section - Second on mobile */}
+          <div className={`order-2 lg:order-1 space-y-4 lg:space-y-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             {/* Greeting with stagger animation */}
-            <div className="space-y-4 lg:space-y-6">
+            <div className="space-y-3 lg:space-y-6 text-center lg:text-left">
               <div className={`transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
-                <p className="text-base lg:text-lg text-navy-light dark:text-blue-400 font-medium">Welcome to my digital space</p>
+                <p className="text-sm lg:text-lg text-navy-light dark:text-blue-400 font-medium">Welcome to my digital space</p>
               </div>
               
               <div className={`transition-all duration-700 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-navy dark:text-navy-light leading-tight">
+                <h1 className="text-2xl sm:text-3xl lg:text-5xl xl:text-6xl font-bold text-navy dark:text-navy-light leading-tight">
                   Hi, I'm{" "}
                   <span className="relative">
                     <span className="text-navy-light dark:text-blue-300">Farid</span>
@@ -109,8 +143,8 @@ export default function Hero() {
               </div>
 
               <div className={`transition-all duration-700 delay-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
-                <div className="h-6 sm:h-8 flex items-center">
-                  <p className="text-lg sm:text-xl lg:text-2xl text-charcoal dark:text-gray-300 font-medium">
+                <div className="h-6 lg:h-8 flex items-center justify-center lg:justify-start">
+                  <p className="text-base sm:text-lg lg:text-2xl text-charcoal dark:text-gray-300 font-medium">
                     <span className={`text-navy-light dark:text-blue-400 transition-all duration-600 ${textFade ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-2'}`}>
                       {roles[textIndex]}
                     </span>
@@ -119,18 +153,18 @@ export default function Hero() {
               </div>
 
               <div className={`transition-all duration-700 delay-800 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
-                <p className="text-base lg:text-lg text-charcoal dark:text-gray-300 leading-relaxed max-w-xl">
+                <p className="text-sm lg:text-lg text-charcoal dark:text-gray-300 leading-relaxed max-w-xl mx-auto lg:mx-0">
                   Experienced IT specialist with expertise in cybersecurity, system administration, and secure infrastructure design. 
                   Certified professional focused on building resilient digital environments and implementing industry-standard security protocols.
                 </p>
               </div>
             </div>
             {/* Action Buttons */}
-            <div className={`flex flex-col sm:flex-row gap-4 transition-all duration-700 delay-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
+            <div className={`flex flex-col sm:flex-row gap-3 lg:gap-4 justify-center lg:justify-start transition-all duration-700 delay-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
               <a
                 href="#projects"
                 onClick={handleScrollToProjects}
-                className="group relative bg-gradient-to-r from-navy to-navy-light dark:from-blue-600 dark:to-blue-500 text-white px-8 py-4 rounded-lg hover:shadow-lg hover:shadow-navy/25 dark:hover:shadow-blue-500/25 transition-all duration-300 text-center font-medium overflow-hidden"
+                className="group relative bg-gradient-to-r from-navy to-navy-light dark:from-blue-600 dark:to-blue-500 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-lg hover:shadow-lg hover:shadow-navy/25 dark:hover:shadow-blue-500/25 transition-all duration-300 text-center font-medium overflow-hidden text-sm lg:text-base"
               >
                 <span className="relative z-10 flex items-center justify-center gap-2">
                   <Code className="w-5 h-5" />
@@ -141,7 +175,7 @@ export default function Hero() {
               <a
                 href="#contact"
                 onClick={handleScrollToContact}
-                className="group relative border-2 border-navy dark:border-blue-500 text-navy dark:text-blue-400 px-8 py-4 rounded-lg hover:bg-navy dark:hover:bg-blue-500 hover:text-white hover:shadow-lg hover:shadow-navy/25 dark:hover:shadow-blue-500/25 transition-all duration-300 text-center font-medium overflow-hidden"
+                className="group relative border-2 border-navy dark:border-blue-500 text-navy dark:text-blue-400 px-6 lg:px-8 py-3 lg:py-4 rounded-lg hover:bg-navy dark:hover:bg-blue-500 hover:text-white hover:shadow-lg hover:shadow-navy/25 dark:hover:shadow-blue-500/25 transition-all duration-300 text-center font-medium overflow-hidden text-sm lg:text-base"
               >
                 <span className="relative z-10 flex items-center justify-center gap-2">
                   <Mail className="w-5 h-5" />
@@ -151,61 +185,27 @@ export default function Hero() {
             </div>
             
             {/* Social Links */}
-            <div className={`flex space-x-6 transition-all duration-700 delay-1200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
+            <div className={`flex space-x-4 lg:space-x-6 justify-center lg:justify-start transition-all duration-700 delay-1200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
               <a
                 href="https://www.linkedin.com/in/faridaxundov/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group p-3 rounded-full bg-light-gray dark:bg-gray-800 text-charcoal dark:text-gray-300 hover:text-navy-light dark:hover:text-blue-300 hover:shadow-lg hover:shadow-navy/25 dark:hover:shadow-blue-500/25 transition-all duration-300"
+                className="group p-2 lg:p-3 rounded-full bg-light-gray dark:bg-gray-800 text-charcoal dark:text-gray-300 hover:text-navy-light dark:hover:text-blue-300 hover:shadow-lg hover:shadow-navy/25 dark:hover:shadow-blue-500/25 transition-all duration-300"
               >
-                <Linkedin className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
+                <Linkedin className="w-5 h-5 lg:w-6 lg:h-6 group-hover:scale-110 transition-transform duration-300" />
               </a>
               <a
                 href="#"
-                className="group p-3 rounded-full bg-light-gray dark:bg-gray-800 text-charcoal dark:text-gray-300 hover:text-navy-light dark:hover:text-blue-300 hover:shadow-lg hover:shadow-navy/25 dark:hover:shadow-blue-500/25 transition-all duration-300"
+                className="group p-2 lg:p-3 rounded-full bg-light-gray dark:bg-gray-800 text-charcoal dark:text-gray-300 hover:text-navy-light dark:hover:text-blue-300 hover:shadow-lg hover:shadow-navy/25 dark:hover:shadow-blue-500/25 transition-all duration-300"
               >
-                <Github className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
+                <Github className="w-5 h-5 lg:w-6 lg:h-6 group-hover:scale-110 transition-transform duration-300" />
               </a>
               <a
                 href="mailto:farid.axundov@example.com"
-                className="group p-3 rounded-full bg-light-gray dark:bg-gray-800 text-charcoal dark:text-gray-300 hover:text-navy-light dark:hover:text-blue-300 hover:shadow-lg hover:shadow-navy/25 dark:hover:shadow-blue-500/25 transition-all duration-300"
+                className="group p-2 lg:p-3 rounded-full bg-light-gray dark:bg-gray-800 text-charcoal dark:text-gray-300 hover:text-navy-light dark:hover:text-blue-300 hover:shadow-lg hover:shadow-navy/25 dark:hover:shadow-blue-500/25 transition-all duration-300"
               >
-                <Mail className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
+                <Mail className="w-5 h-5 lg:w-6 lg:h-6 group-hover:scale-110 transition-transform duration-300" />
               </a>
-            </div>
-          </div>
-          
-          {/* Enhanced Profile Image Section */}
-          <div className={`relative transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
-            <div className="relative group">
-              {/* Glow effect behind image */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-navy-light/20 to-blue-500/20 dark:from-blue-400/30 dark:to-purple-500/30 rounded-3xl blur-lg group-hover:blur-xl transition-all duration-500"></div>
-              
-              {/* Main image container */}
-              <div className="relative">
-                <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=800"
-                  alt="Farid Axundov - IT Professional & Cybersecurity Specialist"
-                  className="rounded-2xl shadow-2xl w-full max-w-md mx-auto animate-float hover:scale-105 transition-transform duration-500"
-                />
-                
-                {/* Server status indicator */}
-                <div className="absolute -top-4 -left-4 bg-gradient-to-r from-green-400 to-green-500 dark:from-green-500 dark:to-green-400 text-white p-3 rounded-xl shadow-lg animate-bounce">
-                  <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 bg-white rounded-full animate-pulse"></div>
-                    <span className="text-xs font-bold">SECURE</span>
-                  </div>
-                </div>
-                
-                <div className="absolute -bottom-6 -right-6 bg-gradient-to-r from-navy-light to-blue-600 dark:from-blue-600 dark:to-purple-600 text-white p-4 rounded-xl shadow-lg hover:scale-110 transition-transform duration-300 cursor-pointer">
-                  <Code className="w-8 h-8 animate-pulse" />
-                </div>
-                
-                {/* Infrastructure badges */}
-                <div className="absolute -top-2 -right-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-2 py-1 rounded-full shadow-lg animate-pulse">
-                  <span className="text-xs font-bold">24/7</span>
-                </div>
-              </div>
             </div>
           </div>
         </div>
