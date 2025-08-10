@@ -21,8 +21,8 @@ export default function Hero() {
       setTimeout(() => {
         setTextIndex((prev) => (prev + 1) % roles.length);
         setTextFade(true); // Fade in new text
-      }, 300); // Half of transition duration
-    }, 3000);
+      }, 150); // Faster transition - half of 300ms
+    }, 2000); // More frequent changes - from 3000ms to 2000ms
     
     return () => clearInterval(interval);
   }, []);
@@ -62,30 +62,32 @@ export default function Hero() {
         <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300/20 dark:bg-pink-500/20 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-xl animate-pulse animation-delay-4000"></div>
       </div>
 
-      {/* Floating Particles */}
+      {/* Floating Particles - Fixed positions */}
       <div className="absolute inset-0 overflow-hidden">
-        {[...Array(6)].map((_, i) => {
-          // Generate fixed random positions that don't change
-          const leftPos = Math.random() * 80 + 10; // 10-90% to avoid edges
-          const topPos = Math.random() * 80 + 10;  // 10-90% to avoid edges
-          
-          return (
-            <div
-              key={i}
-              className="absolute"
-              style={{
-                left: `${leftPos}%`,
-                top: `${topPos}%`,
-                animation: `
-                  float ${5 + i * 0.8}s ease-in-out infinite ${i * 0.7}s, 
-                  fadeInOut ${8 + i * 1.5}s ease-in-out infinite ${i * 2.1}s
-                `
-              }}
-            >
-              <Sparkles className="w-4 h-4 text-navy-light dark:text-blue-300" />
-            </div>
-          );
-        })}
+        {/* Particle 1 */}
+        <div className="absolute left-[15%] top-[20%] animate-float-slow">
+          <Sparkles className="w-4 h-4 text-navy-light dark:text-blue-300 opacity-70" />
+        </div>
+        {/* Particle 2 */}
+        <div className="absolute left-[75%] top-[15%] animate-float-medium">
+          <Sparkles className="w-3 h-3 text-purple-400 dark:text-purple-300 opacity-60" />
+        </div>
+        {/* Particle 3 */}
+        <div className="absolute left-[25%] top-[70%] animate-float-fast">
+          <Sparkles className="w-5 h-5 text-blue-400 dark:text-blue-200 opacity-80" />
+        </div>
+        {/* Particle 4 */}
+        <div className="absolute left-[85%] top-[60%] animate-float-slow">
+          <Sparkles className="w-3 h-3 text-navy-light dark:text-blue-300 opacity-50" />
+        </div>
+        {/* Particle 5 */}
+        <div className="absolute left-[50%] top-[25%] animate-float-medium">
+          <Sparkles className="w-4 h-4 text-purple-300 dark:text-purple-200 opacity-70" />
+        </div>
+        {/* Particle 6 */}
+        <div className="absolute left-[10%] top-[85%] animate-float-fast">
+          <Sparkles className="w-3 h-3 text-blue-300 dark:text-blue-100 opacity-60" />
+        </div>
       </div>
 
       <div className="relative z-0 max-w-6xl mx-auto px-4 lg:px-6 py-12 lg:py-20 pb-20 lg:pb-24">
