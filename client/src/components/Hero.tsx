@@ -54,7 +54,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-light-gray via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-light-gray via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-hidden pt-20">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-4 -left-4 w-72 h-72 bg-navy/10 dark:bg-blue-500/10 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-xl animate-pulse"></div>
@@ -88,10 +88,10 @@ export default function Hero() {
         })}
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 lg:px-6 py-12 lg:py-20 pb-20 lg:pb-24">
+      <div className="relative z-0 max-w-6xl mx-auto px-4 lg:px-6 py-12 lg:py-20 pb-20 lg:pb-24">
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
           {/* Profile Image Section - First on mobile */}
-          <div className={`order-1 lg:order-2 relative transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
+          <div className={`order-1 lg:order-2 relative z-0 transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
             <div className="relative group">
               {/* Glow effect behind image */}
               <div className="absolute -inset-2 lg:-inset-4 bg-gradient-to-r from-navy-light/20 to-blue-500/20 dark:from-blue-400/30 dark:to-purple-500/30 rounded-3xl blur-lg group-hover:blur-xl transition-all duration-500"></div>
