@@ -9,6 +9,12 @@ export default function Experience() {
   }, []);
   const experiences = [
     {
+      period: "Sep 2023 - Present",
+      title: "Server Room Operations Specialist",
+      company: "Enterprise Infrastructure Solutions",
+      description: "Hands-on experience managing enterprise server infrastructure, including rack configuration, cooling systems optimization, power management, and 24/7 monitoring protocols. Specialized in maintaining high-availability data center environments with 99.9% uptime requirements.",
+    },
+    {
       period: "Jan 2022 - Aug 2023",
       title: "Co-Founder & Cybersecurity Specialist",
       company: "ZControl.org • Self-employed",
