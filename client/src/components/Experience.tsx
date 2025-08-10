@@ -66,7 +66,7 @@ export default function Experience() {
           <div className="space-y-16">
             {experiences.map((experience, index) => (
               <div key={index} className={`relative flex items-center transition-all duration-700 delay-${index * 200} ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
-                <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:pr-24 md:text-right' : 'md:pl-24 md:order-2'}`}>
+                <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:text-right' : 'md:order-2'}`} style={{marginRight: index % 2 === 0 ? '200px' : '0', marginLeft: index % 2 !== 0 ? '200px' : '0'}}>
                   <div className="group relative">
                     {/* Glow effect */}
                     <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl blur opacity-25 group-hover:opacity-50 transition duration-500"></div>
@@ -106,7 +106,7 @@ export default function Experience() {
                   </div>
                 </div>
                 
-                <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:pl-24' : 'md:pr-24 md:order-1'}`}></div>
+                <div className={`w-full md:w-5/12 ${index % 2 === 0 ? '' : 'md:order-1'}`} style={{marginLeft: index % 2 === 0 ? '200px' : '0', marginRight: index % 2 !== 0 ? '200px' : '0'}}></div>
               </div>
             ))}
           </div>
