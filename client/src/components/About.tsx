@@ -41,9 +41,9 @@ export default function About() {
           
           <div>
             <img
-              src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
-              alt="Modern office workspace with laptop and plants"
-              className="rounded-2xl shadow-lg w-full"
+              src="/data-center-corridor.png"
+              alt="Professional Data Center Infrastructure - Secure Server Environment"
+              className="rounded-2xl shadow-lg w-full h-full object-cover"
             />
           </div>
         </div>

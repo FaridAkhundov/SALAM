@@ -83,10 +83,10 @@ export default function Experience() {
                         {experience.title}
                       </h3>
                       
-                      <p className="text-lg font-semibold text-charcoal dark:text-gray-300 mb-4 flex items-center">
+                      <div className="text-lg font-semibold text-charcoal dark:text-gray-300 mb-4 flex items-center">
                         <div className="w-2 h-2 bg-gradient-to-r from-green-400 to-blue-500 rounded-full mr-3"></div>
                         {experience.company}
-                      </p>
+                      </div>
                       
                       <p className="text-charcoal dark:text-gray-300 leading-relaxed text-base">
                         {experience.description}
