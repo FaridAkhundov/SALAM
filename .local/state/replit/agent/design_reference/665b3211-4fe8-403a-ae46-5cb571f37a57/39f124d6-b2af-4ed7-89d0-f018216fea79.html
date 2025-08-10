@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farid Axundov - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'navy': '#1e3a8a',
+                        'navy-light': '#3b82f6',
+                        'charcoal': '#374151',
+                        'light-gray': '#f8fafc',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s ease-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(40px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-inter bg-white text-charcoal">
+    <!-- @COMPONENT: Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-2xl font-bold text-navy">FA</div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-charcoal hover:text-navy transition-colors duration-300">Home</a>
+                    <a href="#about" class="text-charcoal hover:text-navy transition-colors duration-300">About</a>
+                    <a href="#experience" class="text-charcoal hover:text-navy transition-colors duration-300">Experience</a>
+                    <a href="#skills" class="text-charcoal hover:text-navy transition-colors duration-300">Skills</a>
+                    <a href="#projects" class="text-charcoal hover:text-navy transition-colors duration-300">Projects</a>
+                    <a href="#contact" class="bg-navy text-white px-6 py-2 rounded-lg hover:bg-navy-light transition-all duration-300">Contact</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2">
+                    <i data-lucide="menu" class="w-6 h-6 text-charcoal"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-gray-100">
+                <div class="flex flex-col space-y-4 pt-4">
+                    <a href="#home" class="text-charcoal hover:text-navy transition-colors duration-300">Home</a>
+                    <a href="#about" class="text-charcoal hover:text-navy transition-colors duration-300">About</a>
+                    <a href="#experience" class="text-charcoal hover:text-navy transition-colors duration-300">Experience</a>
+                    <a href="#skills" class="text-charcoal hover:text-navy transition-colors duration-300">Skills</a>
+                    <a href="#projects" class="text-charcoal hover:text-navy transition-colors duration-300">Projects</a>
+                    <a href="#contact" class="bg-navy text-white px-6 py-2 rounded-lg hover:bg-navy-light transition-all duration-300 text-center">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: Navigation -->
+
+    <!-- @COMPONENT: Hero Section -->
+    <section id="home" class="pt-24 pb-20 bg-gradient-to-br from-light-gray via-white to-blue-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="animate-fade-in">
+                    <h1 class="text-5xl md:text-6xl font-bold text-navy mb-6 leading-tight">
+                        Hi, I'm <span class="text-navy-light">Farid</span>
+                    </h1>
+                    <p class="text-xl text-charcoal mb-8 leading-relaxed">
+                        A passionate software developer and technology enthusiast creating innovative digital solutions and meaningful user experiences.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#projects" class="bg-navy text-white px-8 py-4 rounded-lg hover:bg-navy-light transition-all duration-300 text-center font-medium">
+                            View My Work
+                        </a>
+                        <a href="#contact" class="border-2 border-navy text-navy px-8 py-4 rounded-lg hover:bg-navy hover:text-white transition-all duration-300 text-center font-medium">
+                            Get In Touch
+                        </a>
+                    </div>
+                    
+                    <!-- Social Links -->
+                    <div class="flex space-x-6 mt-8">
+                        <a href="https://www.linkedin.com/in/faridaxundov/" target="_blank" class="text-charcoal hover:text-navy-light transition-colors duration-300">
+                            <i data-lucide="linkedin" class="w-6 h-6"></i>
+                        </a>
+                        <a href="#" class="text-charcoal hover:text-navy-light transition-colors duration-300">
+                            <i data-lucide="github" class="w-6 h-6"></i>
+                        </a>
+                        <a href="#" class="text-charcoal hover:text-navy-light transition-colors duration-300">
+                            <i data-lucide="mail" class="w-6 h-6"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="animate-slide-up">
+                    <div class="relative">
+                        <!-- Professional headshot placeholder -->
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=800" 
+                             alt="Farid Axundov - Professional Headshot" 
+                             class="rounded-2xl shadow-2xl w-full max-w-md mx-auto animate-float" 
+                             data-mock="true">
+                        <div class="absolute -bottom-6 -right-6 bg-navy-light text-white p-4 rounded-xl shadow-lg">
+                            <i data-lucide="code" class="w-8 h-8"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Hero Section -->
+
+    <!-- @COMPONENT: About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-navy mb-4">About Me</h2>
+                <p class="text-xl text-charcoal max-w-3xl mx-auto">
+                    Passionate about creating innovative solutions and building meaningful digital experiences
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="space-y-6">
+                        <p class="text-lg text-charcoal leading-relaxed">
+                            I'm a dedicated software developer with expertise in modern web technologies and a passion for creating seamless user experiences. With a strong foundation in both front-end and back-end development, I enjoy tackling complex problems and turning innovative ideas into reality.
+                        </p>
+                        <p class="text-lg text-charcoal leading-relaxed">
+                            My journey in technology has been driven by curiosity and a constant desire to learn. I believe in writing clean, maintainable code and following best practices to deliver high-quality solutions that make a real impact.
+                        </p>
+                        
+                        <!-- Key Stats -->
+                        <div class="grid grid-cols-2 gap-6 mt-8">
+                            <div class="text-center p-6 bg-light-gray rounded-xl">
+                                <div class="text-3xl font-bold text-navy mb-2" data-bind="years_experience">3+</div>
+                                <div class="text-charcoal">Years Experience</div>
+                            </div>
+                            <div class="text-center p-6 bg-light-gray rounded-xl">
+                                <div class="text-3xl font-bold text-navy mb-2" data-bind="projects_completed">15+</div>
+                                <div class="text-charcoal">Projects Completed</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <!-- Modern office workspace -->
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                         alt="Modern office workspace with laptop and plants" 
+                         class="rounded-2xl shadow-lg w-full" 
+                         data-mock="true">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: About Section -->
+
+    <!-- @COMPONENT: Experience Section -->
+    <section id="experience" class="py-20 bg-light-gray">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-navy mb-4">Experience</h2>
+                <p class="text-xl text-charcoal">My professional journey and key milestones</p>
+            </div>
+            
+            <!-- Timeline -->
+            <div class="relative">
+                <!-- Timeline line -->
+                <div class="absolute left-1/2 transform -translate-x-0.5 w-1 bg-navy-light h-full hidden md:block"></div>
+                
+                <!-- Timeline Items -->
+                <div class="space-y-12">
+                    <!-- @MAP: experiences.map(experience => ( -->
+                    <div class="relative flex items-center">
+                        <div class="w-full md:w-5/12 md:pr-8 md:text-right">
+                            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                                <div class="text-sm text-navy-light font-medium mb-2" data-bind="experience.period">2023 - Present</div>
+                                <h3 class="text-xl font-bold text-navy mb-2" data-bind="experience.title">Senior Software Developer</h3>
+                                <p class="text-lg text-charcoal mb-3" data-bind="experience.company">Tech Solutions Inc.</p>
+                                <p class="text-charcoal leading-relaxed" data-bind="experience.description">
+                                    Led development of scalable web applications using React and Node.js. Collaborated with cross-functional teams to deliver high-quality solutions and mentor junior developers.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Timeline dot -->
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-navy-light rounded-full border-4 border-white hidden md:block"></div>
+                        
+                        <div class="w-full md:w-5/12 md:pl-8"></div>
+                    </div>
+                    
+                    <div class="relative flex items-center">
+                        <div class="w-full md:w-5/12 md:pr-8"></div>
+                        
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-navy-light rounded-full border-4 border-white hidden md:block"></div>
+                        
+                        <div class="w-full md:w-5/12 md:pl-8">
+                            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                                <div class="text-sm text-navy-light font-medium mb-2">2021 - 2023</div>
+                                <h3 class="text-xl font-bold text-navy mb-2">Full Stack Developer</h3>
+                                <p class="text-lg text-charcoal mb-3">Digital Agency Pro</p>
+                                <p class="text-charcoal leading-relaxed">
+                                    Developed responsive web applications and e-commerce platforms. Implemented modern UI/UX designs and optimized application performance for better user experience.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="relative flex items-center">
+                        <div class="w-full md:w-5/12 md:pr-8 md:text-right">
+                            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                                <div class="text-sm text-navy-light font-medium mb-2">2020 - 2021</div>
+                                <h3 class="text-xl font-bold text-navy mb-2">Junior Developer</h3>
+                                <p class="text-lg text-charcoal mb-3">StartUp Innovations</p>
+                                <p class="text-charcoal leading-relaxed">
+                                    Built and maintained web applications using modern JavaScript frameworks. Worked closely with senior developers to learn best practices and contribute to team projects.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-navy-light rounded-full border-4 border-white hidden md:block"></div>
+                        
+                        <div class="w-full md:w-5/12 md:pl-8"></div>
+                    </div>
+                    <!-- @END_MAP )) -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Experience Section -->
+
+    <!-- @COMPONENT: Skills Section -->
+    <section id="skills" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-navy mb-4">Skills & Expertise</h2>
+                <p class="text-xl text-charcoal">Technologies and tools I work with</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <!-- Technology/coding workspace -->
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                         alt="Coding workspace with multiple monitors showing code" 
+                         class="rounded-2xl shadow-lg w-full mb-6" 
+                         data-mock="true">
+                    
+                    <div class="bg-light-gray p-6 rounded-xl">
+                        <h3 class="text-xl font-bold text-navy mb-4">What I Bring</h3>
+                        <ul class="space-y-3 text-charcoal">
+                            <li class="flex items-center">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-navy-light mr-3"></i>
+                                Clean, maintainable code
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-navy-light mr-3"></i>
+                                User-centered design thinking
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-navy-light mr-3"></i>
+                                Agile development practices
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-navy-light mr-3"></i>
+                                Performance optimization
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="space-y-8">
+                    <!-- Skill Categories -->
+                    <div>
+                        <h3 class="text-xl font-bold text-navy mb-6">Frontend Development</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-light-gray p-4 rounded-lg text-center hover:bg-navy hover:text-white transition-all duration-300">
+                                <i data-lucide="code" class="w-8 h-8 mx-auto mb-2"></i>
+                                <div class="font-medium">React</div>
+                            </div>
+                            <div class="bg-light-gray p-4 rounded-lg text-center hover:bg-navy hover:text-white transition-all duration-300">
+                                <i data-lucide="layout" class="w-8 h-8 mx-auto mb-2"></i>
+                                <div class="font-medium">Vue.js</div>
+                            </div>
+                            <div class="bg-light-gray p-4 rounded-lg text-center hover:bg-navy hover:text-white transition-all duration-300">
+                                <i data-lucide="smartphone" class="w-8 h-8 mx-auto mb-2"></i>
+                                <div class="font-medium">TypeScript</div>
+                            </div>
+                            <div class="bg-light-gray p-4 rounded-lg text-center hover:bg-navy hover:text-white transition-all duration-300">
+                                <i data-lucide="monitor" class="w-8 h-8 mx-auto mb-2"></i>
+                                <div class="font-medium">CSS/SASS</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-bold text-navy mb-6">Backend & Tools</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-light-gray p-4 rounded-lg text-center hover:bg-navy hover:text-white transition-all duration-300">
+                                <i data-lucide="server" class="w-8 h-8 mx-auto mb-2"></i>
+                                <div class="font-medium">Node.js</div>
+                            </div>
+                            <div class="bg-light-gray p-4 rounded-lg text-center hover:bg-navy hover:text-white transition-all duration-300">
+                                <i data-lucide="database" class="w-8 h-8 mx-auto mb-2"></i>
+                                <div class="font-medium">MongoDB</div>
+                            </div>
+                            <div class="bg-light-gray p-4 rounded-lg text-center hover:bg-navy hover:text-white transition-all duration-300">
+                                <i data-lucide="git-branch" class="w-8 h-8 mx-auto mb-2"></i>
+                                <div class="font-medium">Git</div>
+                            </div>
+                            <div class="bg-light-gray p-4 rounded-lg text-center hover:bg-navy hover:text-white transition-all duration-300">
+                                <i data-lucide="cloud" class="w-8 h-8 mx-auto mb-2"></i>
+                                <div class="font-medium">AWS</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Skills Section -->
+
+    <!-- @COMPONENT: Projects Section -->
+    <section id="projects" class="py-20 bg-light-gray">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-navy mb-4">Featured Projects</h2>
+                <p class="text-xl text-charcoal">A showcase of my recent work and achievements</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- @MAP: projects.map(project => ( -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <!-- Project showcase image 1 -->
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
+                         alt="E-commerce dashboard with analytics and charts" 
+                         class="w-full h-48 object-cover" 
+                         data-mock="true">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-navy" data-bind="project.title">E-Commerce Platform</h3>
+                            <div class="flex space-x-2">
+                                <a href="#" class="text-charcoal hover:text-navy-light transition-colors">
+                                    <i data-lucide="external-link" class="w-5 h-5"></i>
+                                </a>
+                                <a href="#" class="text-charcoal hover:text-navy-light transition-colors">
+                                    <i data-lucide="github" class="w-5 h-5"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <p class="text-charcoal mb-4 leading-relaxed" data-bind="project.description">
+                            A full-stack e-commerce solution with modern UI, payment integration, and admin dashboard. Built with React, Node.js, and MongoDB.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-navy-light text-white px-3 py-1 rounded-full text-sm">React</span>
+                            <span class="bg-navy-light text-white px-3 py-1 rounded-full text-sm">Node.js</span>
+                            <span class="bg-navy-light text-white px-3 py-1 rounded-full text-sm">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <!-- Project showcase image 2 -->
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
+                         alt="Data visualization dashboard with graphs and metrics" 
+                         class="w-full h-48 object-cover" 
+                         data-mock="true">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-navy">Analytics Dashboard</h3>
+                            <div class="flex space-x-2">
+                                <a href="#" class="text-charcoal hover:text-navy-light transition-colors">
+                                    <i data-lucide="external-link" class="w-5 h-5"></i>
+                                </a>
+                                <a href="#" class="text-charcoal hover:text-navy-light transition-colors">
+                                    <i data-lucide="github" class="w-5 h-5"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <p class="text-charcoal mb-4 leading-relaxed">
+                            A comprehensive analytics dashboard with real-time data visualization, interactive charts, and customizable reporting features.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-navy-light text-white px-3 py-1 rounded-full text-sm">Vue.js</span>
+                            <span class="bg-navy-light text-white px-3 py-1 rounded-full text-sm">D3.js</span>
+                            <span class="bg-navy-light text-white px-3 py-1 rounded-full text-sm">Express</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <!-- Project showcase image 3 -->
+                    <img src="https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
+                         alt="Mobile app interface showing user profiles and messaging" 
+                         class="w-full h-48 object-cover" 
+                         data-mock="true">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-navy">Social Media App</h3>
+                            <div class="flex space-x-2">
+                                <a href="#" class="text-charcoal hover:text-navy-light transition-colors">
+                                    <i data-lucide="external-link" class="w-5 h-5"></i>
+                                </a>
+                                <a href="#" class="text-charcoal hover:text-navy-light transition-colors">
+                                    <i data-lucide="github" class="w-5 h-5"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <p class="text-charcoal mb-4 leading-relaxed">
+                            A modern social media platform with real-time messaging, media sharing, and advanced privacy controls. Optimized for mobile and desktop.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-navy-light text-white px-3 py-1 rounded-full text-sm">React Native</span>
+                            <span class="bg-navy-light text-white px-3 py-1 rounded-full text-sm">Firebase</span>
+                            <span class="bg-navy-light text-white px-3 py-1 rounded-full text-sm">Socket.io</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <!-- Project showcase image 4 -->
+                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
+                         alt="Task management interface with kanban boards and collaboration tools" 
+                         class="w-full h-48 object-cover" 
+                         data-mock="true">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-navy">Project Management Tool</h3>
+                            <div class="flex space-x-2">
+                                <a href="#" class="text-charcoal hover:text-navy-light transition-colors">
+                                    <i data-lucide="external-link" class="w-5 h-5"></i>
+                                </a>
+                                <a href="#" class="text-charloal hover:text-navy-light transition-colors">
+                                    <i data-lucide="github" class="w-5 h-5"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <p class="text-charcoal mb-4 leading-relaxed">
+                            A comprehensive project management solution with kanban boards, team collaboration features, and detailed progress tracking.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-navy-light text-white px-3 py-1 rounded-full text-sm">Angular</span>
+                            <span class="bg-navy-light text-white px-3 py-1 rounded-full text-sm">TypeScript</span>
+                            <span class="bg-navy-light text-white px-3 py-1 rounded-full text-sm">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- @END_MAP )) -->
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center bg-navy text-white px-8 py-4 rounded-lg hover:bg-navy-light transition-all duration-300 font-medium">
+                    <span>View All Projects</span>
+                    <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Projects Section -->
+
+    <!-- @COMPONENT: Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-navy mb-4">Let's Work Together</h2>
+                <p class="text-xl text-charcoal">Ready to bring your next project to life? Let's discuss how I can help.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-bold text-navy mb-6">Get In Touch</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <div class="bg-light-gray p-3 rounded-lg mr-4">
+                                    <i data-lucide="mail" class="w-6 h-6 text-navy"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-navy">Email</p>
+                                    <p class="text-charcoal" data-bind="user.email">farid.axundov@example.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <div class="bg-light-gray p-3 rounded-lg mr-4">
+                                    <i data-lucide="linkedin" class="w-6 h-6 text-navy"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-navy">LinkedIn</p>
+                                    <a href="https://www.linkedin.com/in/faridaxundov/" class="text-navy-light hover:underline">linkedin.com/in/faridaxundov</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <div class="bg-light-gray p-3 rounded-lg mr-4">
+                                    <i data-lucide="map-pin" class="w-6 h-6 text-navy"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-navy">Location</p>
+                                    <p class="text-charcoal" data-bind="user.location">Available for remote work</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Additional workspace image -->
+                    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
+                         alt="Clean modern workspace with laptop and coffee" 
+                         class="rounded-xl shadow-lg w-full" 
+                         data-mock="true">
+                </div>
+                
+                <div>
+                    <form id="contact-form" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="firstName" class="block text-sm font-medium text-navy mb-2">First Name</label>
+                                <input type="text" id="firstName" name="firstName" required 
+                                       class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-navy-light focus:border-transparent transition-all duration-300">
+                            </div>
+                            <div>
+                                <label for="lastName" class="block text-sm font-medium text-navy mb-2">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" required 
+                                       class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-navy-light focus:border-transparent transition-all duration-300">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-navy mb-2">Email</label>
+                            <input type="email" id="email" name="email" required 
+                                   class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-navy-light focus:border-transparent transition-all duration-300">
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-navy mb-2">Subject</label>
+                            <input type="text" id="subject" name="subject" required 
+                                   class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-navy-light focus:border-transparent transition-all duration-300">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-navy mb-2">Message</label>
+                            <textarea id="message" name="message" rows="5" required 
+                                      class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-navy-light focus:border-transparent transition-all duration-300 resize-vertical"></textarea>
+                        </div>
+                        
+                        <button type="submit" 
+                                class="w-full bg-navy text-white py-4 px-6 rounded-lg hover:bg-navy-light transition-all duration-300 font-medium">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Contact Section -->
+
+    <!-- @COMPONENT: Footer -->
+    <footer class="bg-navy text-white py-12">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center">
+                <div class="text-3xl font-bold mb-4">FA</div>
+                <p class="text-gray-300 mb-8">Building the future, one line of code at a time.</p>
+                
+                <div class="flex justify-center space-x-6 mb-8">
+                    <a href="https://www.linkedin.com/in/faridaxundov/" target="_blank" class="text-gray-300 hover:text-white transition-colors duration-300">
+                        <i data-lucide="linkedin" class="w-6 h-6"></i>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">
+                        <i data-lucide="github" class="w-6 h-6"></i>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">
+                        <i data-lucide="mail" class="w-6 h-6"></i>
+                    </a>
+                </div>
+                
+                <div class="border-t border-gray-700 pt-8">
+                    <p class="text-gray-400">&copy; 2024 Farid Axundov. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Mobile menu functionality
+        (function() {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+                
+                // Close mobile menu when clicking on nav links
+                const mobileNavLinks = mobileMenu.querySelectorAll('a');
+                mobileNavLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        mobileMenu.classList.add('hidden');
+                    });
+                });
+            }
+        })();
+        
+        // Smooth scrolling for navigation links
+        (function() {
+            const navLinks = document.querySelectorAll('a[href^="#"]');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        const navHeight = document.querySelector('nav').offsetHeight;
+                        const targetPosition = targetElement.offsetTop - navHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        })();
+        
+        // Contact form basic validation
+        (function() {
+            const contactForm = document.getElementById('contact-form');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Basic form validation
+                    const inputs = this.querySelectorAll('input[required], textarea[required]');
+                    let isValid = true;
+                    
+                    inputs.forEach(input => {
+                        if (!input.value.trim()) {
+                            input.classList.add('border-red-500');
+                            isValid = false;
+                        } else {
+                            input.classList.remove('border-red-500');
+                        }
+                    });
+                    
+                    // Email validation
+                    const email = document.getElementById('email');
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (email && !emailRegex.test(email.value)) {
+                        email.classList.add('border-red-500');
+                        isValid = false;
+                    }
+                    
+                    if (isValid) {
+                        // TODO: Implement form submission logic
+                        alert('Thank you for your message! I will get back to you soon.');
+                        this.reset();
+                    } else {
+                        alert('Please fill in all required fields correctly.');
+                    }
+                });
+            }
+        })();
+        
+        // Add scroll-based navigation highlighting
+        (function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('nav a[href^="#"]');
+            
+            function updateActiveNavLink() {
+                let current = '';
+                const scrollPosition = window.scrollY + 100; // Offset for fixed nav
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('text-navy-light');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.add('text-navy-light');
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', updateActiveNavLink);
+            updateActiveNavLink(); // Initial call
+        })();
+    </script>
+</body>
+</html>
