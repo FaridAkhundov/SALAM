@@ -78,11 +78,11 @@ export default function Education() {
   ];
 
   return (
-    <section id="education" className="py-20 bg-white dark:bg-gray-900">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-navy dark:text-navy-light mb-4">Education & Certifications</h2>
-          <p className="text-xl text-charcoal dark:text-gray-300">Academic background and professional certifications</p>
+    <section id="education" className="py-12 lg:py-20 bg-white dark:bg-gray-900">
+      <div className="max-w-6xl mx-auto px-4 lg:px-6">
+        <div className="text-center mb-8 lg:mb-16">
+          <h2 className="text-2xl lg:text-4xl font-bold text-navy dark:text-navy-light mb-4">Education & Certifications</h2>
+          <p className="text-base lg:text-xl text-charcoal dark:text-gray-300">Academic background and professional certifications</p>
         </div>
         
         <div className="grid lg:grid-cols-3 gap-8">
@@ -93,21 +93,21 @@ export default function Education() {
               {education.map((item, index) => (
                 <div key={index} className="bg-light-gray dark:bg-gray-800 p-6 rounded-xl hover:shadow-lg transition-shadow duration-300 border dark:border-gray-700">
                   <div className="flex items-start">
-                    <div className="bg-navy-light dark:bg-blue-600 text-white p-3 rounded-lg mr-4 flex-shrink-0">
-                      <GraduationCap className="w-6 h-6" />
+                    <div className="bg-navy-light dark:bg-blue-600 text-white p-2 lg:p-3 rounded-lg mr-3 lg:mr-4 flex-shrink-0">
+                      <GraduationCap className="w-5 h-5 lg:w-6 lg:h-6" />
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center mb-2">
                         <Calendar className="w-4 h-4 text-navy-light dark:text-blue-400 mr-2" />
-                        <span className="text-sm text-navy-light dark:text-blue-400 font-medium">{item.period}</span>
+                        <span className="text-xs lg:text-sm text-navy-light dark:text-blue-400 font-medium">{item.period}</span>
                       </div>
-                      <h4 className="text-xl font-bold text-navy dark:text-navy-light mb-1">{item.degree}</h4>
-                      <p className="text-lg text-charcoal dark:text-gray-300 mb-2">{item.institution}</p>
-                      <p className="text-sm text-navy-light dark:text-blue-400 mb-3">{item.grade}</p>
-                      <p className="text-charcoal dark:text-gray-300 mb-4 leading-relaxed">{item.description}</p>
+                      <h4 className="text-lg lg:text-xl font-bold text-navy dark:text-navy-light mb-1">{item.degree}</h4>
+                      <p className="text-base lg:text-lg text-charcoal dark:text-gray-300 mb-2">{item.institution}</p>
+                      <p className="text-xs lg:text-sm text-navy-light dark:text-blue-400 mb-2 lg:mb-3">{item.grade}</p>
+                      <p className="text-sm lg:text-base text-charcoal dark:text-gray-300 mb-3 lg:mb-4 leading-relaxed hidden lg:block">{item.description}</p>
                       
-                      {/* Coursework Section */}
-                      <div className="mb-4">
+                      {/* Coursework Section - Hidden on mobile, only on desktop */}
+                      <div className="mb-4 hidden lg:block">
                         <h5 className="font-semibold text-navy dark:text-navy-light mb-2">Key Coursework:</h5>
                         <div className="grid grid-cols-2 gap-2">
                           {item.coursework.map((course, courseIndex) => (
@@ -121,10 +121,22 @@ export default function Education() {
                         </div>
                       </div>
                       
-                      <div className="space-y-2">
+                      <div className="space-y-2 hidden lg:block">
                         <h5 className="font-semibold text-navy dark:text-navy-light">Activities and achievements:</h5>
                         <ul className="text-sm text-charcoal dark:text-gray-300 space-y-1">
                           {item.achievements.map((achievement, achIndex) => (
+                            <li key={achIndex} className="flex items-start">
+                              <span className="text-navy-light dark:text-blue-400 mr-2">•</span>
+                              {achievement}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      
+                      {/* Mobile minimalist view - only top 2 achievements */}
+                      <div className="lg:hidden">
+                        <ul className="text-xs text-charcoal dark:text-gray-300 space-y-1">
+                          {item.achievements.slice(0, 2).map((achievement, achIndex) => (
                             <li key={achIndex} className="flex items-start">
                               <span className="text-navy-light dark:text-blue-400 mr-2">•</span>
                               {achievement}
@@ -141,18 +153,19 @@ export default function Education() {
           
           {/* Certifications Sidebar */}
           <div>
-            <h3 className="text-2xl font-bold text-navy dark:text-navy-light mb-8">Certifications</h3>
-            <div className="space-y-6">
+            <h3 className="text-xl lg:text-2xl font-bold text-navy dark:text-navy-light mb-6 lg:mb-8">Certifications</h3>
+            <div className="space-y-4 lg:space-y-6">
               {certifications.map((cert, index) => (
-                <div key={index} className="bg-navy dark:bg-gray-800 text-white p-6 rounded-xl border dark:border-gray-700">
-                  <div className="flex items-start mb-4">
-                    <Award className="w-6 h-6 text-yellow-400 mr-3 flex-shrink-0 mt-1" />
+                <div key={index} className="bg-navy dark:bg-gray-800 text-white p-4 lg:p-6 rounded-xl border dark:border-gray-700">
+                  <div className="flex items-start mb-3 lg:mb-4">
+                    <Award className="w-5 h-5 lg:w-6 lg:h-6 text-yellow-400 mr-2 lg:mr-3 flex-shrink-0 mt-1" />
                     <div>
-                      <h4 className="font-bold text-lg mb-1">{cert.name}</h4>
-                      <p className="text-gray-300 text-sm mb-2">{cert.issuer} • {cert.date}</p>
+                      <h4 className="font-bold text-base lg:text-lg mb-1">{cert.name}</h4>
+                      <p className="text-gray-300 text-xs lg:text-sm mb-2">{cert.issuer} • {cert.date}</p>
                     </div>
                   </div>
-                  <div className="flex flex-wrap gap-2">
+                  {/* Skills only on desktop */}
+                  <div className="hidden lg:flex flex-wrap gap-2">
                     {cert.skills.map((skill, skillIndex) => (
                       <span
                         key={skillIndex}
@@ -166,8 +179,8 @@ export default function Education() {
               ))}
             </div>
             
-            {/* Additional Skills */}
-            <div className="mt-8 bg-light-gray dark:bg-gray-800 p-6 rounded-xl border dark:border-gray-700">
+            {/* Additional Skills - hidden on mobile */}
+            <div className="mt-6 lg:mt-8 bg-light-gray dark:bg-gray-800 p-4 lg:p-6 rounded-xl border dark:border-gray-700 hidden lg:block">
               <h4 className="font-bold text-navy dark:text-navy-light mb-4">Technical Skills & Expertise</h4>
               
               <div className="space-y-4">
