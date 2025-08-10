@@ -171,23 +171,26 @@ export default function Hero() {
               {/* Main image container */}
               <div className="relative">
                 <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=800"
-                  alt="Farid Axundov - Professional Headshot"
+                  src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=800"
+                  alt="Modern Server Room - Cybersecurity Infrastructure"
                   className="rounded-2xl shadow-2xl w-full max-w-md mx-auto animate-float hover:scale-105 transition-transform duration-500"
                 />
                 
-                {/* Floating badges */}
+                {/* Server status indicator */}
                 <div className="absolute -top-4 -left-4 bg-gradient-to-r from-green-400 to-green-500 dark:from-green-500 dark:to-green-400 text-white p-3 rounded-xl shadow-lg animate-bounce">
-                  <div className="w-3 h-3 bg-white rounded-full animate-pulse"></div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 bg-white rounded-full animate-pulse"></div>
+                    <span className="text-xs font-bold">SECURE</span>
+                  </div>
                 </div>
                 
                 <div className="absolute -bottom-6 -right-6 bg-gradient-to-r from-navy-light to-blue-600 dark:from-blue-600 dark:to-purple-600 text-white p-4 rounded-xl shadow-lg hover:scale-110 transition-transform duration-300 cursor-pointer">
                   <Code className="w-8 h-8 animate-pulse" />
                 </div>
                 
-                {/* Certification badges */}
-                <div className="absolute -top-2 -right-2 bg-gradient-to-r from-yellow-400 to-orange-500 text-white p-2 rounded-full shadow-lg animate-pulse">
-                  <span className="text-xs font-bold">IBM</span>
+                {/* Infrastructure badges */}
+                <div className="absolute -top-2 -right-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-2 py-1 rounded-full shadow-lg animate-pulse">
+                  <span className="text-xs font-bold">24/7</span>
                 </div>
               </div>
             </div>
