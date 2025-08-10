@@ -64,22 +64,28 @@ export default function Hero() {
 
       {/* Floating Particles */}
       <div className="absolute inset-0 overflow-hidden">
-        {[...Array(6)].map((_, i) => (
-          <div
-            key={i}
-            className={`absolute animate-float transition-opacity duration-1000`}
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${i * 0.5}s`,
-              animationDuration: `${4 + i}s`,
-              opacity: 0.2,
-              animation: `float ${4 + i}s ease-in-out infinite ${i * 0.5}s, fadeInOut ${6 + i * 2}s ease-in-out infinite ${i * 1.5}s`
-            }}
-          >
-            <Sparkles className="w-4 h-4 text-navy-light dark:text-blue-300" />
-          </div>
-        ))}
+        {[...Array(6)].map((_, i) => {
+          // Generate fixed random positions that don't change
+          const leftPos = Math.random() * 80 + 10; // 10-90% to avoid edges
+          const topPos = Math.random() * 80 + 10;  // 10-90% to avoid edges
+          
+          return (
+            <div
+              key={i}
+              className="absolute"
+              style={{
+                left: `${leftPos}%`,
+                top: `${topPos}%`,
+                animation: `
+                  float ${5 + i * 0.8}s ease-in-out infinite ${i * 0.7}s, 
+                  fadeInOut ${8 + i * 1.5}s ease-in-out infinite ${i * 2.1}s
+                `
+              }}
+            >
+              <Sparkles className="w-4 h-4 text-navy-light dark:text-blue-300" />
+            </div>
+          );
+        })}
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 py-20">
