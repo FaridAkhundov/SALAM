@@ -133,16 +133,26 @@ export default function Education() {
                         </ul>
                       </div>
                       
-                      {/* Mobile minimalist view - only top 2 achievements */}
+                      {/* Mobile minimalist view - key highlights */}
                       <div className="lg:hidden">
-                        <ul className="text-xs text-charcoal dark:text-gray-300 space-y-1">
-                          {item.achievements.slice(0, 2).map((achievement, achIndex) => (
-                            <li key={achIndex} className="flex items-start">
-                              <span className="text-navy-light dark:text-blue-400 mr-2">•</span>
-                              {achievement}
-                            </li>
-                          ))}
-                        </ul>
+                        <div className="text-xs text-charcoal dark:text-gray-300 space-y-1">
+                          <div className="flex items-start">
+                            <span className="text-navy-light dark:text-blue-400 mr-2">•</span>
+                            <span>Cybersecurity specialization with hands-on experience</span>
+                          </div>
+                          <div className="flex items-start">
+                            <span className="text-navy-light dark:text-blue-400 mr-2">•</span>
+                            <span>Network security and system administration focus</span>
+                          </div>
+                          <div className="flex items-start">
+                            <span className="text-navy-light dark:text-blue-400 mr-2">•</span>
+                            <span>Active in IT competitions and practical projects</span>
+                          </div>
+                          <div className="flex items-start">
+                            <span className="text-navy-light dark:text-blue-400 mr-2">•</span>
+                            <span>TryHackMe platform expertise and peer mentoring</span>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
