@@ -36,11 +36,11 @@ export default function Projects() {
     <section id="projects" className="py-20 bg-light-gray dark:bg-gray-800">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-navy dark:text-navy-light mb-4">Featured Projects</h2>
-          <p className="text-xl text-charcoal dark:text-gray-300">A showcase of my recent work and achievements</p>
+          <h2 className="text-2xl lg:text-4xl font-bold text-navy dark:text-navy-light mb-4">Featured Projects</h2>
+          <p className="text-base lg:text-xl text-charcoal dark:text-gray-300">A showcase of my recent work and achievements</p>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-8">
           {projects.map((project, index) => (
             <div
               key={index}
@@ -49,11 +49,11 @@ export default function Projects() {
               <img
                 src={project.image}
                 alt={project.alt}
-                className="w-full h-48 object-cover"
+                className="w-full h-40 lg:h-48 object-cover"
               />
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-xl font-bold text-navy dark:text-navy-light">{project.title}</h3>
+              <div className="p-4 lg:p-6">
+                <div className="flex items-center justify-between mb-3 lg:mb-4">
+                  <h3 className="text-lg lg:text-xl font-bold text-navy dark:text-navy-light">{project.title}</h3>
                   <div className="flex space-x-2">
                     <a
                       href="#"
@@ -69,7 +69,7 @@ export default function Projects() {
                     </a>
                   </div>
                 </div>
-                <p className="text-charcoal dark:text-gray-300 mb-4 leading-relaxed">{project.description}</p>
+                <p className="text-sm lg:text-base text-charcoal dark:text-gray-300 mb-3 lg:mb-4 leading-relaxed">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech, techIndex) => (
                     <span

@@ -89,17 +89,17 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 py-20">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Content Section */}
-          <div className={`space-y-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className={`space-y-6 lg:space-y-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             {/* Greeting with stagger animation */}
-            <div className="space-y-6">
+            <div className="space-y-4 lg:space-y-6">
               <div className={`transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
-                <p className="text-lg text-navy-light dark:text-blue-400 font-medium">Welcome to my digital space</p>
+                <p className="text-base lg:text-lg text-navy-light dark:text-blue-400 font-medium">Welcome to my digital space</p>
               </div>
               
               <div className={`transition-all duration-700 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
-                <h1 className="text-5xl md:text-6xl font-bold text-navy dark:text-navy-light leading-tight">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-navy dark:text-navy-light leading-tight">
                   Hi, I'm{" "}
                   <span className="relative">
                     <span className="text-navy-light dark:text-blue-300">Farid</span>
@@ -109,8 +109,8 @@ export default function Hero() {
               </div>
 
               <div className={`transition-all duration-700 delay-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
-                <div className="h-8 flex items-center">
-                  <p className="text-xl md:text-2xl text-charcoal dark:text-gray-300 font-medium">
+                <div className="h-6 sm:h-8 flex items-center">
+                  <p className="text-lg sm:text-xl lg:text-2xl text-charcoal dark:text-gray-300 font-medium">
                     <span className={`text-navy-light dark:text-blue-400 transition-all duration-600 ${textFade ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-2'}`}>
                       {roles[textIndex]}
                     </span>
@@ -119,7 +119,7 @@ export default function Hero() {
               </div>
 
               <div className={`transition-all duration-700 delay-800 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
-                <p className="text-lg text-charcoal dark:text-gray-300 leading-relaxed max-w-xl">
+                <p className="text-base lg:text-lg text-charcoal dark:text-gray-300 leading-relaxed max-w-xl">
                   Experienced IT specialist with expertise in cybersecurity, system administration, and secure infrastructure design. 
                   Certified professional focused on building resilient digital environments and implementing industry-standard security protocols.
                 </p>

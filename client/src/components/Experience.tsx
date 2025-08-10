@@ -59,54 +59,59 @@ export default function Experience() {
         
         {/* Timeline */}
         <div className="relative">
-          {/* Animated Timeline line */}
-          <div className="absolute left-1/2 transform -translate-x-0.5 w-1 bg-gradient-to-b from-blue-400 via-purple-500 to-blue-600 dark:from-blue-400 dark:via-purple-400 dark:to-blue-500 h-full hidden md:block shadow-lg"></div>
+          {/* Animated Timeline line - Only on desktop */}
+          <div className="absolute left-1/2 transform -translate-x-0.5 w-1 bg-gradient-to-b from-blue-400 via-purple-500 to-blue-600 dark:from-blue-400 dark:via-purple-400 dark:to-blue-500 h-full hidden lg:block shadow-lg"></div>
           
           {/* Timeline Items */}
-          <div className="space-y-16">
+          <div className="space-y-8 lg:space-y-16">
             {experiences.map((experience, index) => (
-              <div key={index} className={`relative flex items-center transition-all duration-700 delay-${index * 200} ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
-                <div className={`w-full md:w-2/5 ${index % 2 === 0 ? 'md:text-right' : 'md:order-2'}`} style={{marginRight: index % 2 === 0 ? '100px' : '0', marginLeft: index % 2 !== 0 ? '100px' : '0', width: 'calc(40% + 150px)'}}>
-                  <div className="group relative">
-                    {/* Glow effect */}
-                    <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl blur opacity-25 group-hover:opacity-50 transition duration-500"></div>
-                    
-                    {/* Main card */}
-                    <div className="relative bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-200 dark:border-gray-700 group-hover:border-blue-400 dark:group-hover:border-blue-500">
-                      {/* Period badge */}
-                      <div className="inline-flex items-center px-4 py-2 rounded text-sm bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium mb-4">
-                        <div className="w-2 h-2 bg-white rounded-full mr-2 animate-pulse"></div>
-                        {experience.period}
+              <div key={index} className={`relative transition-all duration-700 delay-${index * 200} ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
+                {/* Mobile: Stacked layout, Desktop: Alternating layout */}
+                <div className={`lg:flex lg:items-center ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
+                  {/* Content Card */}
+                  <div className={`w-full lg:w-2/5 ${index % 2 === 0 ? 'lg:mr-[150px]' : 'lg:ml-[150px]'}`}>
+                    <div className="group relative">
+                      {/* Glow effect */}
+                      <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl blur opacity-25 group-hover:opacity-50 transition duration-500"></div>
+                      
+                      {/* Main card */}
+                      <div className="relative bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm p-6 lg:p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-200 dark:border-gray-700 group-hover:border-blue-400 dark:group-hover:border-blue-500">
+                        {/* Period badge */}
+                        <div className="inline-flex items-center px-3 py-1 lg:px-4 lg:py-2 rounded text-xs lg:text-sm bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium mb-3 lg:mb-4">
+                          <div className="w-2 h-2 bg-white rounded-full mr-2 animate-pulse"></div>
+                          {experience.period}
+                        </div>
+                        
+                        <h3 className="text-xl lg:text-2xl font-bold bg-gradient-to-r from-navy to-blue-600 dark:from-navy-light dark:to-blue-400 bg-clip-text text-transparent mb-2 lg:mb-3">
+                          {experience.title}
+                        </h3>
+                        
+                        <div className="text-base lg:text-lg font-semibold text-charcoal dark:text-gray-300 mb-3 lg:mb-4 flex items-center">
+                          <div className="w-2 h-2 bg-gradient-to-r from-green-400 to-blue-500 rounded-full mr-3"></div>
+                          {experience.company}
+                        </div>
+                        
+                        <p className="text-charcoal dark:text-gray-300 leading-relaxed text-sm lg:text-base">
+                          {experience.description}
+                        </p>
+                        
+                        {/* Decorative corner */}
+                        <div className={`absolute top-4 w-6 h-6 lg:w-8 lg:h-8 border-2 border-blue-400 dark:border-blue-500 opacity-20 ${index === 0 ? 'left-4 rounded-tl-xl' : 'right-4 rounded-tr-xl'}`}></div>
                       </div>
-                      
-                      <h3 className="text-2xl font-bold bg-gradient-to-r from-navy to-blue-600 dark:from-navy-light dark:to-blue-400 bg-clip-text text-transparent mb-3">
-                        {experience.title}
-                      </h3>
-                      
-                      <div className="text-lg font-semibold text-charcoal dark:text-gray-300 mb-4 flex items-center">
-                        <div className="w-2 h-2 bg-gradient-to-r from-green-400 to-blue-500 rounded-full mr-3"></div>
-                        {experience.company}
-                      </div>
-                      
-                      <p className="text-charcoal dark:text-gray-300 leading-relaxed text-base">
-                        {experience.description}
-                      </p>
-                      
-                      {/* Decorative corner */}
-                      <div className={`absolute top-4 w-8 h-8 border-2 border-blue-400 dark:border-blue-500 opacity-20 ${index === 0 ? 'left-4 rounded-tl-xl' : 'right-4 rounded-tr-xl'}`}></div>
                     </div>
                   </div>
-                </div>
-                
-                {/* Enhanced Timeline dot */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 hidden md:block">
-                  <div className="relative">
-                    <div className="w-6 h-6 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full border-4 border-white dark:border-gray-900 shadow-lg animate-pulse"></div>
-                    <div className="absolute inset-0 w-6 h-6 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full animate-ping opacity-30"></div>
+                  
+                  {/* Enhanced Timeline dot - Desktop only */}
+                  <div className="absolute left-1/2 transform -translate-x-1/2 hidden lg:block">
+                    <div className="relative">
+                      <div className="w-6 h-6 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full border-4 border-white dark:border-gray-900 shadow-lg animate-pulse"></div>
+                      <div className="absolute inset-0 w-6 h-6 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full animate-ping opacity-30"></div>
+                    </div>
                   </div>
+                  
+                  {/* Spacer for desktop layout */}
+                  <div className="hidden lg:block lg:w-2/5"></div>
                 </div>
-                
-                <div className={`w-full md:w-2/5 ${index % 2 === 0 ? '' : 'md:order-1'}`} style={{marginLeft: index % 2 === 0 ? '100px' : '0', marginRight: index % 2 !== 0 ? '100px' : '0', width: 'calc(40% + 150px)'}}></div>
               </div>
             ))}
           </div>

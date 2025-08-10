@@ -9,16 +9,16 @@ export default function About() {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div>
             <div className="space-y-6">
-              <p className="text-lg text-charcoal dark:text-gray-300 leading-relaxed">
+              <p className="text-base lg:text-lg text-charcoal dark:text-gray-300 leading-relaxed">
                 I'm an experienced IT Specialist with deep expertise in cybersecurity, system administration, 
                 and infrastructure management. With multiple professional certifications including IBM Cybersecurity, 
                 Cisco Ethical Hacker, and Google Cybersecurity Professional Certificate, I design and implement 
                 secure, scalable IT solutions for complex enterprise environments.
               </p>
-              <p className="text-lg text-charcoal dark:text-gray-300 leading-relaxed">
+              <p className="text-base lg:text-lg text-charcoal dark:text-gray-300 leading-relaxed">
                 As a cybersecurity professional and system administrator, I have extensive experience in 
                 vulnerability assessments, network security, system hardening, and incident response. 
                 My expertise spans across secure infrastructure design, risk management, and implementing 
@@ -26,14 +26,14 @@ export default function About() {
               </p>
               
               {/* Key Stats */}
-              <div className="grid grid-cols-2 gap-6 mt-8">
-                <div className="text-center p-6 bg-light-gray dark:bg-gray-800 rounded-xl">
-                  <div className="text-3xl font-bold text-navy dark:text-navy-light mb-2">2+</div>
-                  <div className="text-charcoal dark:text-gray-300">Years Experience</div>
+              <div className="grid grid-cols-2 gap-4 lg:gap-6 mt-8">
+                <div className="text-center p-4 lg:p-6 bg-light-gray dark:bg-gray-800 rounded-xl">
+                  <div className="text-2xl lg:text-3xl font-bold text-navy dark:text-navy-light mb-2">2+</div>
+                  <div className="text-sm lg:text-base text-charcoal dark:text-gray-300">Years Experience</div>
                 </div>
-                <div className="text-center p-6 bg-light-gray dark:bg-gray-800 rounded-xl">
-                  <div className="text-3xl font-bold text-navy dark:text-navy-light mb-2">10+</div>
-                  <div className="text-charcoal dark:text-gray-300">Projects Completed</div>
+                <div className="text-center p-4 lg:p-6 bg-light-gray dark:bg-gray-800 rounded-xl">
+                  <div className="text-2xl lg:text-3xl font-bold text-navy dark:text-navy-light mb-2">10+</div>
+                  <div className="text-sm lg:text-base text-charcoal dark:text-gray-300">Projects Completed</div>
                 </div>
               </div>
             </div>
@@ -43,7 +43,7 @@ export default function About() {
             <img
               src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=900"
               alt="Professional Server Infrastructure - Data Center Operations"
-              className="rounded-2xl shadow-lg object-cover w-full max-w-sm md:max-w-md lg:max-w-lg h-auto max-h-[500px] md:max-h-[600px]"
+              className="rounded-2xl shadow-lg object-cover w-full max-w-sm lg:max-w-md xl:max-w-lg h-auto max-h-[400px] lg:max-h-[500px] xl:max-h-[600px]"
             />
           </div>
         </div>
