@@ -78,39 +78,39 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="py-20 bg-white dark:bg-gray-900">
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-navy mb-4">Let's Work Together</h2>
-          <p className="text-xl text-charcoal">Ready to bring your next project to life? Let's discuss how I can help.</p>
+          <h2 className="text-4xl font-bold text-navy dark:text-navy-light mb-4">Let's Work Together</h2>
+          <p className="text-xl text-charcoal dark:text-gray-300">Ready to bring your next project to life? Let's discuss how I can help.</p>
         </div>
         
         <div className="grid md:grid-cols-2 gap-12">
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-bold text-navy mb-6">Get In Touch</h3>
+              <h3 className="text-2xl font-bold text-navy dark:text-navy-light mb-6">Get In Touch</h3>
               <div className="space-y-4">
                 <div className="flex items-center">
-                  <div className="bg-light-gray p-3 rounded-lg mr-4">
-                    <Mail className="w-6 h-6 text-navy" />
+                  <div className="bg-light-gray dark:bg-gray-800 p-3 rounded-lg mr-4">
+                    <Mail className="w-6 h-6 text-navy dark:text-navy-light" />
                   </div>
                   <div>
-                    <p className="font-medium text-navy">Email</p>
-                    <p className="text-charcoal">farid.axundov@example.com</p>
+                    <p className="font-medium text-navy dark:text-navy-light">Email</p>
+                    <p className="text-charcoal dark:text-gray-300">farid.axundov@example.com</p>
                   </div>
                 </div>
                 
                 <div className="flex items-center">
-                  <div className="bg-light-gray p-3 rounded-lg mr-4">
-                    <Linkedin className="w-6 h-6 text-navy" />
+                  <div className="bg-light-gray dark:bg-gray-800 p-3 rounded-lg mr-4">
+                    <Linkedin className="w-6 h-6 text-navy dark:text-navy-light" />
                   </div>
                   <div>
-                    <p className="font-medium text-navy">LinkedIn</p>
+                    <p className="font-medium text-navy dark:text-navy-light">LinkedIn</p>
                     <a
                       href="https://www.linkedin.com/in/faridaxundov/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-navy-light hover:underline"
+                      className="text-navy-light dark:text-blue-400 hover:underline"
                     >
                       linkedin.com/in/faridaxundov
                     </a>
@@ -118,12 +118,12 @@ export default function Contact() {
                 </div>
                 
                 <div className="flex items-center">
-                  <div className="bg-light-gray p-3 rounded-lg mr-4">
-                    <MapPin className="w-6 h-6 text-navy" />
+                  <div className="bg-light-gray dark:bg-gray-800 p-3 rounded-lg mr-4">
+                    <MapPin className="w-6 h-6 text-navy dark:text-navy-light" />
                   </div>
                   <div>
-                    <p className="font-medium text-navy">Location</p>
-                    <p className="text-charcoal">Baku, Baku Economic Zone, Azerbaijan • Available for remote work</p>
+                    <p className="font-medium text-navy dark:text-navy-light">Location</p>
+                    <p className="text-charcoal dark:text-gray-300">Baku, Baku Economic Zone, Azerbaijan • Available for remote work</p>
                   </div>
                 </div>
               </div>
@@ -140,7 +140,7 @@ export default function Contact() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <Label htmlFor="firstName" className="block text-sm font-medium text-navy mb-2">
+                  <Label htmlFor="firstName" className="block text-sm font-medium text-navy dark:text-navy-light mb-2">
                     First Name
                   </Label>
                   <Input
@@ -150,11 +150,11 @@ export default function Contact() {
                     value={formData.firstName}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-navy-light focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-charcoal dark:text-gray-100 rounded-lg focus:ring-2 focus:ring-navy-light dark:focus:ring-blue-400 focus:border-transparent transition-all duration-300"
                   />
                 </div>
                 <div>
-                  <Label htmlFor="lastName" className="block text-sm font-medium text-navy mb-2">
+                  <Label htmlFor="lastName" className="block text-sm font-medium text-navy dark:text-navy-light mb-2">
                     Last Name
                   </Label>
                   <Input
@@ -164,13 +164,13 @@ export default function Contact() {
                     value={formData.lastName}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-navy-light focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-charcoal dark:text-gray-100 rounded-lg focus:ring-2 focus:ring-navy-light dark:focus:ring-blue-400 focus:border-transparent transition-all duration-300"
                   />
                 </div>
               </div>
               
               <div>
-                <Label htmlFor="email" className="block text-sm font-medium text-navy mb-2">
+                <Label htmlFor="email" className="block text-sm font-medium text-navy dark:text-navy-light mb-2">
                   Email
                 </Label>
                 <Input
@@ -180,12 +180,12 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-navy-light focus:border-transparent transition-all duration-300"
+                  className="w-full px-4 py-3 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-charcoal dark:text-gray-100 rounded-lg focus:ring-2 focus:ring-navy-light dark:focus:ring-blue-400 focus:border-transparent transition-all duration-300"
                 />
               </div>
               
               <div>
-                <Label htmlFor="subject" className="block text-sm font-medium text-navy mb-2">
+                <Label htmlFor="subject" className="block text-sm font-medium text-navy dark:text-navy-light mb-2">
                   Subject
                 </Label>
                 <Input
@@ -195,12 +195,12 @@ export default function Contact() {
                   value={formData.subject}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-navy-light focus:border-transparent transition-all duration-300"
+                  className="w-full px-4 py-3 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-charcoal dark:text-gray-100 rounded-lg focus:ring-2 focus:ring-navy-light dark:focus:ring-blue-400 focus:border-transparent transition-all duration-300"
                 />
               </div>
               
               <div>
-                <Label htmlFor="message" className="block text-sm font-medium text-navy mb-2">
+                <Label htmlFor="message" className="block text-sm font-medium text-navy dark:text-navy-light mb-2">
                   Message
                 </Label>
                 <Textarea
@@ -210,14 +210,14 @@ export default function Contact() {
                   value={formData.message}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-navy-light focus:border-transparent transition-all duration-300 resize-vertical"
+                  className="w-full px-4 py-3 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-charcoal dark:text-gray-100 rounded-lg focus:ring-2 focus:ring-navy-light dark:focus:ring-blue-400 focus:border-transparent transition-all duration-300 resize-vertical"
                 />
               </div>
               
               <Button
                 type="submit"
                 disabled={contactMutation.isPending}
-                className="w-full bg-navy text-white py-4 px-6 rounded-lg hover:bg-navy-light transition-all duration-300 font-medium disabled:opacity-50"
+                className="w-full bg-navy dark:bg-blue-600 text-white py-4 px-6 rounded-lg hover:bg-navy-light dark:hover:bg-blue-700 transition-all duration-300 font-medium disabled:opacity-50"
               >
                 {contactMutation.isPending ? "Sending..." : "Send Message"}
               </Button>

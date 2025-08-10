@@ -33,18 +33,18 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-light-gray">
+    <section id="projects" className="py-20 bg-light-gray dark:bg-gray-800">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-navy mb-4">Featured Projects</h2>
-          <p className="text-xl text-charcoal">A showcase of my recent work and achievements</p>
+          <h2 className="text-4xl font-bold text-navy dark:text-navy-light mb-4">Featured Projects</h2>
+          <p className="text-xl text-charcoal dark:text-gray-300">A showcase of my recent work and achievements</p>
         </div>
         
         <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border dark:border-gray-700"
             >
               <img
                 src={project.image}
@@ -53,28 +53,28 @@ export default function Projects() {
               />
               <div className="p-6">
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-xl font-bold text-navy">{project.title}</h3>
+                  <h3 className="text-xl font-bold text-navy dark:text-navy-light">{project.title}</h3>
                   <div className="flex space-x-2">
                     <a
                       href="#"
-                      className="text-charcoal hover:text-navy-light transition-colors"
+                      className="text-charcoal dark:text-gray-300 hover:text-navy-light dark:hover:text-blue-300 transition-colors"
                     >
                       <ExternalLink className="w-5 h-5" />
                     </a>
                     <a
                       href="#"
-                      className="text-charcoal hover:text-navy-light transition-colors"
+                      className="text-charcoal dark:text-gray-300 hover:text-navy-light dark:hover:text-blue-300 transition-colors"
                     >
                       <Github className="w-5 h-5" />
                     </a>
                   </div>
                 </div>
-                <p className="text-charcoal mb-4 leading-relaxed">{project.description}</p>
+                <p className="text-charcoal dark:text-gray-300 mb-4 leading-relaxed">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="bg-navy-light text-white px-3 py-1 rounded-full text-sm"
+                      className="bg-navy-light dark:bg-blue-600 text-white px-3 py-1 rounded-full text-sm"
                     >
                       {tech}
                     </span>

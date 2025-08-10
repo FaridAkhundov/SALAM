@@ -28,14 +28,14 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="pt-24 pb-20 bg-gradient-to-br from-light-gray via-white to-blue-50">
+    <section id="home" className="pt-24 pb-20 bg-gradient-to-br from-light-gray via-white to-blue-50 dark:from-gray-800 dark:via-gray-900 dark:to-gray-900">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="animate-fade-in">
-            <h1 className="text-5xl md:text-6xl font-bold text-navy mb-6 leading-tight">
-              Hi, I'm <span className="text-navy-light">Farid</span>
+            <h1 className="text-5xl md:text-6xl font-bold text-navy dark:text-navy-light mb-6 leading-tight">
+              Hi, I'm <span className="text-navy-light dark:text-blue-300">Farid</span>
             </h1>
-            <p className="text-xl text-charcoal mb-8 leading-relaxed">
+            <p className="text-xl text-charcoal dark:text-gray-300 mb-8 leading-relaxed">
               IT Support Enthusiast | Exploring DevOps & System Administration |
               Certified in IT Essentials & Cybersecurity | Fast Learner
             </p>
@@ -62,19 +62,19 @@ export default function Hero() {
                 href="https://www.linkedin.com/in/faridaxundov/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-charcoal hover:text-navy-light transition-colors duration-300"
+                className="text-charcoal dark:text-gray-300 hover:text-navy-light dark:hover:text-blue-300 transition-colors duration-300"
               >
                 <Linkedin className="w-6 h-6" />
               </a>
               <a
                 href="#"
-                className="text-charcoal hover:text-navy-light transition-colors duration-300"
+                className="text-charcoal dark:text-gray-300 hover:text-navy-light dark:hover:text-blue-300 transition-colors duration-300"
               >
                 <Github className="w-6 h-6" />
               </a>
               <a
                 href="mailto:farid.axundov@example.com"
-                className="text-charcoal hover:text-navy-light transition-colors duration-300"
+                className="text-charcoal dark:text-gray-300 hover:text-navy-light dark:hover:text-blue-300 transition-colors duration-300"
               >
                 <Mail className="w-6 h-6" />
               </a>
@@ -88,7 +88,7 @@ export default function Hero() {
                 alt="Farid Axundov - Professional Headshot"
                 className="rounded-2xl shadow-2xl w-full max-w-md mx-auto animate-float"
               />
-              <div className="absolute -bottom-6 -right-6 bg-navy-light text-white p-4 rounded-xl shadow-lg">
+              <div className="absolute -bottom-6 -right-6 bg-navy-light dark:bg-blue-600 text-white p-4 rounded-xl shadow-lg">
                 <Code className="w-8 h-8" />
               </div>
             </div>

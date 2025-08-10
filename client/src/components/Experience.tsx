@@ -15,33 +15,33 @@ export default function Experience() {
   ];
 
   return (
-    <section id="experience" className="py-20 bg-light-gray">
+    <section id="experience" className="py-20 bg-light-gray dark:bg-gray-800">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-navy mb-4">Experience</h2>
-          <p className="text-xl text-charcoal">My professional journey and key milestones</p>
+          <h2 className="text-4xl font-bold text-navy dark:text-navy-light mb-4">Experience</h2>
+          <p className="text-xl text-charcoal dark:text-gray-300">My professional journey and key milestones</p>
         </div>
         
         {/* Timeline */}
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-1/2 transform -translate-x-0.5 w-1 bg-navy-light h-full hidden md:block"></div>
+          <div className="absolute left-1/2 transform -translate-x-0.5 w-1 bg-navy-light dark:bg-blue-400 h-full hidden md:block"></div>
           
           {/* Timeline Items */}
           <div className="space-y-12">
             {experiences.map((experience, index) => (
               <div key={index} className="relative flex items-center">
                 <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:pr-8 md:text-right' : 'md:pl-8'} ${index % 2 !== 0 ? 'md:order-2' : ''}`}>
-                  <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <div className="text-sm text-navy-light font-medium mb-2">{experience.period}</div>
-                    <h3 className="text-xl font-bold text-navy mb-2">{experience.title}</h3>
-                    <p className="text-lg text-charcoal mb-3">{experience.company}</p>
-                    <p className="text-charcoal leading-relaxed">{experience.description}</p>
+                  <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border dark:border-gray-700">
+                    <div className="text-sm text-navy-light dark:text-blue-400 font-medium mb-2">{experience.period}</div>
+                    <h3 className="text-xl font-bold text-navy dark:text-navy-light mb-2">{experience.title}</h3>
+                    <p className="text-lg text-charcoal dark:text-gray-300 mb-3">{experience.company}</p>
+                    <p className="text-charcoal dark:text-gray-300 leading-relaxed">{experience.description}</p>
                   </div>
                 </div>
                 
                 {/* Timeline dot */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-navy-light rounded-full border-4 border-white hidden md:block"></div>
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-navy-light dark:bg-blue-400 rounded-full border-4 border-white dark:border-gray-800 hidden md:block"></div>
                 
                 <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:pl-8' : 'md:pr-8'} ${index % 2 !== 0 ? 'md:order-1' : ''}`}></div>
               </div>

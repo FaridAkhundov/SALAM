@@ -47,40 +47,40 @@ export default function Education() {
   ];
 
   return (
-    <section id="education" className="py-20 bg-white">
+    <section id="education" className="py-20 bg-white dark:bg-gray-900">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-navy mb-4">Education & Certifications</h2>
-          <p className="text-xl text-charcoal">Academic background and professional certifications</p>
+          <h2 className="text-4xl font-bold text-navy dark:text-navy-light mb-4">Education & Certifications</h2>
+          <p className="text-xl text-charcoal dark:text-gray-300">Academic background and professional certifications</p>
         </div>
         
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Education Timeline */}
           <div className="lg:col-span-2">
-            <h3 className="text-2xl font-bold text-navy mb-8">Educational Background</h3>
+            <h3 className="text-2xl font-bold text-navy dark:text-navy-light mb-8">Educational Background</h3>
             <div className="space-y-8">
               {education.map((item, index) => (
-                <div key={index} className="bg-light-gray p-6 rounded-xl hover:shadow-lg transition-shadow duration-300">
+                <div key={index} className="bg-light-gray dark:bg-gray-800 p-6 rounded-xl hover:shadow-lg transition-shadow duration-300 border dark:border-gray-700">
                   <div className="flex items-start">
-                    <div className="bg-navy-light text-white p-3 rounded-lg mr-4 flex-shrink-0">
+                    <div className="bg-navy-light dark:bg-blue-600 text-white p-3 rounded-lg mr-4 flex-shrink-0">
                       <GraduationCap className="w-6 h-6" />
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center mb-2">
-                        <Calendar className="w-4 h-4 text-navy-light mr-2" />
-                        <span className="text-sm text-navy-light font-medium">{item.period}</span>
+                        <Calendar className="w-4 h-4 text-navy-light dark:text-blue-400 mr-2" />
+                        <span className="text-sm text-navy-light dark:text-blue-400 font-medium">{item.period}</span>
                       </div>
-                      <h4 className="text-xl font-bold text-navy mb-1">{item.degree}</h4>
-                      <p className="text-lg text-charcoal mb-2">{item.institution}</p>
-                      <p className="text-sm text-navy-light mb-3">{item.grade}</p>
-                      <p className="text-charcoal mb-4 leading-relaxed">{item.description}</p>
+                      <h4 className="text-xl font-bold text-navy dark:text-navy-light mb-1">{item.degree}</h4>
+                      <p className="text-lg text-charcoal dark:text-gray-300 mb-2">{item.institution}</p>
+                      <p className="text-sm text-navy-light dark:text-blue-400 mb-3">{item.grade}</p>
+                      <p className="text-charcoal dark:text-gray-300 mb-4 leading-relaxed">{item.description}</p>
                       
                       <div className="space-y-2">
-                        <h5 className="font-semibold text-navy">Activities and achievements:</h5>
-                        <ul className="text-sm text-charcoal space-y-1">
+                        <h5 className="font-semibold text-navy dark:text-navy-light">Activities and achievements:</h5>
+                        <ul className="text-sm text-charcoal dark:text-gray-300 space-y-1">
                           {item.achievements.map((achievement, achIndex) => (
                             <li key={achIndex} className="flex items-start">
-                              <span className="text-navy-light mr-2">•</span>
+                              <span className="text-navy-light dark:text-blue-400 mr-2">•</span>
                               {achievement}
                             </li>
                           ))}
@@ -95,10 +95,10 @@ export default function Education() {
           
           {/* Certifications Sidebar */}
           <div>
-            <h3 className="text-2xl font-bold text-navy mb-8">Certifications</h3>
+            <h3 className="text-2xl font-bold text-navy dark:text-navy-light mb-8">Certifications</h3>
             <div className="space-y-6">
               {certifications.map((cert, index) => (
-                <div key={index} className="bg-navy text-white p-6 rounded-xl">
+                <div key={index} className="bg-navy dark:bg-gray-800 text-white p-6 rounded-xl border dark:border-gray-700">
                   <div className="flex items-start mb-4">
                     <Award className="w-6 h-6 text-yellow-400 mr-3 flex-shrink-0 mt-1" />
                     <div>
@@ -110,7 +110,7 @@ export default function Education() {
                     {cert.skills.map((skill, skillIndex) => (
                       <span
                         key={skillIndex}
-                        className="bg-navy-light text-white px-2 py-1 rounded text-xs"
+                        className="bg-navy-light dark:bg-blue-600 text-white px-2 py-1 rounded text-xs"
                       >
                         {skill}
                       </span>
@@ -121,9 +121,9 @@ export default function Education() {
             </div>
             
             {/* Additional Skills */}
-            <div className="mt-8 bg-light-gray p-6 rounded-xl">
-              <h4 className="font-bold text-navy mb-4">Additional Skills</h4>
-              <div className="space-y-2 text-sm text-charcoal">
+            <div className="mt-8 bg-light-gray dark:bg-gray-800 p-6 rounded-xl border dark:border-gray-700">
+              <h4 className="font-bold text-navy dark:text-navy-light mb-4">Additional Skills</h4>
+              <div className="space-y-2 text-sm text-charcoal dark:text-gray-300">
                 <div>• <strong>Python</strong> (Programming Language)</div>
                 <div>• <strong>Website Development</strong> and Hosting</div>
                 <div>• <strong>+4 skills</strong> in cybersecurity and system administration</div>

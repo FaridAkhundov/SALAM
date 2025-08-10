@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { ThemeToggle } from "./ThemeToggle";
 
 export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -58,10 +59,10 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50">
+    <nav className="fixed top-0 left-0 right-0 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm border-b border-gray-100 dark:border-gray-800 z-50">
       <div className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="text-2xl font-bold text-navy">FA</div>
+          <div className="text-2xl font-bold text-navy dark:text-navy-light">FA</div>
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
@@ -72,8 +73,8 @@ export default function Navigation() {
                 onClick={(e) => handleNavClick(e, item.href.substring(1))}
                 className={`transition-colors duration-300 ${
                   activeSection === item.href.substring(1)
-                    ? "text-navy-light"
-                    : "text-charcoal hover:text-navy"
+                    ? "text-navy-light dark:text-navy-light"
+                    : "text-charcoal dark:text-gray-300 hover:text-navy dark:hover:text-navy-light"
                 }`}
               >
                 {item.label}
@@ -82,35 +83,39 @@ export default function Navigation() {
             <a
               href="#contact"
               onClick={(e) => handleNavClick(e, "contact")}
-              className="bg-navy text-white px-6 py-2 rounded-lg hover:bg-navy-light transition-all duration-300"
+              className="bg-navy dark:bg-navy-light text-white px-6 py-2 rounded-lg hover:bg-navy-light dark:hover:bg-navy transition-all duration-300"
             >
               Contact
             </a>
+            <ThemeToggle />
           </div>
           
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2"
-          >
-            {isMobileMenuOpen ? (
-              <X className="w-6 h-6 text-charcoal" />
-            ) : (
-              <Menu className="w-6 h-6 text-charcoal" />
-            )}
-          </button>
+          {/* Mobile Menu Button and Theme Toggle */}
+          <div className="md:hidden flex items-center space-x-2">
+            <ThemeToggle />
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="p-2"
+            >
+              {isMobileMenuOpen ? (
+                <X className="w-6 h-6 text-charcoal dark:text-gray-300" />
+              ) : (
+                <Menu className="w-6 h-6 text-charcoal dark:text-gray-300" />
+              )}
+            </button>
+          </div>
         </div>
         
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-gray-100">
+          <div className="md:hidden mt-4 pb-4 border-t border-gray-100 dark:border-gray-800">
             <div className="flex flex-col space-y-4 pt-4">
               {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href.substring(1))}
-                  className="text-charcoal hover:text-navy transition-colors duration-300"
+                  className="text-charcoal dark:text-gray-300 hover:text-navy dark:hover:text-navy-light transition-colors duration-300"
                 >
                   {item.label}
                 </a>
@@ -118,7 +123,7 @@ export default function Navigation() {
               <a
                 href="#contact"
                 onClick={(e) => handleNavClick(e, "contact")}
-                className="bg-navy text-white px-6 py-2 rounded-lg hover:bg-navy-light transition-all duration-300 text-center"
+                className="bg-navy dark:bg-navy-light text-white px-6 py-2 rounded-lg hover:bg-navy-light dark:hover:bg-navy transition-all duration-300 text-center"
               >
                 Contact
               </a>
