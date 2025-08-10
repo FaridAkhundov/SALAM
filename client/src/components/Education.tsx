@@ -7,25 +7,18 @@ export default function Education() {
       degree: "Bachelor's degree, Information Technology",
       institution: "Azərbaycan Universiteti",
       grade: "Grade 3 - Current GPA: 3.8/4.0",
-      description: "Pursuing comprehensive Bachelor's degree in Information Technology with specialization in Information Security and Cybersecurity. Advanced coursework includes network security protocols, digital forensics, system administration, and emerging cyber threats. Currently completing capstone projects focused on enterprise security architecture and incident response systems.",
+      description: "Pursuing Bachelor's degree in Information Technology with specialization in Information Security. Focused on network security, digital forensics, and emerging cyber threats.",
       coursework: [
         "Network Security & Cryptography",
         "Digital Forensics & Incident Response",
-        "Enterprise Security Architecture",
-        "Advanced Database Management Systems",
         "Cloud Computing & Virtualization",
-        "Software Engineering & Development",
-        "System Administration & Infrastructure",
-        "Cybersecurity Risk Assessment"
+        "System Administration & Infrastructure"
       ],
       achievements: [
-        "Cisco IT Essentials certificate holder with distinction",
-        "2nd place winner at Aplogit 2018 national programming competition",
-        "Advanced Cyber Defence category finalist at national 'Səbirkin Alimləri' science competition",
-        "Dean's List recognition for academic excellence (2023-2024)",
-        "TryHackMe platform - Achieved RNB (Respectable) Hacker rank with 85+ room completions",
-        "Led university cybersecurity awareness workshop for incoming students",
-        "Contributed to university's IT security policy documentation review"
+        "Cisco IT Essentials certificate holder",
+        "2nd place winner at Aplogit 2018 national competition",
+        "Advanced Cyber Defence finalist at 'Səbirkin Alimləri' science competition",
+        "TryHackMe platform - RNB Hacker rank with 85+ completions"
       ]
     },
     {
@@ -33,26 +26,18 @@ export default function Education() {
       degree: "Higher National Diploma, Information Technology",
       institution: "STEP IT Academy Azerbaijan",
       grade: "Completed 3.5 years - Cisco IT Essentials Certified",
-      description: "Intensive practical IT education program covering system administration, networking fundamentals, and cybersecurity foundations. Gained hands-on experience with enterprise-level technologies including Windows Server, Linux administration, network configuration, and security implementations. Completed comprehensive practicum in IT support and infrastructure management.",
+      description: "Practical IT education covering system administration, networking, and cybersecurity foundations. Hands-on experience with Windows Server, Linux administration, and network configuration.",
       coursework: [
-        "Hardware & Software Troubleshooting",
         "Windows Server Administration",
-        "Linux System Administration",
+        "Linux System Administration", 
         "Network Infrastructure & Configuration",
-        "IT Security Fundamentals",
-        "Database Administration (MySQL, PostgreSQL)",
-        "Web Development & Hosting Solutions",
-        "Virtualization Technologies (VMware, VirtualBox)"
+        "IT Security Fundamentals"
       ],
       achievements: [
-        "Cisco IT Essentials certification with 95% completion score",
-        "Participated in regional IT skills competition - Top 10 finalist",
-        "Led peer-led technical study groups and troubleshooting sessions",
-        "Assisted instructors during lab sessions for junior students",
-        "Completed advanced networking project simulating enterprise environment",
-        "Contributed to academy's internal IT infrastructure maintenance",
-        "Mentored 15+ newcomers in lab environments and technical tools",
-        "Engaged in extracurricular cybersecurity research beyond curriculum scope"
+        "Cisco IT Essentials certification with 95% score",
+        "Regional IT skills competition - Top 10 finalist",
+        "Led technical study groups and troubleshooting sessions",
+        "Mentored newcomers in lab environments and tools"
       ]
     }
   ];
@@ -177,44 +162,25 @@ export default function Education() {
             <div className="mt-8 bg-light-gray dark:bg-gray-800 p-6 rounded-xl border dark:border-gray-700">
               <h4 className="font-bold text-navy dark:text-navy-light mb-4">Technical Skills & Expertise</h4>
               
-              <div className="space-y-4">
+              <div className="space-y-3">
                 <div>
                   <h5 className="font-semibold text-navy dark:text-navy-light mb-2">Programming & Development</h5>
-                  <div className="space-y-1 text-sm text-charcoal dark:text-gray-300">
-                    <div>• <strong>Python</strong> - Advanced scripting and automation</div>
-                    <div>• <strong>JavaScript/TypeScript</strong> - Web application development</div>
-                    <div>• <strong>React.js</strong> - Modern frontend frameworks</div>
-                    <div>• <strong>SQL</strong> - Database management and queries</div>
+                  <div className="text-sm text-charcoal dark:text-gray-300">
+                    <div>• <strong>Python, JavaScript/TypeScript, React.js, SQL</strong></div>
                   </div>
                 </div>
                 
                 <div>
                   <h5 className="font-semibold text-navy dark:text-navy-light mb-2">Cybersecurity & Networking</h5>
-                  <div className="space-y-1 text-sm text-charcoal dark:text-gray-300">
-                    <div>• <strong>Penetration Testing</strong> - Vulnerability assessment</div>
-                    <div>• <strong>Network Security</strong> - Firewall and IDS configuration</div>
-                    <div>• <strong>Digital Forensics</strong> - Incident response and analysis</div>
-                    <div>• <strong>Risk Assessment</strong> - Security auditing and compliance</div>
+                  <div className="text-sm text-charcoal dark:text-gray-300">
+                    <div>• <strong>Penetration Testing, Network Security, Digital Forensics</strong></div>
                   </div>
                 </div>
                 
                 <div>
                   <h5 className="font-semibold text-navy dark:text-navy-light mb-2">System Administration</h5>
-                  <div className="space-y-1 text-sm text-charcoal dark:text-gray-300">
-                    <div>• <strong>Linux/Windows Server</strong> - Enterprise administration</div>
-                    <div>• <strong>Virtualization</strong> - VMware, VirtualBox, Docker</div>
-                    <div>• <strong>Cloud Platforms</strong> - AWS, Azure fundamentals</div>
-                    <div>• <strong>Database Systems</strong> - PostgreSQL, MySQL, MongoDB</div>
-                  </div>
-                </div>
-                
-                <div>
-                  <h5 className="font-semibold text-navy dark:text-navy-light mb-2">Research & Academic Interests</h5>
-                  <div className="space-y-1 text-sm text-charcoal dark:text-gray-300">
-                    <div>• <strong>Secure Infrastructure</strong> - Academic and research purposes</div>
-                    <div>• <strong>Threat Intelligence</strong> - Emerging cyber threats analysis</div>
-                    <div>• <strong>Security Architecture</strong> - Enterprise security design</div>
-                    <div>• <strong>Compliance Frameworks</strong> - ISO 27001, NIST guidelines</div>
+                  <div className="text-sm text-charcoal dark:text-gray-300">
+                    <div>• <strong>Linux/Windows Server, Virtualization, Cloud Platforms</strong></div>
                   </div>
                 </div>
               </div>
