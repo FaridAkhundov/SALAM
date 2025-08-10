@@ -67,12 +67,14 @@ export default function Hero() {
         {[...Array(6)].map((_, i) => (
           <div
             key={i}
-            className={`absolute animate-float opacity-20 dark:opacity-30`}
+            className={`absolute animate-float transition-opacity duration-1000`}
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
               animationDelay: `${i * 0.5}s`,
-              animationDuration: `${4 + i}s`
+              animationDuration: `${4 + i}s`,
+              opacity: 0.2,
+              animation: `float ${4 + i}s ease-in-out infinite ${i * 0.5}s, fadeInOut ${6 + i * 2}s ease-in-out infinite ${i * 1.5}s`
             }}
           >
             <Sparkles className="w-4 h-4 text-navy-light dark:text-blue-300" />
