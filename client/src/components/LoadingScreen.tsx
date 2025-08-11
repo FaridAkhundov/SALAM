@@ -5,7 +5,7 @@ interface LoadingScreenProps {
 }
 
 const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
-  const [stage, setStage] = useState<'initial' | 'expanding' | 'revealing' | 'complete'>('initial');
+  const [stage, setStage] = useState<'initial' | 'separating' | 'revealing' | 'complete'>('initial');
   const [particles, setParticles] = useState<Array<{id: number, x: number, y: number, delay: number, direction: number}>>([]);
 
   useEffect(() => {
@@ -19,25 +19,25 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
     }));
     setParticles(newParticles);
 
-    // Stage 1: Initial FA fade-in with glow (1.5 seconds)
+    // Stage 1: Initial FA fade-in (1 second)
     const timer1 = setTimeout(() => {
-      setStage('expanding');
-    }, 1500);
+      setStage('separating');
+    }, 1000);
 
-    // Stage 2: Expand and transform (1 second)
+    // Stage 2: F slides left, A slides right (1 second)
     const timer2 = setTimeout(() => {
       setStage('revealing');
-    }, 2500);
+    }, 2000);
 
-    // Stage 3: Reveal full name (1.5 seconds)
+    // Stage 3: Reveal full name between F and A (1.5 seconds)
     const timer3 = setTimeout(() => {
       setStage('complete');
-    }, 4000);
+    }, 3500);
 
-    // Stage 4: Fade out and complete (0.8 seconds)
+    // Stage 4: Fade out and complete (0.5 seconds)
     const timer4 = setTimeout(() => {
       onComplete();
-    }, 4800);
+    }, 4000);
 
     return () => {
       clearTimeout(timer1);
@@ -81,7 +81,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
 
       {/* Main Content Container */}
       <div className="relative text-center z-10">
-        {/* Stage 1: Initial FA Letters with Soft Glow */}
+        {/* Stage 1: Initial FA Letters with Fade-in */}
         {stage === 'initial' && (
           <div className="animate-cinematic-fade-in">
             <h1 className="text-9xl font-bold text-white tracking-wider">
@@ -91,45 +91,65 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
           </div>
         )}
 
-        {/* Stage 2: Expanding and Transforming */}
-        {stage === 'expanding' && (
-          <div className="animate-cinematic-expand">
-            <h1 className="text-9xl font-bold text-white tracking-wider transform scale-110">
-              <span className="inline-block animate-letter-expand">F</span>
-              <span className="inline-block animate-letter-expand animation-delay-100">A</span>
-            </h1>
+        {/* Stage 2: F slides left, A slides right */}
+        {stage === 'separating' && (
+          <div className="flex items-center justify-center min-h-[200px]">
+            <div className="relative w-full max-w-4xl flex justify-between items-center">
+              <span className="text-9xl font-bold text-white animate-slide-left">F</span>
+              <span className="text-9xl font-bold text-white animate-slide-right">A</span>
+            </div>
           </div>
         )}
 
-        {/* Stage 3: Full Name Revelation */}
+        {/* Stage 3: Full Name Revealed Between F and A */}
         {stage === 'revealing' && (
-          <div className="space-y-4">
-            <h1 className="text-7xl font-bold text-white tracking-wide">
-              <span className="inline-block animate-letter-reveal animation-delay-200">F</span>
-              <span className="inline-block animate-letter-reveal animation-delay-300">a</span>
-              <span className="inline-block animate-letter-reveal animation-delay-400">r</span>
-              <span className="inline-block animate-letter-reveal animation-delay-500">i</span>
-              <span className="inline-block animate-letter-reveal animation-delay-600">d</span>
-            </h1>
-            <h2 className="text-5xl font-semibold text-white/90 tracking-wide">
-              <span className="inline-block animate-letter-reveal animation-delay-800">A</span>
-              <span className="inline-block animate-letter-reveal animation-delay-900">k</span>
-              <span className="inline-block animate-letter-reveal animation-delay-1000">h</span>
-              <span className="inline-block animate-letter-reveal animation-delay-1100">u</span>
-              <span className="inline-block animate-letter-reveal animation-delay-1200">n</span>
-              <span className="inline-block animate-letter-reveal animation-delay-1300">d</span>
-              <span className="inline-block animate-letter-reveal animation-delay-1400">o</span>
-              <span className="inline-block animate-letter-reveal animation-delay-1500">v</span>
-            </h2>
+          <div className="flex items-center justify-center min-h-[200px]">
+            <div className="relative w-full max-w-6xl flex justify-between items-center">
+              <span className="text-8xl font-bold text-white/80">F</span>
+              
+              <div className="flex-1 text-center space-y-2 animate-fade-in-up">
+                <p className="text-sm uppercase tracking-[0.3em] text-white/60 font-light animate-slide-down">
+                  Designed by
+                </p>
+                <h1 className="text-6xl font-bold text-white tracking-wide">
+                  <span className="inline-block animate-letter-reveal">a</span>
+                  <span className="inline-block animate-letter-reveal animation-delay-100">r</span>
+                  <span className="inline-block animate-letter-reveal animation-delay-200">i</span>
+                  <span className="inline-block animate-letter-reveal animation-delay-300">d</span>
+                  <span className="mx-4"></span>
+                  <span className="inline-block animate-letter-reveal animation-delay-400">k</span>
+                  <span className="inline-block animate-letter-reveal animation-delay-500">h</span>
+                  <span className="inline-block animate-letter-reveal animation-delay-600">u</span>
+                  <span className="inline-block animate-letter-reveal animation-delay-700">n</span>
+                  <span className="inline-block animate-letter-reveal animation-delay-800">d</span>
+                  <span className="inline-block animate-letter-reveal animation-delay-900">o</span>
+                  <span className="inline-block animate-letter-reveal animation-delay-1000">v</span>
+                </h1>
+              </div>
+              
+              <span className="text-8xl font-bold text-white/80">A</span>
+            </div>
           </div>
         )}
 
         {/* Stage 4: Final Fade Out */}
         {stage === 'complete' && (
           <div className="animate-cinematic-fade-out">
-            <div className="space-y-4">
-              <h1 className="text-7xl font-bold text-white tracking-wide">Farid</h1>
-              <h2 className="text-5xl font-semibold text-white/90 tracking-wide">Akhundov</h2>
+            <div className="flex items-center justify-center min-h-[200px]">
+              <div className="relative w-full max-w-6xl flex justify-between items-center">
+                <span className="text-8xl font-bold text-white/80">F</span>
+                
+                <div className="flex-1 text-center space-y-2">
+                  <p className="text-sm uppercase tracking-[0.3em] text-white/60 font-light">
+                    Designed by
+                  </p>
+                  <h1 className="text-6xl font-bold text-white tracking-wide">
+                    arid khundov
+                  </h1>
+                </div>
+                
+                <span className="text-8xl font-bold text-white/80">A</span>
+              </div>
             </div>
           </div>
         )}
