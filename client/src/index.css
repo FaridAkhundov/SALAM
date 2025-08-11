@@ -285,12 +285,22 @@
   .animate-on-scroll {
     opacity: 0;
     transform: translateY(30px);
-    transition: all 0.8s ease-out;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
   }
 
   .animate-on-scroll.visible {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  /* Special scroll animation for images to avoid hover conflicts */
+  .animate-on-scroll img {
+    transition: box-shadow 0.3s ease !important;
+    transform: none !important;
+  }
+  
+  .animate-on-scroll img:hover {
+    transform: none !important;
   }
 
   .animate-slide-bottom {
