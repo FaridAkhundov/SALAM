@@ -63,17 +63,17 @@ export default function Skills() {
               <img
                 src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
                 alt="Coding workspace with multiple monitors showing code"
-                className="rounded-2xl shadow-lg w-full hover:shadow-xl hover:scale-105 hover-lift hover-glow transition-all duration-300 cursor-pointer"
+                className="rounded-2xl shadow-lg w-full hover:shadow-xl hover-lift hover-glow transition-all duration-300 cursor-pointer border border-gray-200 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-500"
               />
             </div>
             
-            <div className="bg-light-gray dark:bg-gray-800 p-4 sm:p-5 lg:p-6 rounded-xl border dark:border-gray-700 hover-glow animate-on-scroll animation-delay-600 transition-all duration-300">
+            <div className="bg-light-gray dark:bg-gray-800 p-4 sm:p-5 lg:p-6 rounded-xl border dark:border-gray-700 hover-glow card-entrance transition-all duration-300" style={{ animationDelay: '0.6s' }}>
               <h3 className="text-lg sm:text-xl lg:text-xl font-bold text-navy dark:text-navy-light mb-3 lg:mb-4">What I Bring</h3>
               <ul className="space-y-2 lg:space-y-3 text-sm sm:text-base lg:text-base text-charcoal dark:text-gray-300">
                 {strengths.map((strength, index) => (
                   <li 
                     key={index} 
-                    className="flex items-center animate-on-scroll animation-delay-800"
+                    className="flex items-center card-entrance"
                     style={{ 
                       animationDelay: `${0.8 + index * 0.1}s` 
                     }}
