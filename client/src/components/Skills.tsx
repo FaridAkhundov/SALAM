@@ -66,7 +66,7 @@ export default function Skills() {
               />
             </div>
             
-            <div className="bg-light-gray dark:bg-gray-800 p-4 lg:p-6 rounded-xl border dark:border-gray-700 hover-glow animate-on-scroll animation-delay-600">
+            <div className="bg-light-gray dark:bg-gray-800 p-4 lg:p-6 rounded-xl border dark:border-gray-700 hover-glow hover-lift animate-on-scroll animation-delay-600 transition-all duration-300">
               <h3 className="text-lg lg:text-xl font-bold text-navy dark:text-navy-light mb-3 lg:mb-4">What I Bring</h3>
               <ul className="space-y-2 lg:space-y-3 text-sm lg:text-base text-charcoal dark:text-gray-300">
                 {strengths.map((strength, index) => (
@@ -95,13 +95,13 @@ export default function Skills() {
                   return (
                     <div
                       key={index}
-                      className="bg-light-gray dark:bg-gray-800 p-3 lg:p-4 rounded-lg text-center hover:bg-navy dark:hover:bg-blue-600 hover:text-white transition-all duration-300 group border dark:border-gray-700 hover-lift card-entrance"
+                      className="bg-light-gray dark:bg-gray-800 p-3 lg:p-4 rounded-lg text-center hover:bg-navy dark:hover:bg-blue-600 hover:text-white transition-all duration-300 group border dark:border-gray-700 hover-lift hover-magnetic card-entrance cursor-pointer hover:shadow-xl hover:scale-105"
                       style={{ 
                         animationDelay: `${1.2 + index * 0.1}s` 
                       }}
                     >
-                      <IconComponent className="w-6 h-6 lg:w-8 lg:h-8 mx-auto mb-2 text-charcoal dark:text-gray-300 group-hover:text-white transition-transform duration-300 group-hover:scale-110" />
-                      <div className="text-sm lg:text-base font-medium text-charcoal dark:text-gray-300 group-hover:text-white">{skill.name}</div>
+                      <IconComponent className="w-6 h-6 lg:w-8 lg:h-8 mx-auto mb-2 text-charcoal dark:text-gray-300 group-hover:text-white transition-all duration-300 group-hover:scale-125 group-hover:rotate-6" />
+                      <div className="text-sm lg:text-base font-medium text-charcoal dark:text-gray-300 group-hover:text-white transition-all duration-300">{skill.name}</div>
                     </div>
                   );
                 })}
@@ -116,13 +116,13 @@ export default function Skills() {
                   return (
                     <div
                       key={index}
-                      className="bg-light-gray dark:bg-gray-800 p-3 lg:p-4 rounded-lg text-center hover:bg-navy dark:hover:bg-blue-600 hover:text-white transition-all duration-300 group border dark:border-gray-700 hover-lift card-entrance"
+                      className="bg-light-gray dark:bg-gray-800 p-3 lg:p-4 rounded-lg text-center hover:bg-navy dark:hover:bg-blue-600 hover:text-white transition-all duration-300 group border dark:border-gray-700 hover-lift hover-magnetic card-entrance cursor-pointer hover:shadow-xl hover:scale-105"
                       style={{ 
                         animationDelay: `${1.6 + index * 0.1}s` 
                       }}
                     >
-                      <IconComponent className="w-6 h-6 lg:w-8 lg:h-8 mx-auto mb-2 text-charcoal dark:text-gray-300 group-hover:text-white transition-transform duration-300 group-hover:scale-110" />
-                      <div className="text-sm lg:text-base font-medium text-charcoal dark:text-gray-300 group-hover:text-white">{skill.name}</div>
+                      <IconComponent className="w-6 h-6 lg:w-8 lg:h-8 mx-auto mb-2 text-charcoal dark:text-gray-300 group-hover:text-white transition-all duration-300 group-hover:scale-125 group-hover:-rotate-6" />
+                      <div className="text-sm lg:text-base font-medium text-charcoal dark:text-gray-300 group-hover:text-white transition-all duration-300">{skill.name}</div>
                     </div>
                   );
                 })}
