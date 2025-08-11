@@ -62,7 +62,7 @@ export default function Skills() {
               <img
                 src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
                 alt="Coding workspace with multiple monitors showing code"
-                className="rounded-2xl shadow-lg w-full hover:shadow-xl hover:scale-105 hover-lift hover-glow transition-all duration-300 cursor-pointer"
+                className="rounded-2xl shadow-lg w-full hover:shadow-xl hover-glow transition-all duration-300"
               />
             </div>
             
