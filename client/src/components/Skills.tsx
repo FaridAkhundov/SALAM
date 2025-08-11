@@ -55,8 +55,8 @@ export default function Skills() {
         </div>
         
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
-          <div className="animate-on-scroll animation-delay-400">
-            <div className="mb-4 lg:mb-6">
+          <div>
+            <div className="mb-4 lg:mb-6 animate-on-scroll animation-delay-400">
               <img
                 src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
                 alt="Coding workspace with multiple monitors showing code"
@@ -64,11 +64,15 @@ export default function Skills() {
               />
             </div>
             
-            <div className="bg-light-gray dark:bg-gray-800 p-4 lg:p-6 rounded-xl border dark:border-gray-700 hover-glow card-entrance">
+            <div className="bg-light-gray dark:bg-gray-800 p-4 lg:p-6 rounded-xl border dark:border-gray-700 hover-glow animate-on-scroll animation-delay-600">
               <h3 className="text-lg lg:text-xl font-bold text-navy dark:text-navy-light mb-3 lg:mb-4">What I Bring</h3>
               <ul className="space-y-2 lg:space-y-3 text-sm lg:text-base text-charcoal dark:text-gray-300">
                 {strengths.map((strength, index) => (
-                  <li key={index} className="flex items-center animate-on-scroll" style={{ animationDelay: `${0.6 + index * 0.1}s` }}>
+                  <li key={index} className={`flex items-center animate-on-scroll ${
+                    index === 0 ? 'animation-delay-700' :
+                    index === 1 ? 'animation-delay-800' :
+                    index === 2 ? 'animation-delay-900' : 'animation-delay-1000'
+                  }`}>
                     <CheckCircle className="w-5 h-5 text-navy-light dark:text-blue-400 mr-3 flex-shrink-0" />
                     {strength}
                   </li>
@@ -79,7 +83,7 @@ export default function Skills() {
           
           <div className="space-y-6 lg:space-y-8">
             {/* Technical Skills */}
-            <div className="animate-on-scroll animation-delay-600">
+            <div className="animate-on-scroll animation-delay-800">
               <h3 className="text-lg lg:text-xl font-bold text-navy dark:text-navy-light mb-4 lg:mb-6">Technical Skills</h3>
               <div className="grid grid-cols-2 gap-3 lg:gap-4">
                 {technicalSkills.map((skill, index) => {
@@ -87,8 +91,11 @@ export default function Skills() {
                   return (
                     <div
                       key={index}
-                      className="bg-light-gray dark:bg-gray-800 p-3 lg:p-4 rounded-lg text-center hover:bg-navy dark:hover:bg-blue-600 hover:text-white transition-all duration-300 group border dark:border-gray-700 hover-lift card-entrance"
-                      style={{ animationDelay: `${0.8 + index * 0.1}s` }}
+                      className={`bg-light-gray dark:bg-gray-800 p-3 lg:p-4 rounded-lg text-center hover:bg-navy dark:hover:bg-blue-600 hover:text-white transition-all duration-300 group border dark:border-gray-700 hover-lift animate-on-scroll ${
+                        index === 0 ? 'animation-delay-1000' :
+                        index === 1 ? 'animation-delay-1100' :
+                        index === 2 ? 'animation-delay-1200' : 'animation-delay-1300'
+                      }`}
                     >
                       <IconComponent className="w-6 h-6 lg:w-8 lg:h-8 mx-auto mb-2 text-charcoal dark:text-gray-300 group-hover:text-white transition-transform duration-300 group-hover:scale-110" />
                       <div className="text-sm lg:text-base font-medium text-charcoal dark:text-gray-300 group-hover:text-white">{skill.name}</div>
@@ -98,7 +105,7 @@ export default function Skills() {
               </div>
             </div>
             
-            <div className="animate-on-scroll animation-delay-800">
+            <div className="animate-on-scroll animation-delay-1400">
               <h3 className="text-lg lg:text-xl font-bold text-navy dark:text-navy-light mb-4 lg:mb-6">Cybersecurity & Infrastructure</h3>
               <div className="grid grid-cols-2 gap-3 lg:gap-4">
                 {cybersecuritySkills.map((skill, index) => {
@@ -106,8 +113,11 @@ export default function Skills() {
                   return (
                     <div
                       key={index}
-                      className="bg-light-gray dark:bg-gray-800 p-3 lg:p-4 rounded-lg text-center hover:bg-navy dark:hover:bg-blue-600 hover:text-white transition-all duration-300 group border dark:border-gray-700 hover-lift card-entrance"
-                      style={{ animationDelay: `${1.2 + index * 0.1}s` }}
+                      className={`bg-light-gray dark:bg-gray-800 p-3 lg:p-4 rounded-lg text-center hover:bg-navy dark:hover:bg-blue-600 hover:text-white transition-all duration-300 group border dark:border-gray-700 hover-lift animate-on-scroll ${
+                        index === 0 ? 'animation-delay-1600' :
+                        index === 1 ? 'animation-delay-1700' :
+                        index === 2 ? 'animation-delay-1800' : 'animation-delay-1800'
+                      }`}
                     >
                       <IconComponent className="w-6 h-6 lg:w-8 lg:h-8 mx-auto mb-2 text-charcoal dark:text-gray-300 group-hover:text-white transition-transform duration-300 group-hover:scale-110" />
                       <div className="text-sm lg:text-base font-medium text-charcoal dark:text-gray-300 group-hover:text-white">{skill.name}</div>
