@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Mail, Linkedin, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -11,6 +11,7 @@ import type { InsertContact } from "@shared/schema";
 
 export default function Contact() {
   const { toast } = useToast();
+  const sectionRef = useRef<HTMLElement>(null);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -18,6 +19,24 @@ export default function Contact() {
     subject: "",
     message: "",
   });
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const animatedElements = sectionRef.current?.querySelectorAll('.animate-on-scroll, .form-field-entrance');
+    animatedElements?.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
 
   const contactMutation = useMutation({
     mutationFn: async (data: InsertContact) => {
@@ -78,20 +97,20 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-12 lg:py-20 bg-white dark:bg-gray-900">
+    <section ref={sectionRef} id="contact" className="py-12 lg:py-20 bg-white dark:bg-gray-900">
       <div className="max-w-4xl mx-auto px-4 lg:px-6">
         <div className="text-center mb-8 lg:mb-16">
-          <h2 className="text-2xl lg:text-4xl font-bold text-navy dark:text-navy-light mb-4">Let's Work Together</h2>
-          <p className="text-base lg:text-xl text-charcoal dark:text-gray-300">Ready to bring your next project to life? Let's discuss how I can help.</p>
+          <h2 className="text-2xl lg:text-4xl font-bold text-navy dark:text-navy-light mb-4 animate-on-scroll">Let's Work Together</h2>
+          <p className="text-base lg:text-xl text-charcoal dark:text-gray-300 animate-on-scroll animation-delay-200">Ready to bring your next project to life? Let's discuss how I can help.</p>
         </div>
         
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
           <div className="space-y-6 lg:space-y-8">
-            <div>
+            <div className="animate-on-scroll animation-delay-400">
               <h3 className="text-xl lg:text-2xl font-bold text-navy dark:text-navy-light mb-4 lg:mb-6">Get In Touch</h3>
               <div className="space-y-4">
-                <div className="flex items-center">
-                  <div className="bg-light-gray dark:bg-gray-800 p-3 rounded-lg mr-4">
+                <div className="flex items-center animate-on-scroll animation-delay-600 hover-lift">
+                  <div className="bg-light-gray dark:bg-gray-800 p-3 rounded-lg mr-4 hover-magnetic">
                     <Mail className="w-6 h-6 text-navy dark:text-navy-light" />
                   </div>
                   <div>
@@ -100,8 +119,8 @@ export default function Contact() {
                   </div>
                 </div>
                 
-                <div className="flex items-center">
-                  <div className="bg-light-gray dark:bg-gray-800 p-3 rounded-lg mr-4">
+                <div className="flex items-center animate-on-scroll animation-delay-800 hover-lift">
+                  <div className="bg-light-gray dark:bg-gray-800 p-3 rounded-lg mr-4 hover-magnetic">
                     <Linkedin className="w-6 h-6 text-navy dark:text-navy-light" />
                   </div>
                   <div>
@@ -110,15 +129,15 @@ export default function Contact() {
                       href="https://www.linkedin.com/in/faridaxundov/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-navy-light dark:text-blue-400 hover:underline"
+                      className="text-navy-light dark:text-blue-400 hover:underline transition-colors duration-300"
                     >
                       linkedin.com/in/faridaxundov
                     </a>
                   </div>
                 </div>
                 
-                <div className="flex items-center">
-                  <div className="bg-light-gray dark:bg-gray-800 p-3 rounded-lg mr-4">
+                <div className="flex items-center animate-on-scroll animation-delay-1000 hover-lift">
+                  <div className="bg-light-gray dark:bg-gray-800 p-3 rounded-lg mr-4 hover-magnetic">
                     <MapPin className="w-6 h-6 text-navy dark:text-navy-light" />
                   </div>
                   <div>
@@ -132,14 +151,14 @@ export default function Contact() {
             <img
               src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400"
               alt="Clean modern workspace with laptop and coffee"
-              className="rounded-xl shadow-lg w-full"
+              className="rounded-xl shadow-lg w-full animate-on-scroll animation-delay-1200 hover-lift hover:scale-105 transition-transform duration-500"
             />
           </div>
           
-          <div>
+          <div className="animate-on-scroll animation-delay-400">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid sm:grid-cols-2 gap-4 lg:gap-6">
-                <div>
+                <div className="form-field-entrance" style={{ animationDelay: '0.6s' }}>
                   <Label htmlFor="firstName" className="block text-sm font-medium text-navy dark:text-navy-light mb-2">
                     First Name
                   </Label>
@@ -150,10 +169,10 @@ export default function Contact() {
                     value={formData.firstName}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-charcoal dark:text-gray-100 rounded-lg focus:ring-2 focus:ring-navy-light dark:focus:ring-blue-400 focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-charcoal dark:text-gray-100 rounded-lg focus:ring-2 focus:ring-navy-light dark:focus:ring-blue-400 focus:border-transparent transition-all duration-300 hover-lift"
                   />
                 </div>
-                <div>
+                <div className="form-field-entrance" style={{ animationDelay: '0.7s' }}>
                   <Label htmlFor="lastName" className="block text-sm font-medium text-navy dark:text-navy-light mb-2">
                     Last Name
                   </Label>
@@ -169,7 +188,7 @@ export default function Contact() {
                 </div>
               </div>
               
-              <div>
+              <div className="form-field-entrance" style={{ animationDelay: '0.8s' }}>
                 <Label htmlFor="email" className="block text-sm font-medium text-navy dark:text-navy-light mb-2">
                   Email
                 </Label>
@@ -180,11 +199,11 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-charcoal dark:text-gray-100 rounded-lg focus:ring-2 focus:ring-navy-light dark:focus:ring-blue-400 focus:border-transparent transition-all duration-300"
+                  className="w-full px-4 py-3 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-charcoal dark:text-gray-100 rounded-lg focus:ring-2 focus:ring-navy-light dark:focus:ring-blue-400 focus:border-transparent transition-all duration-300 hover-lift"
                 />
               </div>
               
-              <div>
+              <div className="form-field-entrance" style={{ animationDelay: '0.9s' }}>
                 <Label htmlFor="subject" className="block text-sm font-medium text-navy dark:text-navy-light mb-2">
                   Subject
                 </Label>
@@ -195,11 +214,11 @@ export default function Contact() {
                   value={formData.subject}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-charcoal dark:text-gray-100 rounded-lg focus:ring-2 focus:ring-navy-light dark:focus:ring-blue-400 focus:border-transparent transition-all duration-300"
+                  className="w-full px-4 py-3 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-charcoal dark:text-gray-100 rounded-lg focus:ring-2 focus:ring-navy-light dark:focus:ring-blue-400 focus:border-transparent transition-all duration-300 hover-lift"
                 />
               </div>
               
-              <div>
+              <div className="form-field-entrance" style={{ animationDelay: '1s' }}>
                 <Label htmlFor="message" className="block text-sm font-medium text-navy dark:text-navy-light mb-2">
                   Message
                 </Label>
@@ -210,14 +229,15 @@ export default function Contact() {
                   value={formData.message}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-charcoal dark:text-gray-100 rounded-lg focus:ring-2 focus:ring-navy-light dark:focus:ring-blue-400 focus:border-transparent transition-all duration-300 resize-vertical"
+                  className="w-full px-4 py-3 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-charcoal dark:text-gray-100 rounded-lg focus:ring-2 focus:ring-navy-light dark:focus:ring-blue-400 focus:border-transparent transition-all duration-300 resize-vertical hover-lift"
                 />
               </div>
               
               <Button
                 type="submit"
                 disabled={contactMutation.isPending}
-                className="w-full bg-navy dark:bg-blue-600 text-white py-4 px-6 rounded-lg hover:bg-navy-light dark:hover:bg-blue-700 transition-all duration-300 font-medium disabled:opacity-50"
+                className="w-full bg-navy dark:bg-blue-600 text-white py-4 px-6 rounded-lg hover:bg-navy-light dark:hover:bg-blue-700 transition-all duration-300 font-medium disabled:opacity-50 form-field-entrance hover-lift hover-magnetic animate-glow-pulse"
+                style={{ animationDelay: '1.1s' }}
               >
                 {contactMutation.isPending ? "Sending..." : "Send Message"}
               </Button>

@@ -1,6 +1,25 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 export default function Experience() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const animatedElements = sectionRef.current?.querySelectorAll('.animate-on-scroll, .card-entrance');
+    animatedElements?.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -23,7 +42,7 @@ export default function Experience() {
   ];
 
   return (
-    <section id="experience" className="py-20 relative overflow-hidden">
+    <section ref={sectionRef} id="experience" className="py-20 relative overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"></div>
       
@@ -47,12 +66,12 @@ export default function Experience() {
       </div>
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
-        <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-navy via-blue-600 to-purple-600 dark:from-navy-light dark:via-blue-400 dark:to-purple-400 bg-clip-text text-transparent mb-4">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-navy via-blue-600 to-purple-600 dark:from-navy-light dark:via-blue-400 dark:to-purple-400 bg-clip-text text-transparent mb-4 animate-on-scroll">
             Professional Experience
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-4 rounded-full"></div>
-          <p className="text-xl text-charcoal dark:text-gray-300 max-w-2xl mx-auto">
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-4 rounded-full animate-on-scroll animation-delay-200"></div>
+          <p className="text-xl text-charcoal dark:text-gray-300 max-w-2xl mx-auto animate-on-scroll animation-delay-400">
             Building secure digital infrastructures and leading cybersecurity initiatives
           </p>
         </div>
@@ -65,7 +84,7 @@ export default function Experience() {
           {/* Timeline Items */}
           <div className="space-y-8 lg:space-y-16">
             {experiences.map((experience, index) => (
-              <div key={index} className={`relative transition-all duration-700 delay-${index * 200} ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
+              <div key={index} className="relative card-entrance" style={{ animationDelay: `${0.6 + index * 0.3}s` }}>
                 {/* Mobile: Stacked layout, Desktop: Alternating layout */}
                 <div className={`lg:flex lg:items-center ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
                   {/* Content Card */}
@@ -75,7 +94,7 @@ export default function Experience() {
                       <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl blur opacity-25 group-hover:opacity-50 transition duration-500"></div>
                       
                       {/* Main card */}
-                      <div className="relative bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm p-6 lg:p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-200 dark:border-gray-700 group-hover:border-blue-400 dark:group-hover:border-blue-500">
+                      <div className="relative bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm p-6 lg:p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-200 dark:border-gray-700 group-hover:border-blue-400 dark:group-hover:border-blue-500 hover-lift hover-magnetic">
                         {/* Period badge */}
                         <div className="inline-flex items-center px-3 py-1 lg:px-4 lg:py-2 rounded text-xs lg:text-sm bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium mb-3 lg:mb-4">
                           <div className="w-2 h-2 bg-white rounded-full mr-2 animate-pulse"></div>

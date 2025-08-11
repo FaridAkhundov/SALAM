@@ -1,6 +1,26 @@
 import { ExternalLink, Github, ArrowRight } from "lucide-react";
+import { useEffect, useRef } from "react";
 
 export default function Projects() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const animatedElements = sectionRef.current?.querySelectorAll('.animate-on-scroll, .card-entrance');
+    animatedElements?.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
   const projects = [
     {
       title: "Cybersecurity Infrastructure",
@@ -33,37 +53,41 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-light-gray dark:bg-gray-800">
+    <section ref={sectionRef} id="projects" className="py-20 bg-light-gray dark:bg-gray-800">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-2xl lg:text-4xl font-bold text-navy dark:text-navy-light mb-4">Featured Projects</h2>
-          <p className="text-base lg:text-xl text-charcoal dark:text-gray-300">A showcase of my recent work and achievements</p>
+          <h2 className="text-2xl lg:text-4xl font-bold text-navy dark:text-navy-light mb-4 animate-on-scroll">Featured Projects</h2>
+          <p className="text-base lg:text-xl text-charcoal dark:text-gray-300 animate-on-scroll animation-delay-200">A showcase of my recent work and achievements</p>
         </div>
         
         <div className="grid lg:grid-cols-2 gap-6 lg:gap-8">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border dark:border-gray-700"
+              className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border dark:border-gray-700 card-entrance hover-lift hover-magnetic group"
+              style={{ animationDelay: `${0.4 + index * 0.2}s` }}
             >
-              <img
-                src={project.image}
-                alt={project.alt}
-                className="w-full h-40 lg:h-48 object-cover"
-              />
+              <div className="relative overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.alt}
+                  className="w-full h-40 lg:h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
               <div className="p-4 lg:p-6">
                 <div className="flex items-center justify-between mb-3 lg:mb-4">
-                  <h3 className="text-lg lg:text-xl font-bold text-navy dark:text-navy-light">{project.title}</h3>
+                  <h3 className="text-lg lg:text-xl font-bold text-navy dark:text-navy-light group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">{project.title}</h3>
                   <div className="flex space-x-2">
                     <a
                       href="#"
-                      className="text-charcoal dark:text-gray-300 hover:text-navy-light dark:hover:text-blue-300 transition-colors"
+                      className="text-charcoal dark:text-gray-300 hover:text-navy-light dark:hover:text-blue-300 transition-all duration-300 hover:scale-110 hover:rotate-12 p-1"
                     >
                       <ExternalLink className="w-5 h-5" />
                     </a>
                     <a
                       href="#"
-                      className="text-charcoal dark:text-gray-300 hover:text-navy-light dark:hover:text-blue-300 transition-colors"
+                      className="text-charcoal dark:text-gray-300 hover:text-navy-light dark:hover:text-blue-300 transition-all duration-300 hover:scale-110 hover:-rotate-12 p-1"
                     >
                       <Github className="w-5 h-5" />
                     </a>
@@ -88,10 +112,10 @@ export default function Projects() {
         <div className="text-center mt-12">
           <a
             href="#"
-            className="inline-flex items-center bg-navy text-white px-8 py-4 rounded-lg hover:bg-navy-light transition-all duration-300 font-medium"
+            className="inline-flex items-center bg-navy text-white px-8 py-4 rounded-lg hover:bg-navy-light transition-all duration-300 font-medium animate-on-scroll hover-lift hover-magnetic group"
           >
             <span>View All Projects</span>
-            <ArrowRight className="w-5 h-5 ml-2" />
+            <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-2 transition-transform duration-300" />
           </a>
         </div>
       </div>

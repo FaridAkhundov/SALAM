@@ -1,10 +1,11 @@
 import { Code, Linkedin, Github, Mail, ChevronDown, Sparkles } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function Hero() {
   const [isVisible, setIsVisible] = useState(false);
   const [textIndex, setTextIndex] = useState(0);
   const [textFade, setTextFade] = useState(true);
+  const heroRef = useRef<HTMLElement>(null);
   
   const roles = [
     "IT Specialist",
@@ -174,23 +175,25 @@ export default function Hero() {
               <a
                 href="#projects"
                 onClick={handleScrollToProjects}
-                className="group relative bg-gradient-to-r from-navy to-navy-light dark:from-blue-600 dark:to-blue-500 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-lg hover:shadow-lg hover:shadow-navy/25 dark:hover:shadow-blue-500/25 transition-all duration-300 text-center font-medium overflow-hidden text-sm lg:text-base"
+                className="group relative bg-gradient-to-r from-navy to-navy-light dark:from-blue-600 dark:to-blue-500 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-lg hover:shadow-lg hover:shadow-navy/25 dark:hover:shadow-blue-500/25 transition-all duration-300 text-center font-medium overflow-hidden text-sm lg:text-base hover-lift animate-glow-pulse"
               >
                 <span className="relative z-10 flex items-center justify-center gap-2">
-                  <Code className="w-5 h-5" />
+                  <Code className="w-5 h-5 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12" />
                   View My Work
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-navy-light to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
               </a>
               <a
                 href="#contact"
                 onClick={handleScrollToContact}
-                className="group relative border-2 border-navy dark:border-blue-500 text-navy dark:text-blue-400 px-6 lg:px-8 py-3 lg:py-4 rounded-lg hover:bg-navy dark:hover:bg-blue-500 hover:text-white hover:shadow-lg hover:shadow-navy/25 dark:hover:shadow-blue-500/25 transition-all duration-300 text-center font-medium overflow-hidden text-sm lg:text-base"
+                className="group relative border-2 border-navy dark:border-blue-500 text-navy dark:text-blue-400 px-6 lg:px-8 py-3 lg:py-4 rounded-lg hover:bg-navy dark:hover:bg-blue-500 hover:text-white hover:shadow-lg hover:shadow-navy/25 dark:hover:shadow-blue-500/25 transition-all duration-300 text-center font-medium overflow-hidden text-sm lg:text-base hover-lift hover-magnetic"
               >
                 <span className="relative z-10 flex items-center justify-center gap-2">
-                  <Mail className="w-5 h-5" />
+                  <Mail className="w-5 h-5 transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-12" />
                   Get In Touch
                 </span>
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
               </a>
             </div>
             
@@ -200,21 +203,21 @@ export default function Hero() {
                 href="https://www.linkedin.com/in/faridaxundov/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group p-2 lg:p-3 rounded-full bg-light-gray dark:bg-gray-800 text-charcoal dark:text-gray-300 hover:text-navy-light dark:hover:text-blue-300 hover:shadow-lg hover:shadow-navy/25 dark:hover:shadow-blue-500/25 transition-all duration-300"
+                className="group p-2 lg:p-3 rounded-full bg-light-gray dark:bg-gray-800 text-charcoal dark:text-gray-300 hover:text-navy-light dark:hover:text-blue-300 hover:shadow-lg hover:shadow-navy/25 dark:hover:shadow-blue-500/25 transition-all duration-300 hover-magnetic hover-lift"
               >
-                <Linkedin className="w-5 h-5 lg:w-6 lg:h-6 group-hover:scale-110 transition-transform duration-300" />
+                <Linkedin className="w-5 h-5 lg:w-6 lg:h-6 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300" />
               </a>
               <a
                 href="#"
-                className="group p-2 lg:p-3 rounded-full bg-light-gray dark:bg-gray-800 text-charcoal dark:text-gray-300 hover:text-navy-light dark:hover:text-blue-300 hover:shadow-lg hover:shadow-navy/25 dark:hover:shadow-blue-500/25 transition-all duration-300"
+                className="group p-2 lg:p-3 rounded-full bg-light-gray dark:bg-gray-800 text-charcoal dark:text-gray-300 hover:text-navy-light dark:hover:text-blue-300 hover:shadow-lg hover:shadow-navy/25 dark:hover:shadow-blue-500/25 transition-all duration-300 hover-magnetic hover-lift"
               >
-                <Github className="w-5 h-5 lg:w-6 lg:h-6 group-hover:scale-110 transition-transform duration-300" />
+                <Github className="w-5 h-5 lg:w-6 lg:h-6 group-hover:scale-110 group-hover:-rotate-12 transition-transform duration-300" />
               </a>
               <a
                 href="mailto:farid.axundov@example.com"
-                className="group p-2 lg:p-3 rounded-full bg-light-gray dark:bg-gray-800 text-charcoal dark:text-gray-300 hover:text-navy-light dark:hover:text-blue-300 hover:shadow-lg hover:shadow-navy/25 dark:hover:shadow-blue-500/25 transition-all duration-300"
+                className="group p-2 lg:p-3 rounded-full bg-light-gray dark:bg-gray-800 text-charcoal dark:text-gray-300 hover:text-navy-light dark:hover:text-blue-300 hover:shadow-lg hover:shadow-navy/25 dark:hover:shadow-blue-500/25 transition-all duration-300 hover-magnetic hover-lift"
               >
-                <Mail className="w-5 h-5 lg:w-6 lg:h-6 group-hover:scale-110 transition-transform duration-300" />
+                <Mail className="w-5 h-5 lg:w-6 lg:h-6 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300" />
               </a>
             </div>
           </div>
