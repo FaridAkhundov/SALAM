@@ -29,12 +29,15 @@ function App() {
   };
 
   useEffect(() => {
-    // Check if user has seen the intro before (optional)
+    // For development/testing - always show the intro
+    // Uncomment the lines below if you want to skip intro after first visit
+    /*
     const hasSeenIntro = sessionStorage.getItem('hasSeenIntro');
     if (hasSeenIntro) {
       setShowIntro(false);
       setShowContent(true);
     }
+    */
   }, []);
 
   const markIntroAsSeen = () => {
