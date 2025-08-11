@@ -24,20 +24,20 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
       setStage('separating');
     }, 1000);
 
-    // Stage 2: F slides left, A slides right (1 second)
+    // Stage 2: F slides left, A slides right (1.5 seconds)
     const timer2 = setTimeout(() => {
       setStage('revealing');
-    }, 2000);
+    }, 2500);
 
-    // Stage 3: Reveal full name between F and A (1.5 seconds)
+    // Stage 3: Reveal full name between F and A (2.5 seconds)
     const timer3 = setTimeout(() => {
       setStage('complete');
-    }, 3500);
+    }, 5000);
 
-    // Stage 4: Fade out and complete (0.5 seconds)
+    // Stage 4: Fade out and complete (0.8 seconds)
     const timer4 = setTimeout(() => {
       onComplete();
-    }, 4000);
+    }, 5800);
 
     return () => {
       clearTimeout(timer1);
@@ -104,21 +104,21 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
         {/* Stage 3: Full Name Revealed Between F and A */}
         {stage === 'revealing' && (
           <div className="flex items-center justify-center min-h-[200px]">
-            <div className="relative w-full max-w-6xl flex justify-between items-center">
+            <div className="relative w-full max-w-7xl flex justify-between items-center">
               {/* F with "arid" */}
               <div className="flex items-baseline">
                 <span className="text-8xl font-bold text-white/80">F</span>
-                <span className="text-8xl font-bold text-white ml-1 animate-smooth-fade-in">arid</span>
+                <span className="text-8xl font-bold text-white ml-2 animate-ultra-smooth-fade">arid</span>
               </div>
               
-              {/* Center spacer */}
-              <div className="text-center space-y-2">
+              {/* Center spacer with more breathing room */}
+              <div className="text-center space-y-2 px-8">
               </div>
               
               {/* A with "khundov" */}
               <div className="flex items-baseline">
                 <span className="text-8xl font-bold text-white/80">A</span>
-                <span className="text-8xl font-bold text-white ml-1 animate-smooth-fade-in animation-delay-200">khundov</span>
+                <span className="text-8xl font-bold text-white ml-2 animate-ultra-smooth-fade animation-delay-400">khundov</span>
               </div>
             </div>
           </div>
@@ -128,21 +128,21 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
         {stage === 'complete' && (
           <div className="animate-cinematic-fade-out">
             <div className="flex items-center justify-center min-h-[200px]">
-              <div className="relative w-full max-w-6xl flex justify-between items-center">
+              <div className="relative w-full max-w-7xl flex justify-between items-center">
                 {/* F with "arid" */}
                 <div className="flex items-baseline">
                   <span className="text-8xl font-bold text-white/80">F</span>
-                  <span className="text-8xl font-bold text-white ml-1">arid</span>
+                  <span className="text-8xl font-bold text-white ml-2">arid</span>
                 </div>
                 
-                {/* Center spacer */}
-                <div className="text-center space-y-2">
+                {/* Center spacer with more breathing room */}
+                <div className="text-center space-y-2 px-8">
                 </div>
                 
                 {/* A with "khundov" */}
                 <div className="flex items-baseline">
                   <span className="text-8xl font-bold text-white/80">A</span>
-                  <span className="text-8xl font-bold text-white ml-1">khundov</span>
+                  <span className="text-8xl font-bold text-white ml-2">khundov</span>
                 </div>
               </div>
             </div>
