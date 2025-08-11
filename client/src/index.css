@@ -134,13 +134,7 @@
     animation-delay: 1.8s;
   }
 
-  .animation-delay-1500 {
-    animation-delay: 1.5s;
-  }
 
-  .animation-delay-1700 {
-    animation-delay: 1.7s;
-  }
 
   .animation-delay-100 {
     animation-delay: 0.1s;
@@ -637,6 +631,21 @@
   }
   100% {
     opacity: 0;
+  }
+}
+
+@keyframes ultraSmoothFade {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(10px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
 
