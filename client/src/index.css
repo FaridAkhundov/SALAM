@@ -639,3 +639,66 @@
     opacity: 0;
   }
 }
+
+/* Welcome Loading Screen Stroke Animation */
+.welcome-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome-svg {
+  max-width: 90vw;
+  height: auto;
+}
+
+.welcome-text .letter {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: drawStroke 2s ease-in-out forwards;
+  opacity: 0;
+  animation-fill-mode: both;
+}
+
+/* Stagger the animation for each letter */
+.letter-w {
+  animation-delay: 0s;
+}
+
+.letter-e1 {
+  animation-delay: 0.2s;
+}
+
+.letter-l1 {
+  animation-delay: 0.4s;
+}
+
+.letter-c {
+  animation-delay: 0.6s;
+}
+
+.letter-o {
+  animation-delay: 0.8s;
+}
+
+.letter-m {
+  animation-delay: 1.0s;
+}
+
+.letter-e2 {
+  animation-delay: 1.2s;
+}
+
+@keyframes drawStroke {
+  0% {
+    stroke-dashoffset: 100;
+    opacity: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
