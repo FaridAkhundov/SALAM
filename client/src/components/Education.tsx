@@ -221,39 +221,39 @@ export default function Education() {
                 <div className="animate-on-scroll animation-delay-200" style={{ animationDelay: '2.2s' }}>
                   <h5 className="font-semibold text-navy dark:text-navy-light mb-2">Programming & Development</h5>
                   <div className="space-y-1 text-sm text-charcoal dark:text-gray-300">
-                    <div className="animate-on-scroll hover:bg-navy/10 dark:hover:bg-blue-900/30 hover:text-navy dark:hover:text-blue-300 p-2 rounded-lg transition-all duration-300 cursor-pointer hover:translate-x-2" style={{ animationDelay: '2.3s' }}>• <strong>Python</strong> - Advanced scripting and automation</div>
-                    <div className="animate-on-scroll hover:bg-navy/10 dark:hover:bg-blue-900/30 hover:text-navy dark:hover:text-blue-300 p-2 rounded-lg transition-all duration-300 cursor-pointer hover:translate-x-2" style={{ animationDelay: '2.4s' }}>• <strong>JavaScript/TypeScript</strong> - Web application development</div>
-                    <div className="animate-on-scroll hover:bg-navy/10 dark:hover:bg-blue-900/30 hover:text-navy dark:hover:text-blue-300 p-2 rounded-lg transition-all duration-300 cursor-pointer hover:translate-x-2" style={{ animationDelay: '2.5s' }}>• <strong>React.js</strong> - Modern frontend frameworks</div>
-                    <div className="animate-on-scroll hover:bg-navy/10 dark:hover:bg-blue-900/30 hover:text-navy dark:hover:text-blue-300 p-2 rounded-lg transition-all duration-300 cursor-pointer hover:translate-x-2" style={{ animationDelay: '2.6s' }}>• <strong>SQL</strong> - Database management and optimization</div>
+                    <div className="animate-on-scroll" style={{ animationDelay: '2.3s' }}>• <strong>Python</strong> - Advanced scripting and automation</div>
+                    <div className="animate-on-scroll" style={{ animationDelay: '2.4s' }}>• <strong>JavaScript/TypeScript</strong> - Web application development</div>
+                    <div className="animate-on-scroll" style={{ animationDelay: '2.5s' }}>• <strong>React.js</strong> - Modern frontend frameworks</div>
+                    <div className="animate-on-scroll" style={{ animationDelay: '2.6s' }}>• <strong>SQL</strong> - Database management and optimization</div>
                   </div>
                 </div>
                 
                 <div className="animate-on-scroll" style={{ animationDelay: '2.7s' }}>
                   <h5 className="font-semibold text-navy dark:text-navy-light mb-2">Cybersecurity & Networking</h5>
                   <div className="space-y-1 text-sm text-charcoal dark:text-gray-300">
-                    <div className="animate-on-scroll hover:bg-navy/10 dark:hover:bg-blue-900/30 hover:text-navy dark:hover:text-blue-300 p-2 rounded-lg transition-all duration-300 cursor-pointer hover:translate-x-2" style={{ animationDelay: '2.8s' }}>• <strong>Penetration Testing</strong> - Vulnerability assessment and exploitation</div>
-                    <div className="animate-on-scroll hover:bg-navy/10 dark:hover:bg-blue-900/30 hover:text-navy dark:hover:text-blue-300 p-2 rounded-lg transition-all duration-300 cursor-pointer hover:translate-x-2" style={{ animationDelay: '2.9s' }}>• <strong>Network Security</strong> - Firewall and IDS/IPS configuration</div>
-                    <div className="animate-on-scroll hover:bg-navy/10 dark:hover:bg-blue-900/30 hover:text-navy dark:hover:text-blue-300 p-2 rounded-lg transition-all duration-300 cursor-pointer hover:translate-x-2" style={{ animationDelay: '3.0s' }}>• <strong>Digital Forensics</strong> - Incident response and evidence analysis</div>
-                    <div className="animate-on-scroll hover:bg-navy/10 dark:hover:bg-blue-900/30 hover:text-navy dark:hover:text-blue-300 p-2 rounded-lg transition-all duration-300 cursor-pointer hover:translate-x-2" style={{ animationDelay: '3.1s' }}>• <strong>Risk Assessment</strong> - Security auditing and compliance</div>
+                    <div className="animate-on-scroll" style={{ animationDelay: '2.8s' }}>• <strong>Penetration Testing</strong> - Vulnerability assessment and exploitation</div>
+                    <div className="animate-on-scroll" style={{ animationDelay: '2.9s' }}>• <strong>Network Security</strong> - Firewall and IDS/IPS configuration</div>
+                    <div className="animate-on-scroll" style={{ animationDelay: '3.0s' }}>• <strong>Digital Forensics</strong> - Incident response and evidence analysis</div>
+                    <div className="animate-on-scroll" style={{ animationDelay: '3.1s' }}>• <strong>Risk Assessment</strong> - Security auditing and compliance</div>
                   </div>
                 </div>
                 
                 <div className="animate-on-scroll" style={{ animationDelay: '3.2s' }}>
                   <h5 className="font-semibold text-navy dark:text-navy-light mb-2">System Administration</h5>
                   <div className="space-y-1 text-sm text-charcoal dark:text-gray-300">
-                    <div className="animate-on-scroll hover:bg-navy/10 dark:hover:bg-blue-900/30 hover:text-navy dark:hover:text-blue-300 p-2 rounded-lg transition-all duration-300 cursor-pointer hover:translate-x-2" style={{ animationDelay: '3.3s' }}>• <strong>Linux/Windows Server</strong> - Enterprise administration</div>
-                    <div className="animate-on-scroll hover:bg-navy/10 dark:hover:bg-blue-900/30 hover:text-navy dark:hover:text-blue-300 p-2 rounded-lg transition-all duration-300 cursor-pointer hover:translate-x-2" style={{ animationDelay: '3.4s' }}>• <strong>Virtualization</strong> - VMware, VirtualBox, Docker containers</div>
-                    <div className="animate-on-scroll hover:bg-navy/10 dark:hover:bg-blue-900/30 hover:text-navy dark:hover:text-blue-300 p-2 rounded-lg transition-all duration-300 cursor-pointer hover:translate-x-2" style={{ animationDelay: '3.5s' }}>• <strong>Cloud Platforms</strong> - AWS, Azure fundamentals and deployment</div>
-                    <div className="animate-on-scroll hover:bg-navy/10 dark:hover:bg-blue-900/30 hover:text-navy dark:hover:text-blue-300 p-2 rounded-lg transition-all duration-300 cursor-pointer hover:translate-x-2" style={{ animationDelay: '3.6s' }}>• <strong>Database Systems</strong> - PostgreSQL, MySQL, MongoDB</div>
+                    <div className="animate-on-scroll" style={{ animationDelay: '3.3s' }}>• <strong>Linux/Windows Server</strong> - Enterprise administration</div>
+                    <div className="animate-on-scroll" style={{ animationDelay: '3.4s' }}>• <strong>Virtualization</strong> - VMware, VirtualBox, Docker containers</div>
+                    <div className="animate-on-scroll" style={{ animationDelay: '3.5s' }}>• <strong>Cloud Platforms</strong> - AWS, Azure fundamentals and deployment</div>
+                    <div className="animate-on-scroll" style={{ animationDelay: '3.6s' }}>• <strong>Database Systems</strong> - PostgreSQL, MySQL, MongoDB</div>
                   </div>
                 </div>
                 
                 <div className="animate-on-scroll" style={{ animationDelay: '3.7s' }}>
                   <h5 className="font-semibold text-navy dark:text-navy-light mb-2">Research & Academic Interests</h5>
                   <div className="space-y-1 text-sm text-charcoal dark:text-gray-300">
-                    <div className="animate-on-scroll hover:bg-navy/10 dark:hover:bg-blue-900/30 hover:text-navy dark:hover:text-blue-300 p-2 rounded-lg transition-all duration-300 cursor-pointer hover:translate-x-2" style={{ animationDelay: '3.8s' }}>• <strong>Secure Infrastructure</strong> - Academic and research purposes</div>
-                    <div className="animate-on-scroll hover:bg-navy/10 dark:hover:bg-blue-900/30 hover:text-navy dark:hover:text-blue-300 p-2 rounded-lg transition-all duration-300 cursor-pointer hover:translate-x-2" style={{ animationDelay: '3.9s' }}>• <strong>Threat Intelligence</strong> - Emerging cyber threats analysis</div>
-                    <div className="animate-on-scroll hover:bg-navy/10 dark:hover:bg-blue-900/30 hover:text-navy dark:hover:text-blue-300 p-2 rounded-lg transition-all duration-300 cursor-pointer hover:translate-x-2" style={{ animationDelay: '4.0s' }}>• <strong>Security Architecture</strong> - Enterprise security design</div>
+                    <div className="animate-on-scroll" style={{ animationDelay: '3.8s' }}>• <strong>Secure Infrastructure</strong> - Academic and research purposes</div>
+                    <div className="animate-on-scroll" style={{ animationDelay: '3.9s' }}>• <strong>Threat Intelligence</strong> - Emerging cyber threats analysis</div>
+                    <div className="animate-on-scroll" style={{ animationDelay: '4.0s' }}>• <strong>Security Architecture</strong> - Enterprise security design</div>
                   </div>
                 </div>
               </div>
