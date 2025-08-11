@@ -95,8 +95,8 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
         {stage === 'separating' && (
           <div className="flex items-center justify-center min-h-[200px]">
             <div className="relative w-full max-w-4xl flex justify-between items-center">
-              <span className="text-9xl font-bold text-white animate-slide-left">F</span>
-              <span className="text-9xl font-bold text-white animate-slide-right">A</span>
+              <span className="text-9xl font-bold text-white animate-slide-left-smooth">F</span>
+              <span className="text-9xl font-bold text-white animate-slide-right-smooth">A</span>
             </div>
           </div>
         )}
@@ -118,10 +118,10 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
                 </p>
               </div>
               
-              {/* "khundov" with A */}
+              {/* A with "khundov" */}
               <div className="flex items-baseline">
-                <span className="text-8xl font-bold text-white mr-1 animate-smooth-fade-in animation-delay-200">khundov</span>
                 <span className="text-8xl font-bold text-white/80">A</span>
+                <span className="text-8xl font-bold text-white ml-1 animate-smooth-fade-in animation-delay-200">khundov</span>
               </div>
             </div>
           </div>
@@ -135,7 +135,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
                 {/* F with "arid" */}
                 <div className="flex items-baseline">
                   <span className="text-8xl font-bold text-white/80">F</span>
-                  <span className="text-8xl font-bold text-white ml-2">arid</span>
+                  <span className="text-8xl font-bold text-white ml-1">arid</span>
                 </div>
                 
                 {/* Center "Designed by" */}
@@ -145,10 +145,10 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
                   </p>
                 </div>
                 
-                {/* "khundov" with A */}
+                {/* A with "khundov" */}
                 <div className="flex items-baseline">
-                  <span className="text-8xl font-bold text-white mr-2">khundov</span>
                   <span className="text-8xl font-bold text-white/80">A</span>
+                  <span className="text-8xl font-bold text-white ml-1">khundov</span>
                 </div>
               </div>
             </div>
