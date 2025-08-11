@@ -55,7 +55,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-light-gray via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-hidden pt-20">
+    <section id="home" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-light-gray via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-hidden pt-16 sm:pt-20">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-4 -left-4 w-72 h-72 bg-navy/10 dark:bg-blue-500/10 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-xl animate-pulse"></div>
@@ -99,8 +99,8 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="relative z-0 max-w-6xl mx-auto px-4 lg:px-6 py-12 lg:py-20 pb-20 lg:pb-24">
-        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
+      <div className="relative z-0 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-20 pb-16 sm:pb-20 lg:pb-24">
+        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
           {/* Profile Image Section - First on mobile */}
           <div className={`order-1 lg:order-2 relative z-0 transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
             <div className="relative group">
@@ -112,7 +112,7 @@ export default function Hero() {
                 <img
                   src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=800"
                   alt="Farid Axundov - IT Professional & Cybersecurity Specialist"
-                  className="rounded-2xl shadow-2xl w-full max-w-xs lg:max-w-md mx-auto animate-float hover:scale-105 transition-transform duration-500"
+                  className="rounded-2xl shadow-2xl w-full max-w-xs sm:max-w-sm lg:max-w-md mx-auto animate-float hover:scale-105 transition-transform duration-500"
                 />
                 
                 {/* Server status indicator */}
@@ -136,7 +136,7 @@ export default function Hero() {
           </div>
 
           {/* Content Section - Second on mobile */}
-          <div className={`order-2 lg:order-1 space-y-4 lg:space-y-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className={`order-2 lg:order-1 space-y-6 sm:space-y-8 lg:space-y-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             {/* Greeting with stagger animation */}
             <div className="space-y-3 lg:space-y-6 text-center lg:text-left">
               <div className={`transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>

@@ -97,15 +97,15 @@ export default function Contact() {
   };
 
   return (
-    <section ref={sectionRef} id="contact" className="py-12 lg:py-20 bg-white dark:bg-gray-900">
-      <div className="max-w-4xl mx-auto px-4 lg:px-6">
-        <div className="text-center mb-8 lg:mb-16">
-          <h2 className="text-2xl lg:text-4xl font-bold text-navy dark:text-navy-light mb-4 animate-on-scroll">Let's Work Together</h2>
-          <p className="text-base lg:text-xl text-charcoal dark:text-gray-300 animate-on-scroll animation-delay-200">Ready to bring your next project to life? Let's discuss how I can help.</p>
+    <section ref={sectionRef} id="contact" className="py-12 sm:py-16 lg:py-20 bg-white dark:bg-gray-900">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-navy dark:text-navy-light mb-4 animate-on-scroll">Let's Work Together</h2>
+          <p className="text-base sm:text-lg lg:text-xl text-charcoal dark:text-gray-300 animate-on-scroll animation-delay-200">Ready to bring your next project to life? Let's discuss how I can help.</p>
         </div>
         
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
-          <div className="space-y-6 lg:space-y-8">
+          <div className="space-y-6 sm:space-y-7 lg:space-y-8">
             <div className="animate-on-scroll animation-delay-400">
               <h3 className="text-xl lg:text-2xl font-bold text-navy dark:text-navy-light mb-4 lg:mb-6">Get In Touch</h3>
               <div className="space-y-4">

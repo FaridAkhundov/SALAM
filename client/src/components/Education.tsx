@@ -99,7 +99,7 @@ export default function Education() {
 
   return (
     <section ref={sectionRef} id="education" className="py-12 lg:py-20 bg-white dark:bg-gray-900">
-      <div className="max-w-6xl mx-auto px-4 lg:px-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8 lg:mb-16">
           <h2 className="text-2xl lg:text-4xl font-bold text-navy dark:text-navy-light mb-4 animate-on-scroll">Education & Certifications</h2>
           <p className="text-base lg:text-xl text-charcoal dark:text-gray-300 animate-on-scroll animation-delay-200">Academic background and professional certifications</p>

@@ -42,7 +42,7 @@ export default function Experience() {
   ];
 
   return (
-    <section ref={sectionRef} id="experience" className="py-20 relative overflow-hidden">
+    <section ref={sectionRef} id="experience" className="py-12 sm:py-16 lg:py-20 relative overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"></div>
       
@@ -65,13 +65,13 @@ export default function Experience() {
         }}></div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-navy via-blue-600 to-purple-600 dark:from-navy-light dark:via-blue-400 dark:to-purple-400 bg-clip-text text-transparent mb-4 animate-on-scroll">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-12 sm:mb-14 lg:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-navy via-blue-600 to-purple-600 dark:from-navy-light dark:via-blue-400 dark:to-purple-400 bg-clip-text text-transparent mb-4 animate-on-scroll">
             Professional Experience
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-4 rounded-full animate-on-scroll animation-delay-200"></div>
-          <p className="text-xl text-charcoal dark:text-gray-300 max-w-2xl mx-auto animate-on-scroll animation-delay-400">
+          <p className="text-lg sm:text-xl text-charcoal dark:text-gray-300 max-w-2xl mx-auto animate-on-scroll animation-delay-400">
             Building secure digital infrastructures and leading cybersecurity initiatives
           </p>
         </div>
@@ -82,7 +82,7 @@ export default function Experience() {
           <div className="absolute left-1/2 transform -translate-x-0.5 w-1 bg-gradient-to-b from-blue-400 via-purple-500 to-blue-600 dark:from-blue-400 dark:via-purple-400 dark:to-blue-500 h-full hidden lg:block shadow-lg"></div>
           
           {/* Timeline Items */}
-          <div className="space-y-8 lg:space-y-16">
+          <div className="space-y-8 sm:space-y-12 lg:space-y-16">
             {experiences.map((experience, index) => (
               <div key={index} className="relative card-entrance" style={{ animationDelay: `${0.6 + index * 0.3}s` }}>
                 {/* Mobile: Stacked layout, Desktop: Alternating layout */}
@@ -94,9 +94,9 @@ export default function Experience() {
                       <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl blur opacity-25 group-hover:opacity-50 transition duration-500"></div>
                       
                       {/* Main card */}
-                      <div className="relative bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm p-6 lg:p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-200 dark:border-gray-700 group-hover:border-blue-400 dark:group-hover:border-blue-500 hover-lift hover-magnetic">
+                      <div className="relative bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm p-4 sm:p-6 lg:p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-200 dark:border-gray-700 group-hover:border-blue-400 dark:group-hover:border-blue-500 hover-lift hover-magnetic">
                         {/* Period badge */}
-                        <div className="inline-flex items-center px-3 py-1 lg:px-4 lg:py-2 rounded text-xs lg:text-sm bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium mb-3 lg:mb-4">
+                        <div className="inline-flex items-center px-2 py-1 sm:px-3 sm:py-1 lg:px-4 lg:py-2 rounded text-xs sm:text-sm lg:text-sm bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium mb-3 lg:mb-4">
                           <div className="w-2 h-2 bg-white rounded-full mr-2 animate-pulse"></div>
                           {experience.period}
                         </div>

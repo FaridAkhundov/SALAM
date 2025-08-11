@@ -22,25 +22,25 @@ export default function About() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="about" className="py-20 bg-white dark:bg-gray-900">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-navy dark:text-navy-light mb-4 animate-on-scroll animate-slide-bottom">About Me</h2>
-          <p className="text-xl text-charcoal dark:text-gray-300 max-w-3xl mx-auto animate-on-scroll animation-delay-200">
+    <section ref={sectionRef} id="about" className="py-12 sm:py-16 lg:py-20 bg-white dark:bg-gray-900">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12 sm:mb-14 lg:mb-16">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-navy dark:text-navy-light mb-4 animate-on-scroll animate-slide-bottom">About Me</h2>
+          <p className="text-lg sm:text-xl text-charcoal dark:text-gray-300 max-w-3xl mx-auto animate-on-scroll animation-delay-200">
             Passionate about creating innovative solutions and building meaningful digital experiences
           </p>
         </div>
         
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
           <div className="animate-on-scroll animation-delay-400">
             <div className="space-y-6">
-              <p className="text-base lg:text-lg text-charcoal dark:text-gray-300 leading-relaxed animate-on-scroll animation-delay-600">
+              <p className="text-sm sm:text-base lg:text-lg text-charcoal dark:text-gray-300 leading-relaxed animate-on-scroll animation-delay-600">
                 I'm an experienced IT Specialist with deep expertise in cybersecurity, system administration, 
                 and infrastructure management. With multiple professional certifications including IBM Cybersecurity, 
                 Cisco Ethical Hacker, and Google Cybersecurity Professional Certificate, I design and implement 
                 secure, scalable IT solutions for complex enterprise environments.
               </p>
-              <p className="text-base lg:text-lg text-charcoal dark:text-gray-300 leading-relaxed animate-on-scroll animation-delay-800">
+              <p className="text-sm sm:text-base lg:text-lg text-charcoal dark:text-gray-300 leading-relaxed animate-on-scroll animation-delay-800">
                 As a cybersecurity professional and system administrator, I have extensive experience in 
                 vulnerability assessments, network security, system hardening, and incident response. 
                 My expertise spans across secure infrastructure design, risk management, and implementing 
@@ -48,14 +48,14 @@ export default function About() {
               </p>
               
               {/* Key Stats */}
-              <div className="grid grid-cols-2 gap-4 lg:gap-6 mt-8">
-                <div className="text-center p-4 lg:p-6 bg-light-gray dark:bg-gray-800 rounded-xl hover-lift hover-glow animate-on-scroll animation-delay-1000">
-                  <div className="text-2xl lg:text-3xl font-bold text-navy dark:text-navy-light mb-2">2+</div>
-                  <div className="text-sm lg:text-base text-charcoal dark:text-gray-300">Years Experience</div>
+              <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:gap-6 mt-6 sm:mt-8">
+                <div className="text-center p-3 sm:p-4 lg:p-6 bg-light-gray dark:bg-gray-800 rounded-xl hover-lift hover-glow animate-on-scroll animation-delay-1000">
+                  <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-navy dark:text-navy-light mb-1 sm:mb-2">2+</div>
+                  <div className="text-xs sm:text-sm lg:text-base text-charcoal dark:text-gray-300">Years Experience</div>
                 </div>
-                <div className="text-center p-4 lg:p-6 bg-light-gray dark:bg-gray-800 rounded-xl hover-lift hover-glow animate-on-scroll animation-delay-1000">
-                  <div className="text-2xl lg:text-3xl font-bold text-navy dark:text-navy-light mb-2">10+</div>
-                  <div className="text-sm lg:text-base text-charcoal dark:text-gray-300">Projects Completed</div>
+                <div className="text-center p-3 sm:p-4 lg:p-6 bg-light-gray dark:bg-gray-800 rounded-xl hover-lift hover-glow animate-on-scroll animation-delay-1000">
+                  <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-navy dark:text-navy-light mb-1 sm:mb-2">10+</div>
+                  <div className="text-xs sm:text-sm lg:text-base text-charcoal dark:text-gray-300">Projects Completed</div>
                 </div>
               </div>
             </div>

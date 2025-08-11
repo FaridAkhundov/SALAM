@@ -60,9 +60,9 @@ export default function Navigation() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm border-b border-gray-100 dark:border-gray-800 z-50">
-      <div className="max-w-6xl mx-auto px-6 py-4">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
         <div className="flex items-center justify-between">
-          <div className="text-2xl font-bold text-navy dark:text-navy-light">FA</div>
+          <div className="text-xl sm:text-2xl font-bold text-navy dark:text-navy-light">FA</div>
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
@@ -108,8 +108,8 @@ export default function Navigation() {
         
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-gray-100 dark:border-gray-800">
-            <div className="flex flex-col space-y-4 pt-4">
+          <div className="md:hidden mt-3 sm:mt-4 pb-3 sm:pb-4 border-t border-gray-100 dark:border-gray-800">
+            <div className="flex flex-col space-y-3 sm:space-y-4 pt-3 sm:pt-4">
               {navItems.map((item) => (
                 <a
                   key={item.href}

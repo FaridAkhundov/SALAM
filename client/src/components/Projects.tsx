@@ -54,14 +54,14 @@ export default function Projects() {
   ];
 
   return (
-    <section ref={sectionRef} id="projects" className="py-20 bg-light-gray dark:bg-gray-800">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-2xl lg:text-4xl font-bold text-navy dark:text-navy-light mb-4 animate-on-scroll">Featured Projects</h2>
-          <p className="text-base lg:text-xl text-charcoal dark:text-gray-300 animate-on-scroll animation-delay-200">A showcase of my recent work and achievements</p>
+    <section ref={sectionRef} id="projects" className="py-12 sm:py-16 lg:py-20 bg-light-gray dark:bg-gray-800">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12 sm:mb-14 lg:mb-16">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-navy dark:text-navy-light mb-4 animate-on-scroll">Featured Projects</h2>
+          <p className="text-base sm:text-lg lg:text-xl text-charcoal dark:text-gray-300 animate-on-scroll animation-delay-200">A showcase of my recent work and achievements</p>
         </div>
         
-        <div className="grid lg:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-7 lg:gap-8">
           {projects.map((project, index) => (
             <div
               key={index}
@@ -76,9 +76,9 @@ export default function Projects() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
-              <div className="p-4 lg:p-6">
+              <div className="p-4 sm:p-5 lg:p-6">
                 <div className="flex items-center justify-between mb-3 lg:mb-4">
-                  <h3 className="text-lg lg:text-xl font-bold text-navy dark:text-navy-light group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">{project.title}</h3>
+                  <h3 className="text-lg sm:text-xl lg:text-xl font-bold text-navy dark:text-navy-light group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">{project.title}</h3>
                   <div className="flex space-x-2">
                     <a
                       href="#"
@@ -94,12 +94,12 @@ export default function Projects() {
                     </a>
                   </div>
                 </div>
-                <p className="text-sm lg:text-base text-charcoal dark:text-gray-300 mb-3 lg:mb-4 leading-relaxed">{project.description}</p>
+                <p className="text-sm sm:text-base lg:text-base text-charcoal dark:text-gray-300 mb-3 lg:mb-4 leading-relaxed">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="bg-navy-light dark:bg-blue-600 text-white px-3 py-1 rounded-full text-sm"
+                      className="bg-navy-light dark:bg-blue-600 text-white px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm"
                     >
                       {tech}
                     </span>
