@@ -127,6 +127,14 @@
   .animation-delay-1700 {
     animation-delay: 1.7s;
   }
+
+  .animation-delay-1800 {
+    animation-delay: 1.8s;
+  }
+
+  .animation-delay-100 {
+    animation-delay: 0.1s;
+  }
   
   .animate-fade-in {
     animation: fadeIn 0.6s ease-out;
@@ -175,6 +183,45 @@
   .animate-ripple {
     animation: ripple 3s ease-out infinite;
   }
+
+  /* Cinematic Intro Animations */
+  .animate-cinematic-fade-in {
+    animation: cinematicFadeIn 1.5s ease-out forwards;
+  }
+
+  .animate-cinematic-expand {
+    animation: cinematicExpand 1s ease-out forwards;
+  }
+
+  .animate-cinematic-fade-out {
+    animation: cinematicFadeOut 0.8s ease-in forwards;
+  }
+
+  .animate-glow-soft {
+    animation: glowSoft 3s ease-in-out infinite alternate;
+  }
+
+  .animate-letter-expand {
+    animation: letterExpand 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  }
+
+  .animate-letter-reveal {
+    animation: letterReveal 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+  }
+
+  .animate-light-streak {
+    animation: lightStreak 4s ease-in-out infinite;
+  }
+
+  .animate-particle-drift {
+    animation: particleDrift 12s linear infinite;
+  }
+
+  .animate-sparkle-subtle {
+    animation: sparkleSubtle 3s ease-in-out infinite;
+  }
+
+
 }
 
 @keyframes fadeIn {
@@ -309,5 +356,127 @@
   100% {
     transform: scale(4);
     opacity: 0;
+  }
+}
+
+/* Cinematic Intro Keyframes */
+@keyframes cinematicFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes cinematicExpand {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes cinematicFadeOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes glowSoft {
+  0% {
+    text-shadow: 
+      0 0 20px rgba(255, 255, 255, 0.3),
+      0 0 40px rgba(255, 255, 255, 0.2),
+      0 0 60px rgba(255, 255, 255, 0.1);
+  }
+  100% {
+    text-shadow: 
+      0 0 30px rgba(255, 255, 255, 0.5),
+      0 0 60px rgba(255, 255, 255, 0.3),
+      0 0 90px rgba(255, 255, 255, 0.2);
+  }
+}
+
+@keyframes letterExpand {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes letterReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px) rotateX(90deg);
+  }
+  50% {
+    transform: translateY(5px) rotateX(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px) rotateX(0deg);
+  }
+}
+
+@keyframes lightStreak {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}
+
+@keyframes particleDrift {
+  0% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0.2;
+  }
+  25% {
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-20px) translateX(10px);
+    opacity: 0.4;
+  }
+  75% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-40px) translateX(-5px);
+    opacity: 0.1;
+  }
+}
+
+@keyframes sparkleSubtle {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.5);
   }
 }

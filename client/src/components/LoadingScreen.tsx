@@ -1,43 +1,43 @@
 import { useState, useEffect } from 'react';
-import { Sparkles, Shield, Lock, Zap } from 'lucide-react';
 
 interface LoadingScreenProps {
   onComplete: () => void;
 }
 
 const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
-  const [stage, setStage] = useState<'logo' | 'expanding' | 'revealing' | 'complete'>('logo');
-  const [particles, setParticles] = useState<Array<{id: number, x: number, y: number, delay: number}>>([]);
+  const [stage, setStage] = useState<'initial' | 'expanding' | 'revealing' | 'complete'>('initial');
+  const [particles, setParticles] = useState<Array<{id: number, x: number, y: number, delay: number, direction: number}>>([]);
 
   useEffect(() => {
-    // Generate random particles
-    const newParticles = Array.from({ length: 20 }, (_, i) => ({
+    // Generate random particles for premium background effect
+    const newParticles = Array.from({ length: 30 }, (_, i) => ({
       id: i,
       x: Math.random() * 100,
       y: Math.random() * 100,
-      delay: Math.random() * 3
+      delay: Math.random() * 4,
+      direction: Math.random() > 0.5 ? 1 : -1
     }));
     setParticles(newParticles);
 
-    // Stage 1: Show pulsing FA logo for 2.5 seconds
+    // Stage 1: Initial FA fade-in with glow (1.5 seconds)
     const timer1 = setTimeout(() => {
       setStage('expanding');
-    }, 2500);
+    }, 1500);
 
-    // Stage 2: Expand and transform for 2 seconds
+    // Stage 2: Expand and transform (1 second)
     const timer2 = setTimeout(() => {
       setStage('revealing');
-    }, 4500);
+    }, 2500);
 
-    // Stage 3: Reveal full name for 2.5 seconds
+    // Stage 3: Reveal full name (1.5 seconds)
     const timer3 = setTimeout(() => {
       setStage('complete');
-    }, 7000);
+    }, 4000);
 
-    // Stage 4: Fade out and complete
+    // Stage 4: Fade out and complete (0.8 seconds)
     const timer4 = setTimeout(() => {
       onComplete();
-    }, 8000);
+    }, 4800);
 
     return () => {
       clearTimeout(timer1);
@@ -48,147 +48,88 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
   }, [onComplete]);
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-light-gray via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-hidden">
-      {/* Dynamic Background Particles */}
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black overflow-hidden">
+      {/* Premium Light Streaks Background */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-white/10 to-transparent animate-light-streak animation-delay-500"></div>
+        <div className="absolute top-0 right-1/3 w-px h-full bg-gradient-to-b from-transparent via-white/8 to-transparent animate-light-streak animation-delay-1200"></div>
+        <div className="absolute top-0 left-2/3 w-px h-full bg-gradient-to-b from-transparent via-white/6 to-transparent animate-light-streak animation-delay-1800"></div>
+      </div>
+
+      {/* Floating Particles */}
       <div className="absolute inset-0">
         {particles.map((particle) => (
           <div
             key={particle.id}
-            className="absolute animate-particle-float"
+            className="absolute animate-particle-drift"
             style={{
               left: `${particle.x}%`,
               top: `${particle.y}%`,
-              animationDelay: `${particle.delay}s`
+              animationDelay: `${particle.delay}s`,
+              animationDirection: particle.direction > 0 ? 'normal' : 'reverse'
             }}
           >
-            <Sparkles className="w-2 h-2 text-blue-400/30 dark:text-blue-300/40" />
+            <div className="w-1 h-1 bg-white/20 rounded-full animate-sparkle-subtle"></div>
           </div>
         ))}
       </div>
 
-      {/* Ripple Effects */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="absolute w-4 h-4 bg-blue-500/20 dark:bg-blue-400/30 rounded-full animate-ripple"></div>
-        <div className="absolute w-4 h-4 bg-purple-500/20 dark:bg-purple-400/30 rounded-full animate-ripple animation-delay-1000"></div>
-        <div className="absolute w-4 h-4 bg-indigo-500/20 dark:bg-indigo-400/30 rounded-full animate-ripple animation-delay-2000"></div>
-      </div>
+      {/* Radial Glow Effect */}
+      <div className="absolute inset-0" style={{
+        background: 'radial-gradient(circle at center, rgba(255, 255, 255, 0.05) 0%, transparent 50%, transparent 100%)'
+      }}></div>
 
       {/* Main Content Container */}
       <div className="relative text-center z-10">
-        {/* Stage 1: Pulsing FA Logo */}
-        {stage === 'logo' && (
-          <div className="animate-fade-in">
-            <div className="relative">
-              {/* Outer glow ring */}
-              <div className="absolute inset-0 w-40 h-40 mx-auto bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full animate-pulse"></div>
-              
-              {/* Main logo container */}
-              <div className="relative w-36 h-36 mx-auto bg-gradient-to-br from-navy-light to-blue-600 dark:from-blue-500 dark:to-purple-600 rounded-2xl flex items-center justify-center shadow-2xl animate-logo-pulse">
-                <span className="text-7xl font-bold text-white animate-glow">FA</span>
-                
-                {/* Floating icons around logo */}
-                <div className="absolute -top-2 -left-2">
-                  <Shield className="w-6 h-6 text-blue-300 animate-float animation-delay-400" />
-                </div>
-                <div className="absolute -top-2 -right-2">
-                  <Lock className="w-5 h-5 text-purple-300 animate-float animation-delay-800" />
-                </div>
-                <div className="absolute -bottom-2 -right-2">
-                  <Zap className="w-6 h-6 text-indigo-300 animate-float animation-delay-1200" />
-                </div>
-              </div>
-            </div>
-            
-            {/* Loading text */}
-            <div className="mt-8">
-              <p className="text-lg text-navy-light dark:text-blue-400 animate-pulse">
-                Initializing Security Protocols...
-              </p>
-            </div>
+        {/* Stage 1: Initial FA Letters with Soft Glow */}
+        {stage === 'initial' && (
+          <div className="animate-cinematic-fade-in">
+            <h1 className="text-9xl font-bold text-white tracking-wider">
+              <span className="inline-block animate-glow-soft">F</span>
+              <span className="inline-block animate-glow-soft animation-delay-200">A</span>
+            </h1>
           </div>
         )}
 
-        {/* Stage 2: Logo Expanding and Transforming */}
+        {/* Stage 2: Expanding and Transforming */}
         {stage === 'expanding' && (
-          <div className="animate-fade-in">
-            <div className="relative">
-              {/* Expanding logo */}
-              <div className="w-36 h-36 mx-auto bg-gradient-to-br from-navy-light to-blue-600 dark:from-blue-500 dark:to-purple-600 rounded-2xl flex items-center justify-center shadow-2xl animate-logo-expand">
-                <span className="text-6xl font-bold text-white">FA</span>
-              </div>
-            </div>
-            
-            {/* System status */}
-            <div className="mt-8 space-y-3">
-              <div className="flex items-center justify-center space-x-2">
-                <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                <span className="text-sm text-charcoal dark:text-gray-300">Authentication Systems Online</span>
-              </div>
-              <div className="flex items-center justify-center space-x-2">
-                <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse animation-delay-400"></div>
-                <span className="text-sm text-charcoal dark:text-gray-300">Network Security Active</span>
-              </div>
-              <div className="flex items-center justify-center space-x-2">
-                <div className="w-3 h-3 bg-purple-500 rounded-full animate-pulse animation-delay-800"></div>
-                <span className="text-sm text-charcoal dark:text-gray-300">Loading Portfolio Interface</span>
-              </div>
-            </div>
+          <div className="animate-cinematic-expand">
+            <h1 className="text-9xl font-bold text-white tracking-wider transform scale-110">
+              <span className="inline-block animate-letter-expand">F</span>
+              <span className="inline-block animate-letter-expand animation-delay-100">A</span>
+            </h1>
           </div>
         )}
 
-        {/* Stage 3: Name Revelation */}
+        {/* Stage 3: Full Name Revelation */}
         {stage === 'revealing' && (
-          <div className="animate-fade-in">
-            <div className="space-y-6">
-              {/* Smaller logo */}
-              <div className="w-24 h-24 mx-auto bg-gradient-to-br from-navy-light to-blue-600 dark:from-blue-500 dark:to-purple-600 rounded-xl flex items-center justify-center shadow-xl">
-                <span className="text-3xl font-bold text-white">FA</span>
-              </div>
-              
-              {/* Letter by letter revelation */}
-              <div className="space-y-3">
-                <h1 className="text-6xl font-bold text-navy dark:text-navy-light">
-                  <span className="inline-block animate-letter-drop animation-delay-200">F</span>
-                  <span className="inline-block animate-letter-drop animation-delay-400">a</span>
-                  <span className="inline-block animate-letter-drop animation-delay-600">r</span>
-                  <span className="inline-block animate-letter-drop animation-delay-800">i</span>
-                  <span className="inline-block animate-letter-drop animation-delay-1000">d</span>
-                </h1>
-                <h2 className="text-4xl font-semibold text-navy-light dark:text-blue-400">
-                  <span className="inline-block animate-letter-drop animation-delay-1200">A</span>
-                  <span className="inline-block animate-letter-drop animation-delay-1300">k</span>
-                  <span className="inline-block animate-letter-drop animation-delay-1400">h</span>
-                  <span className="inline-block animate-letter-drop animation-delay-1500">u</span>
-                  <span className="inline-block animate-letter-drop animation-delay-1600">n</span>
-                  <span className="inline-block animate-letter-drop animation-delay-1700">d</span>
-                  <span className="inline-block animate-letter-drop animation-delay-1800">o</span>
-                  <span className="inline-block animate-letter-drop animation-delay-1900">v</span>
-                </h2>
-                
-                {/* Professional title with typing effect */}
-                <div className="mt-6">
-                  <p className="text-xl text-charcoal dark:text-gray-300 animate-fade-in animation-delay-2000">
-                    IT Professional & Cybersecurity Specialist
-                  </p>
-                  <p className="text-sm text-navy-light dark:text-blue-400 animate-fade-in animation-delay-2000 mt-2">
-                    Securing Digital Infrastructures Since 2020
-                  </p>
-                </div>
-              </div>
-            </div>
+          <div className="space-y-4">
+            <h1 className="text-7xl font-bold text-white tracking-wide">
+              <span className="inline-block animate-letter-reveal animation-delay-200">F</span>
+              <span className="inline-block animate-letter-reveal animation-delay-300">a</span>
+              <span className="inline-block animate-letter-reveal animation-delay-400">r</span>
+              <span className="inline-block animate-letter-reveal animation-delay-500">i</span>
+              <span className="inline-block animate-letter-reveal animation-delay-600">d</span>
+            </h1>
+            <h2 className="text-5xl font-semibold text-white/90 tracking-wide">
+              <span className="inline-block animate-letter-reveal animation-delay-800">A</span>
+              <span className="inline-block animate-letter-reveal animation-delay-900">k</span>
+              <span className="inline-block animate-letter-reveal animation-delay-1000">h</span>
+              <span className="inline-block animate-letter-reveal animation-delay-1100">u</span>
+              <span className="inline-block animate-letter-reveal animation-delay-1200">n</span>
+              <span className="inline-block animate-letter-reveal animation-delay-1300">d</span>
+              <span className="inline-block animate-letter-reveal animation-delay-1400">o</span>
+              <span className="inline-block animate-letter-reveal animation-delay-1500">v</span>
+            </h2>
           </div>
         )}
 
-        {/* Stage 4: Fade Out */}
+        {/* Stage 4: Final Fade Out */}
         {stage === 'complete' && (
-          <div className="animate-fade-in opacity-0 transition-opacity duration-1000">
-            <div className="text-center space-y-4">
-              <div className="w-24 h-24 mx-auto bg-gradient-to-br from-navy-light to-blue-600 dark:from-blue-500 dark:to-purple-600 rounded-xl flex items-center justify-center shadow-xl">
-                <span className="text-3xl font-bold text-white">FA</span>
-              </div>
-              <h1 className="text-6xl font-bold text-navy dark:text-navy-light">Farid</h1>
-              <h2 className="text-4xl font-semibold text-navy-light dark:text-blue-400">Akhundov</h2>
-              <p className="text-xl text-charcoal dark:text-gray-300">Ready to Secure Your Digital World</p>
+          <div className="animate-cinematic-fade-out">
+            <div className="space-y-4">
+              <h1 className="text-7xl font-bold text-white tracking-wide">Farid</h1>
+              <h2 className="text-5xl font-semibold text-white/90 tracking-wide">Akhundov</h2>
             </div>
           </div>
         )}
