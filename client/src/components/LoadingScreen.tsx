@@ -42,7 +42,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
         {/* Stage 1: Initial FA centered */}
         {stage === 'initial' && (
           <div className="text-center">
-            <div className="text-8xl font-thin text-white tracking-widest" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+            <div className="text-8xl font-medium text-white tracking-widest" style={{ fontFamily: 'Montserrat, sans-serif' }}>
               FA
             </div>
           </div>
@@ -50,39 +50,19 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
 
         {/* Stage 2: Moving and revealing */}
         {stage === 'moving' && (
-          <div className="relative">
-            <div className="flex flex-col items-center space-y-4">
-              {/* Farid line */}
-              <div className="flex items-center">
-                <span 
-                  className="text-8xl font-thin text-white animate-f-slide-right" 
-                  style={{ fontFamily: 'Montserrat, sans-serif' }}
-                >
-                  F
-                </span>
-                <span 
-                  className="text-8xl font-thin text-white animate-letters-fade-in"
-                  style={{ fontFamily: 'Montserrat, sans-serif' }}
-                >
-                  ərid
-                </span>
-              </div>
-              
-              {/* Akhundov line */}
-              <div className="flex items-center">
-                <span 
-                  className="text-8xl font-thin text-white animate-a-slide-down" 
-                  style={{ fontFamily: 'Montserrat, sans-serif' }}
-                >
-                  A
-                </span>
-                <span 
-                  className="text-8xl font-thin text-white animate-letters-fade-in animation-delay-300"
-                  style={{ fontFamily: 'Montserrat, sans-serif' }}
-                >
-                  xundov
-                </span>
-              </div>
+          <div className="relative w-full h-32 flex items-center justify-center">
+            {/* Container for the full name layout */}
+            <div className="relative text-8xl font-medium text-white" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+              {/* F sliding to its position */}
+              <span className="absolute animate-f-move-to-position">F</span>
+              {/* ərid fading in after F reaches position */}
+              <span className="absolute animate-letters-fade-in animation-delay-500" style={{ left: '1ch' }}>ərid</span>
+              {/* Space */}
+              <span className="absolute opacity-0" style={{ left: '5.5ch' }}>&nbsp;</span>
+              {/* A sliding to its position */}
+              <span className="absolute animate-a-move-to-position" style={{ left: '6ch' }}>A</span>
+              {/* xundov fading in after A reaches position */}
+              <span className="absolute animate-letters-fade-in animation-delay-800" style={{ left: '7ch' }}>xundov</span>
             </div>
           </div>
         )}
@@ -90,13 +70,8 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
         {/* Stage 3: Complete name */}
         {(stage === 'complete' || stage === 'fadeOut') && (
           <div className={`text-center ${stage === 'fadeOut' ? 'animate-minimal-fade-out' : ''}`}>
-            <div className="flex flex-col items-center space-y-4">
-              <div className="text-8xl font-thin text-white tracking-wider" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                Fərid
-              </div>
-              <div className="text-8xl font-thin text-white tracking-wider" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                Axundov
-              </div>
+            <div className="text-8xl font-medium text-white tracking-wider" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+              Fərid Axundov
             </div>
           </div>
         )}
