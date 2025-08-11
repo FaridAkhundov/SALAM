@@ -4,10 +4,8 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "@/components/ThemeProvider";
-import LoadingScreen from "@/components/LoadingScreen";
 import Home from "@/pages/home";
 import NotFound from "@/pages/not-found";
-import { useState } from "react";
 
 function Router() {
   return (
@@ -19,22 +17,12 @@ function Router() {
 }
 
 function App() {
-  const [showLoading, setShowLoading] = useState(true);
-
-  const handleLoadingComplete = () => {
-    setShowLoading(false);
-  };
-
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider defaultTheme="dark" storageKey="portfolio-theme">
         <TooltipProvider>
           <Toaster />
-          {showLoading ? (
-            <LoadingScreen onComplete={handleLoadingComplete} />
-          ) : (
-            <Router />
-          )}
+          <Router />
         </TooltipProvider>
       </ThemeProvider>
     </QueryClientProvider>
