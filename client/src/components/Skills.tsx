@@ -22,42 +22,18 @@ export default function Skills() {
 
     return () => observer.disconnect();
   }, []);
-  const skillCategories = [
-    {
-      title: "Programming & Development",
-      skills: [
-        "Python - Advanced scripting and automation",
-        "JavaScript/TypeScript - Web application development", 
-        "React.js - Modern frontend frameworks",
-        "SQL - Database management and optimization"
-      ]
-    },
-    {
-      title: "Cybersecurity & Networking", 
-      skills: [
-        "Penetration Testing - Vulnerability assessment and exploitation",
-        "Network Security - Firewall and IDS/IPS configuration",
-        "Digital Forensics - Incident response and evidence analysis",
-        "Risk Assessment - Security auditing and compliance"
-      ]
-    },
-    {
-      title: "System Administration",
-      skills: [
-        "Linux/Windows Server - Enterprise administration",
-        "Virtualization - VMware, VirtualBox, Docker containers", 
-        "Cloud Platforms - AWS, Azure fundamentals and deployment",
-        "Database Systems - PostgreSQL, MySQL, MongoDB"
-      ]
-    },
-    {
-      title: "Research & Academic Interests",
-      skills: [
-        "Secure Infrastructure - Academic and research purposes",
-        "Threat Intelligence - Emerging cyber threats analysis",
-        "Security Architecture - Enterprise security design"
-      ]
-    }
+  const technicalSkills = [
+    { name: "Python", icon: Code },
+    { name: "IT Essentials", icon: Monitor },
+    { name: "Linux", icon: Smartphone },
+    { name: "Networking", icon: Layout },
+  ];
+
+  const cybersecuritySkills = [
+    { name: "Cybersecurity", icon: Server },
+    { name: "System Admin", icon: Database },
+    { name: "DevOps", icon: GitBranch },
+    { name: "Website Development", icon: Cloud },
   ];
 
   const strengths = [
@@ -110,37 +86,48 @@ export default function Skills() {
           </div>
           
           <div className="space-y-6 lg:space-y-8">
-            {skillCategories.map((category, categoryIndex) => (
-              <div 
-                key={categoryIndex}
-                className="animate-on-scroll"
-                style={{ 
-                  animationDelay: `${1.0 + categoryIndex * 0.3}s` 
-                }}
-              >
-                <h3 className="text-lg lg:text-xl font-bold text-navy dark:text-navy-light mb-4 lg:mb-6">
-                  {category.title}
-                </h3>
-                <div className="bg-light-gray dark:bg-gray-800 p-4 lg:p-6 rounded-xl border dark:border-gray-700">
-                  <ul className="space-y-3 lg:space-y-4">
-                    {category.skills.map((skill, skillIndex) => (
-                      <li 
-                        key={skillIndex}
-                        className="flex items-start animate-on-scroll"
-                        style={{ 
-                          animationDelay: `${1.2 + categoryIndex * 0.3 + skillIndex * 0.1}s` 
-                        }}
-                      >
-                        <span className="inline-block w-2 h-2 bg-navy-light dark:bg-blue-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                        <span className="text-sm lg:text-base text-charcoal dark:text-gray-300 leading-relaxed">
-                          {skill}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+            {/* Technical Skills */}
+            <div className="animate-on-scroll animation-delay-1000">
+              <h3 className="text-lg lg:text-xl font-bold text-navy dark:text-navy-light mb-4 lg:mb-6">Technical Skills</h3>
+              <div className="grid grid-cols-2 gap-3 lg:gap-4">
+                {technicalSkills.map((skill, index) => {
+                  const IconComponent = skill.icon;
+                  return (
+                    <div
+                      key={index}
+                      className="bg-light-gray dark:bg-gray-800 p-3 lg:p-4 rounded-lg text-center hover:bg-navy dark:hover:bg-blue-600 hover:text-white transition-all duration-300 group border dark:border-gray-700 hover-lift card-entrance"
+                      style={{ 
+                        animationDelay: `${1.2 + index * 0.1}s` 
+                      }}
+                    >
+                      <IconComponent className="w-6 h-6 lg:w-8 lg:h-8 mx-auto mb-2 text-charcoal dark:text-gray-300 group-hover:text-white transition-transform duration-300 group-hover:scale-110" />
+                      <div className="text-sm lg:text-base font-medium text-charcoal dark:text-gray-300 group-hover:text-white">{skill.name}</div>
+                    </div>
+                  );
+                })}
               </div>
-            ))}
+            </div>
+            
+            <div className="animate-on-scroll animation-delay-1400">
+              <h3 className="text-lg lg:text-xl font-bold text-navy dark:text-navy-light mb-4 lg:mb-6">Cybersecurity & Infrastructure</h3>
+              <div className="grid grid-cols-2 gap-3 lg:gap-4">
+                {cybersecuritySkills.map((skill, index) => {
+                  const IconComponent = skill.icon;
+                  return (
+                    <div
+                      key={index}
+                      className="bg-light-gray dark:bg-gray-800 p-3 lg:p-4 rounded-lg text-center hover:bg-navy dark:hover:bg-blue-600 hover:text-white transition-all duration-300 group border dark:border-gray-700 hover-lift card-entrance"
+                      style={{ 
+                        animationDelay: `${1.6 + index * 0.1}s` 
+                      }}
+                    >
+                      <IconComponent className="w-6 h-6 lg:w-8 lg:h-8 mx-auto mb-2 text-charcoal dark:text-gray-300 group-hover:text-white transition-transform duration-300 group-hover:scale-110" />
+                      <div className="text-sm lg:text-base font-medium text-charcoal dark:text-gray-300 group-hover:text-white">{skill.name}</div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </div>
       </div>
