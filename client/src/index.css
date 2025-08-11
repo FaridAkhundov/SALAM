@@ -264,11 +264,11 @@
   }
 
   .animate-f-slide-left {
-    animation: fSlideLeft 1s linear forwards;
+    animation: fSlideLeft 1.5s ease-out forwards;
   }
 
   .animate-a-slide-right {
-    animation: aSlideRight 1s linear forwards;
+    animation: aSlideRight 1.5s ease-out forwards;
   }
 
   .animate-letters-fade-in {
@@ -595,7 +595,7 @@
 
 @keyframes fSlideLeft {
   0% {
-    transform: translateX(40px);
+    transform: translateX(20px);
   }
   100% {
     transform: translateX(0);
@@ -604,7 +604,7 @@
 
 @keyframes aSlideRight {
   0% {
-    transform: translateX(-40px);
+    transform: translateX(-20px);
   }
   100% {
     transform: translateX(0);

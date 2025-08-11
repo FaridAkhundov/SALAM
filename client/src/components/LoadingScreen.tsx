@@ -13,20 +13,20 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
       setStage('moving');
     }, 500);
 
-    // Stage 2: F moves right, A moves down, letters fade in (2s)
+    // Stage 2: F moves right, A moves down, letters fade in (2.5s)
     const timer2 = setTimeout(() => {
       setStage('complete');
-    }, 2500);
+    }, 3000);
 
     // Stage 3: Hold complete name (0.5s)
     const timer3 = setTimeout(() => {
       setStage('fadeOut');
-    }, 3000);
+    }, 3500);
 
     // Stage 4: Fade out and load website (0.3s)
     const timer4 = setTimeout(() => {
       onComplete();
-    }, 3300);
+    }, 3800);
 
     return () => {
       clearTimeout(timer1);
