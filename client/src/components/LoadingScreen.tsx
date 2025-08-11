@@ -111,11 +111,8 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
                 <span className="text-8xl font-bold text-white ml-1 animate-smooth-fade-in">arid</span>
               </div>
               
-              {/* Center "Designed by" */}
+              {/* Center spacer */}
               <div className="text-center space-y-2">
-                <p className="text-sm uppercase tracking-[0.3em] text-white/60 font-light animate-smooth-fade-in animation-delay-300">
-                  Designed by
-                </p>
               </div>
               
               {/* A with "khundov" */}
@@ -138,11 +135,8 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
                   <span className="text-8xl font-bold text-white ml-1">arid</span>
                 </div>
                 
-                {/* Center "Designed by" */}
+                {/* Center spacer */}
                 <div className="text-center space-y-2">
-                  <p className="text-sm uppercase tracking-[0.3em] text-white/60 font-light">
-                    Designed by
-                  </p>
                 </div>
                 
                 {/* A with "khundov" */}
