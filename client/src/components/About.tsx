@@ -63,11 +63,12 @@ export default function About() {
           
           <div className="flex justify-center animate-on-scroll animation-delay-600">
             <div className="relative group">
-              <div className="absolute -inset-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur opacity-25 group-hover:opacity-50 animate-glow-pulse"></div>
+              <div className="absolute -inset-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur-sm opacity-0 group-hover:opacity-30 transition-all duration-700 ease-in-out"></div>
+              <div className="absolute -inset-2 bg-gradient-to-r from-blue-400 to-purple-400 rounded-2xl blur-md opacity-0 group-hover:opacity-20 transition-all duration-1000 ease-in-out"></div>
               <img
                 src="https://images.unsplash.com/photo-1489436969537-cf0c1dc69cba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=900"
                 alt="Professional Electronic Device - Network Infrastructure Technology"
-                className="relative rounded-2xl shadow-lg object-cover w-full max-w-sm lg:max-w-md xl:max-w-lg h-auto max-h-[400px] lg:max-h-[500px] xl:max-h-[600px] hover-lift transition-all duration-500"
+                className="relative rounded-2xl shadow-lg object-cover w-full max-w-sm lg:max-w-md xl:max-w-lg h-auto max-h-[400px] lg:max-h-[500px] xl:max-h-[600px] transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-blue-500/20"
               />
             </div>
           </div>
