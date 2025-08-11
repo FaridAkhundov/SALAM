@@ -9,11 +9,12 @@ export default function Projects() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
             entry.target.classList.add('animate-in');
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1, rootMargin: '50px' }
     );
 
     const animatedElements = sectionRef.current?.querySelectorAll('.animate-on-scroll, .card-entrance');
