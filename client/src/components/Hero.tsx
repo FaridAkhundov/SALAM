@@ -112,7 +112,7 @@ export default function Hero() {
                 <img
                   src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=800"
                   alt="Farid Axundov - IT Professional & Cybersecurity Specialist"
-                  className="rounded-2xl shadow-2xl w-full max-w-xs sm:max-w-sm lg:max-w-md mx-auto animate-float hover:scale-105 transition-transform duration-500"
+                  className="rounded-2xl shadow-2xl w-full max-w-xs sm:max-w-sm lg:max-w-md mx-auto animate-float transition-transform duration-500"
                 />
                 
                 {/* Server status indicator */}
