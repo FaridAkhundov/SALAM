@@ -76,15 +76,18 @@ export default function Experience() {
                       
                       {/* Main card */}
                       <div className="relative bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm p-6 lg:p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-200 dark:border-gray-700 group-hover:border-blue-400 dark:group-hover:border-blue-500">
-                        {/* Period badge */}
-                        <div className="inline-flex items-center px-3 py-1 lg:px-4 lg:py-2 rounded text-xs lg:text-sm bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium mb-3 lg:mb-4">
-                          <div className="w-2 h-2 bg-white rounded-full mr-2 animate-pulse"></div>
-                          {experience.period}
+                        {/* Header with title and period badge */}
+                        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-3 lg:mb-4">
+                          <h3 className="text-xl lg:text-2xl font-bold bg-gradient-to-r from-navy to-blue-600 dark:from-navy-light dark:to-blue-400 bg-clip-text text-transparent mb-2 sm:mb-0 lg:mb-0">
+                            {experience.title}
+                          </h3>
+                          
+                          {/* Period badge - moved to right */}
+                          <div className="inline-flex items-center px-3 py-1 lg:px-4 lg:py-2 rounded text-xs lg:text-sm bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium flex-shrink-0">
+                            <div className="w-2 h-2 bg-white rounded-full mr-2 animate-pulse"></div>
+                            {experience.period}
+                          </div>
                         </div>
-                        
-                        <h3 className="text-xl lg:text-2xl font-bold bg-gradient-to-r from-navy to-blue-600 dark:from-navy-light dark:to-blue-400 bg-clip-text text-transparent mb-2 lg:mb-3">
-                          {experience.title}
-                        </h3>
                         
                         <div className="text-base lg:text-lg font-semibold text-charcoal dark:text-gray-300 mb-3 lg:mb-4 flex items-center">
                           <div className="w-2 h-2 bg-gradient-to-r from-green-400 to-blue-500 rounded-full mr-3"></div>
