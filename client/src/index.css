@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import '@fontsource/montserrat/100.css';
+@import '@fontsource/montserrat/300.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -261,12 +263,20 @@
     animation: ultraSmoothFade 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
   }
 
-  .animate-slide-left-smooth {
-    animation: slideLeftSmooth 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  .animate-f-slide-right {
+    animation: fSlideRight 2s linear forwards;
   }
 
-  .animate-slide-right-smooth {
-    animation: slideRightSmooth 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  .animate-a-slide-down {
+    animation: aSlideDown 2s linear forwards;
+  }
+
+  .animate-letters-fade-in {
+    animation: lettersFadeIn 2s linear forwards;
+  }
+
+  .animate-minimal-fade-out {
+    animation: minimalFadeOut 0.3s linear forwards;
   }
 
 }
@@ -583,48 +593,41 @@
   }
 }
 
-@keyframes slideLeftSmooth {
+@keyframes fSlideRight {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-150px);
-  }
-}
-
-@keyframes slideRightSmooth {
-  0% {
     transform: translateX(0);
   }
+}
+
+@keyframes aSlideDown {
+  0% {
+    transform: translateY(-60px);
+  }
   100% {
-    transform: translateX(150px);
+    transform: translateY(0);
   }
 }
 
-@keyframes ultraSmoothFade {
+@keyframes lettersFadeIn {
   0% {
     opacity: 0;
-    transform: translateY(30px) scale(0.8);
-    filter: blur(5px);
   }
-  20% {
-    opacity: 0.1;
-    transform: translateY(20px) scale(0.85);
-    filter: blur(3px);
-  }
-  40% {
-    opacity: 0.4;
-    transform: translateY(10px) scale(0.92);
-    filter: blur(1px);
-  }
-  70% {
-    opacity: 0.8;
-    transform: translateY(2px) scale(0.98);
-    filter: blur(0px);
+  50% {
+    opacity: 0;
   }
   100% {
     opacity: 1;
-    transform: translateY(0) scale(1);
-    filter: blur(0px);
+  }
+}
+
+@keyframes minimalFadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
