@@ -47,11 +47,11 @@ export default function Skills() {
     <section ref={sectionRef} id="skills" className="py-12 lg:py-20 bg-white dark:bg-gray-900">
       <div className="max-w-4xl lg:max-w-6xl mx-auto px-4 lg:px-6">
         <div className="text-center mb-8 lg:mb-16">
-          <h2 className="text-2xl lg:text-4xl font-bold text-navy dark:text-navy-light mb-4 animate-on-scroll">
+          <h2 className="text-2xl lg:text-4xl font-bold text-navy dark:text-navy-light mb-4 animate-fade-in">
             <span className="block sm:hidden">Technical Skills</span>
             <span className="hidden sm:block">Technical Skills & Expertise</span>
           </h2>
-          <p className="text-lg lg:text-xl text-charcoal dark:text-gray-300 animate-on-scroll animation-delay-200">Technologies and tools I work with</p>
+          <p className="text-lg lg:text-xl text-charcoal dark:text-gray-300 animate-fade-in" style={{ animationDelay: '0.2s' }}>Technologies and tools I work with</p>
         </div>
         
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
@@ -65,15 +65,13 @@ export default function Skills() {
               />
             </div>
             
-            <div className="bg-light-gray dark:bg-gray-800 p-4 lg:p-6 rounded-xl border dark:border-gray-700 hover-glow animate-on-scroll animation-delay-600">
+            <div className="bg-light-gray dark:bg-gray-800 p-4 lg:p-6 rounded-xl border dark:border-gray-700 hover-glow animate-fade-in" style={{ animationDelay: '0.6s' }}>
               <h3 className="text-lg lg:text-xl font-bold text-navy dark:text-navy-light mb-3 lg:mb-4">What I Bring</h3>
               <ul className="space-y-2 lg:space-y-3 text-sm lg:text-base text-charcoal dark:text-gray-300">
                 {strengths.map((strength, index) => (
-                  <li key={index} className={`flex items-center animate-on-scroll ${
-                    index === 0 ? 'animation-delay-700' :
-                    index === 1 ? 'animation-delay-800' :
-                    index === 2 ? 'animation-delay-900' : 'animation-delay-1000'
-                  }`}>
+                  <li key={index} className="flex items-center animate-fade-in" style={{ 
+                    animationDelay: `${0.7 + index * 0.1}s` 
+                  }}>
                     <CheckCircle className="w-5 h-5 text-navy-light dark:text-blue-400 mr-3 flex-shrink-0" />
                     {strength}
                   </li>
@@ -84,7 +82,7 @@ export default function Skills() {
           
           <div className="space-y-6 lg:space-y-8">
             {/* Technical Skills */}
-            <div className="animate-on-scroll animation-delay-800">
+            <div className="animate-fade-in" style={{ animationDelay: '0.8s' }}>
               <h3 className="text-lg lg:text-xl font-bold text-navy dark:text-navy-light mb-4 lg:mb-6">Technical Skills</h3>
               <div className="grid grid-cols-2 gap-3 lg:gap-4">
                 {technicalSkills.map((skill, index) => {
@@ -92,11 +90,8 @@ export default function Skills() {
                   return (
                     <div
                       key={index}
-                      className={`bg-light-gray dark:bg-gray-800 p-3 lg:p-4 rounded-lg text-center hover:bg-navy dark:hover:bg-blue-600 hover:text-white transition-all duration-300 group border dark:border-gray-700 hover-lift animate-on-scroll ${
-                        index === 0 ? 'animation-delay-1000' :
-                        index === 1 ? 'animation-delay-1100' :
-                        index === 2 ? 'animation-delay-1200' : 'animation-delay-1300'
-                      }`}
+                      className="bg-light-gray dark:bg-gray-800 p-3 lg:p-4 rounded-lg text-center hover:bg-navy dark:hover:bg-blue-600 hover:text-white transition-all duration-300 group border dark:border-gray-700 hover-lift animate-fade-in"
+                      style={{ animationDelay: `${1.0 + index * 0.1}s` }}
                     >
                       <IconComponent className="w-6 h-6 lg:w-8 lg:h-8 mx-auto mb-2 text-charcoal dark:text-gray-300 group-hover:text-white transition-transform duration-300 group-hover:scale-110" />
                       <div className="text-sm lg:text-base font-medium text-charcoal dark:text-gray-300 group-hover:text-white">{skill.name}</div>
@@ -106,7 +101,7 @@ export default function Skills() {
               </div>
             </div>
             
-            <div className="animate-on-scroll animation-delay-1400">
+            <div className="animate-fade-in" style={{ animationDelay: '1.4s' }}>
               <h3 className="text-lg lg:text-xl font-bold text-navy dark:text-navy-light mb-4 lg:mb-6">Cybersecurity & Infrastructure</h3>
               <div className="grid grid-cols-2 gap-3 lg:gap-4">
                 {cybersecuritySkills.map((skill, index) => {
@@ -114,11 +109,8 @@ export default function Skills() {
                   return (
                     <div
                       key={index}
-                      className={`bg-light-gray dark:bg-gray-800 p-3 lg:p-4 rounded-lg text-center hover:bg-navy dark:hover:bg-blue-600 hover:text-white transition-all duration-300 group border dark:border-gray-700 hover-lift animate-on-scroll ${
-                        index === 0 ? 'animation-delay-1600' :
-                        index === 1 ? 'animation-delay-1700' :
-                        index === 2 ? 'animation-delay-1800' : 'animation-delay-1800'
-                      }`}
+                      className="bg-light-gray dark:bg-gray-800 p-3 lg:p-4 rounded-lg text-center hover:bg-navy dark:hover:bg-blue-600 hover:text-white transition-all duration-300 group border dark:border-gray-700 hover-lift animate-fade-in"
+                      style={{ animationDelay: `${1.6 + index * 0.1}s` }}
                     >
                       <IconComponent className="w-6 h-6 lg:w-8 lg:h-8 mx-auto mb-2 text-charcoal dark:text-gray-300 group-hover:text-white transition-transform duration-300 group-hover:scale-110" />
                       <div className="text-sm lg:text-base font-medium text-charcoal dark:text-gray-300 group-hover:text-white">{skill.name}</div>
