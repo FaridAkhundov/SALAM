@@ -56,12 +56,11 @@ export default function Skills() {
         
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
           <div className="animate-on-scroll animation-delay-400">
-            <div className="relative group mb-4 lg:mb-6">
-              <div className="absolute -inset-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-500"></div>
+            <div className="mb-4 lg:mb-6">
               <img
                 src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
                 alt="Coding workspace with multiple monitors showing code"
-                className="relative rounded-2xl shadow-lg w-full hover-lift transition-all duration-500"
+                className="rounded-2xl shadow-lg w-full transition-all duration-300 hover:shadow-xl hover:scale-[1.02]"
               />
             </div>
             
