@@ -293,14 +293,10 @@
     transform: translateY(0);
   }
 
-  /* Special scroll animation for images to avoid hover conflicts */
-  .animate-on-scroll img {
-    transition: box-shadow 0.3s ease !important;
-    transform: none !important;
-  }
-  
-  .animate-on-scroll img:hover {
-    transform: none !important;
+  /* Simple fade-in animation for images */
+  .animate-fade-in {
+    opacity: 0;
+    animation: fadeInOnly 0.8s ease-out forwards;
   }
 
   .animate-slide-bottom {
@@ -335,6 +331,15 @@
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes fadeInOnly {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 

@@ -57,13 +57,12 @@ export default function Skills() {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
           <div>
             <div className="mb-4 lg:mb-6">
-              <div className="animate-on-scroll animation-delay-400">
-                <img
-                  src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
-                  alt="Coding workspace with multiple monitors showing code"
-                  className="rounded-2xl shadow-lg w-full hover:shadow-xl transition-shadow duration-300"
-                />
-              </div>
+              <img
+                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
+                alt="Coding workspace with multiple monitors showing code"
+                className="rounded-2xl shadow-lg w-full hover:shadow-xl transition-shadow duration-300 animate-fade-in"
+                style={{ animationDelay: '0.4s' }}
+              />
             </div>
             
             <div className="bg-light-gray dark:bg-gray-800 p-4 lg:p-6 rounded-xl border dark:border-gray-700 hover-glow animate-on-scroll animation-delay-600">
