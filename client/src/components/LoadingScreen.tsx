@@ -105,18 +105,27 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
         {stage === 'revealing' && (
           <div className="flex items-center justify-center min-h-[200px]">
             <div className="relative w-full max-w-6xl flex justify-between items-center">
-              <span className="text-8xl font-bold text-white/80">F</span>
-              
-              <div className="flex-1 text-center space-y-2 animate-fade-in-up">
-                <p className="text-sm uppercase tracking-[0.3em] text-white/60 font-light animate-slide-down">
-                  Designed by
-                </p>
-                <h1 className="text-6xl font-bold text-white tracking-wide">
+              {/* F with "arid" */}
+              <div className="flex items-baseline">
+                <span className="text-8xl font-bold text-white/80">F</span>
+                <span className="text-8xl font-bold text-white ml-2 animate-fade-in-up">
                   <span className="inline-block animate-letter-reveal">a</span>
                   <span className="inline-block animate-letter-reveal animation-delay-100">r</span>
                   <span className="inline-block animate-letter-reveal animation-delay-200">i</span>
                   <span className="inline-block animate-letter-reveal animation-delay-300">d</span>
-                  <span className="mx-4"></span>
+                </span>
+              </div>
+              
+              {/* Center "Designed by" */}
+              <div className="text-center space-y-2">
+                <p className="text-sm uppercase tracking-[0.3em] text-white/60 font-light animate-slide-down">
+                  Designed by
+                </p>
+              </div>
+              
+              {/* "khundov" with A */}
+              <div className="flex items-baseline">
+                <span className="text-8xl font-bold text-white mr-2 animate-fade-in-up">
                   <span className="inline-block animate-letter-reveal animation-delay-400">k</span>
                   <span className="inline-block animate-letter-reveal animation-delay-500">h</span>
                   <span className="inline-block animate-letter-reveal animation-delay-600">u</span>
@@ -124,10 +133,9 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
                   <span className="inline-block animate-letter-reveal animation-delay-800">d</span>
                   <span className="inline-block animate-letter-reveal animation-delay-900">o</span>
                   <span className="inline-block animate-letter-reveal animation-delay-1000">v</span>
-                </h1>
+                </span>
+                <span className="text-8xl font-bold text-white/80">A</span>
               </div>
-              
-              <span className="text-8xl font-bold text-white/80">A</span>
             </div>
           </div>
         )}
@@ -137,18 +145,24 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
           <div className="animate-cinematic-fade-out">
             <div className="flex items-center justify-center min-h-[200px]">
               <div className="relative w-full max-w-6xl flex justify-between items-center">
-                <span className="text-8xl font-bold text-white/80">F</span>
+                {/* F with "arid" */}
+                <div className="flex items-baseline">
+                  <span className="text-8xl font-bold text-white/80">F</span>
+                  <span className="text-8xl font-bold text-white ml-2">arid</span>
+                </div>
                 
-                <div className="flex-1 text-center space-y-2">
+                {/* Center "Designed by" */}
+                <div className="text-center space-y-2">
                   <p className="text-sm uppercase tracking-[0.3em] text-white/60 font-light">
                     Designed by
                   </p>
-                  <h1 className="text-6xl font-bold text-white tracking-wide">
-                    arid khundov
-                  </h1>
                 </div>
                 
-                <span className="text-8xl font-bold text-white/80">A</span>
+                {/* "khundov" with A */}
+                <div className="flex items-baseline">
+                  <span className="text-8xl font-bold text-white mr-2">khundov</span>
+                  <span className="text-8xl font-bold text-white/80">A</span>
+                </div>
               </div>
             </div>
           </div>
