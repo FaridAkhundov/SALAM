@@ -108,32 +108,19 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
               {/* F with "arid" */}
               <div className="flex items-baseline">
                 <span className="text-8xl font-bold text-white/80">F</span>
-                <span className="text-8xl font-bold text-white ml-2 animate-fade-in-up">
-                  <span className="inline-block animate-letter-reveal">a</span>
-                  <span className="inline-block animate-letter-reveal animation-delay-100">r</span>
-                  <span className="inline-block animate-letter-reveal animation-delay-200">i</span>
-                  <span className="inline-block animate-letter-reveal animation-delay-300">d</span>
-                </span>
+                <span className="text-8xl font-bold text-white ml-1 animate-smooth-fade-in">arid</span>
               </div>
               
               {/* Center "Designed by" */}
               <div className="text-center space-y-2">
-                <p className="text-sm uppercase tracking-[0.3em] text-white/60 font-light animate-slide-down">
+                <p className="text-sm uppercase tracking-[0.3em] text-white/60 font-light animate-smooth-fade-in animation-delay-300">
                   Designed by
                 </p>
               </div>
               
               {/* "khundov" with A */}
               <div className="flex items-baseline">
-                <span className="text-8xl font-bold text-white mr-2 animate-fade-in-up">
-                  <span className="inline-block animate-letter-reveal animation-delay-400">k</span>
-                  <span className="inline-block animate-letter-reveal animation-delay-500">h</span>
-                  <span className="inline-block animate-letter-reveal animation-delay-600">u</span>
-                  <span className="inline-block animate-letter-reveal animation-delay-700">n</span>
-                  <span className="inline-block animate-letter-reveal animation-delay-800">d</span>
-                  <span className="inline-block animate-letter-reveal animation-delay-900">o</span>
-                  <span className="inline-block animate-letter-reveal animation-delay-1000">v</span>
-                </span>
+                <span className="text-8xl font-bold text-white mr-1 animate-smooth-fade-in animation-delay-200">khundov</span>
                 <span className="text-8xl font-bold text-white/80">A</span>
               </div>
             </div>
