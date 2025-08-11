@@ -263,12 +263,12 @@
     animation: ultraSmoothFade 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
   }
 
-  .animate-f-move-to-position {
-    animation: fMoveToPosition 1s linear forwards;
+  .animate-f-slide-left {
+    animation: fSlideLeft 1s linear forwards;
   }
 
-  .animate-a-move-to-position {
-    animation: aMoveToPosition 1s linear forwards;
+  .animate-a-slide-right {
+    animation: aSlideRight 1s linear forwards;
   }
 
   .animate-letters-fade-in {
@@ -593,24 +593,20 @@
   }
 }
 
-@keyframes fMoveToPosition {
+@keyframes fSlideLeft {
   0% {
-    left: 0.5ch;
-    transform: translateX(0);
+    transform: translateX(40px);
   }
   100% {
-    left: 0;
     transform: translateX(0);
   }
 }
 
-@keyframes aMoveToPosition {
+@keyframes aSlideRight {
   0% {
-    left: 0.5ch;
-    transform: translateX(0);
+    transform: translateX(-40px);
   }
   100% {
-    left: 6ch;
     transform: translateX(0);
   }
 }

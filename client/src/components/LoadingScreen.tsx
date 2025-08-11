@@ -51,18 +51,15 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
         {/* Stage 2: Moving and revealing */}
         {stage === 'moving' && (
           <div className="relative w-full h-32 flex items-center justify-center">
-            {/* Container for the full name layout */}
             <div className="relative text-8xl font-medium text-white" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-              {/* F sliding to its position */}
-              <span className="absolute animate-f-move-to-position">F</span>
-              {/* ərid fading in after F reaches position */}
-              <span className="absolute animate-letters-fade-in animation-delay-500" style={{ left: '1ch' }}>ərid</span>
-              {/* Space */}
-              <span className="absolute opacity-0" style={{ left: '5.5ch' }}>&nbsp;</span>
-              {/* A sliding to its position */}
-              <span className="absolute animate-a-move-to-position" style={{ left: '6ch' }}>A</span>
-              {/* xundov fading in after A reaches position */}
-              <span className="absolute animate-letters-fade-in animation-delay-800" style={{ left: '7ch' }}>xundov</span>
+              {/* Start with FA positioned as if centered, then animate to final positions */}
+              <div className="inline-block">
+                <span className="inline-block animate-f-slide-left">F</span>
+                <span className="inline-block animate-letters-fade-in animation-delay-500">ərid</span>
+                <span className="inline-block">&nbsp;</span>
+                <span className="inline-block animate-a-slide-right">A</span>
+                <span className="inline-block animate-letters-fade-in animation-delay-800">xundov</span>
+              </div>
             </div>
           </div>
         )}
