@@ -134,6 +134,14 @@
     animation-delay: 1.8s;
   }
 
+  .animation-delay-1500 {
+    animation-delay: 1.5s;
+  }
+
+  .animation-delay-1700 {
+    animation-delay: 1.7s;
+  }
+
   .animation-delay-100 {
     animation-delay: 0.1s;
   }

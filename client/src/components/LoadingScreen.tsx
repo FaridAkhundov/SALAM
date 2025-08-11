@@ -55,10 +55,10 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
               {/* Start with FA positioned as if centered, then animate to final positions */}
               <div className="inline-block">
                 <span className="inline-block animate-f-slide-left">F</span>
-                <span className="inline-block animate-letters-fade-in animation-delay-500">ərid</span>
+                <span className="inline-block animate-letters-fade-in animation-delay-1500">ərid</span>
                 <span className="inline-block">&nbsp;</span>
                 <span className="inline-block animate-a-slide-right">A</span>
-                <span className="inline-block animate-letters-fade-in animation-delay-800">xundov</span>
+                <span className="inline-block animate-letters-fade-in animation-delay-1700">xundov</span>
               </div>
             </div>
           </div>
