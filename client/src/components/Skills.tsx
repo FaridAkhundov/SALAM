@@ -27,8 +27,8 @@ export default function Skills() {
       <div className="max-w-4xl lg:max-w-6xl mx-auto px-4 lg:px-6">
         <div className="text-center mb-8 lg:mb-16">
           <h2 className="text-2xl lg:text-4xl font-bold text-navy dark:text-navy-light mb-4">
-            <span className="block sm:hidden">Technical Skills</span>
-            <span className="hidden sm:block">Technical Skills & Expertise</span>
+            <span className="block sm:hidden">Skills</span>
+            <span className="hidden sm:block">Technical Skills</span>
           </h2>
           <p className="text-lg lg:text-xl text-charcoal dark:text-gray-300">Technologies and tools I work with</p>
         </div>
