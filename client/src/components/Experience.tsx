@@ -96,7 +96,7 @@ export default function Experience() {
                         </p>
                         
                         {/* Decorative corner */}
-                        <div className={`absolute top-4 w-6 h-6 lg:w-8 lg:h-8 border-2 border-blue-400 dark:border-blue-500 opacity-20 ${index === 0 ? 'left-4 rounded-tl-xl' : 'right-4 rounded-tr-xl'}`}></div>
+                        <div className="absolute top-4 w-6 h-6 lg:w-8 lg:h-8 border-2 border-blue-400 dark:border-blue-500 opacity-20 right-4 rounded-tr-xl"></div>
                       </div>
                     </div>
                   </div>
