@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Mail, Linkedin, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -11,6 +11,7 @@ import type { InsertContact } from "@shared/schema";
 
 export default function Contact() {
   const { toast } = useToast();
+  const sectionRef = useRef<HTMLElement>(null);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -18,6 +19,24 @@ export default function Contact() {
     subject: "",
     message: "",
   });
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '50px' }
+    );
+
+    const animatedElements = sectionRef.current?.querySelectorAll('.animate-on-scroll');
+    animatedElements?.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
 
   const contactMutation = useMutation({
     mutationFn: async (data: InsertContact) => {
@@ -78,19 +97,19 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-12 lg:py-20 bg-white dark:bg-gray-900">
+    <section ref={sectionRef} id="contact" className="py-12 lg:py-20 bg-white dark:bg-gray-900">
       <div className="max-w-4xl mx-auto px-4 lg:px-6">
         <div className="text-center mb-8 lg:mb-16">
-          <h2 className="text-2xl lg:text-4xl font-bold text-navy dark:text-navy-light mb-4">Let's Work Together</h2>
-          <p className="text-base lg:text-xl text-charcoal dark:text-gray-300">Ready to bring your next project to life? Let's discuss how I can help.</p>
+          <h2 className="text-2xl lg:text-4xl font-bold text-navy dark:text-navy-light mb-4 animate-on-scroll">Let's Work Together</h2>
+          <p className="text-base lg:text-xl text-charcoal dark:text-gray-300 animate-on-scroll animation-delay-200">Ready to bring your next project to life? Let's discuss how I can help.</p>
         </div>
         
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
           <div className="space-y-6 lg:space-y-8">
-            <div>
+            <div className="animate-on-scroll animation-delay-400">
               <h3 className="text-xl lg:text-2xl font-bold text-navy dark:text-navy-light mb-4 lg:mb-6">Get In Touch</h3>
               <div className="space-y-4">
-                <div className="flex items-center">
+                <div className="flex items-center animate-on-scroll animation-delay-600">
                   <div className="bg-light-gray dark:bg-gray-800 p-3 rounded-lg mr-4">
                     <Mail className="w-6 h-6 text-navy dark:text-navy-light" />
                   </div>
@@ -100,7 +119,7 @@ export default function Contact() {
                   </div>
                 </div>
                 
-                <div className="flex items-center">
+                <div className="flex items-center animate-on-scroll animation-delay-700">
                   <div className="bg-light-gray dark:bg-gray-800 p-3 rounded-lg mr-4">
                     <Linkedin className="w-6 h-6 text-navy dark:text-navy-light" />
                   </div>
@@ -117,7 +136,7 @@ export default function Contact() {
                   </div>
                 </div>
                 
-                <div className="flex items-center">
+                <div className="flex items-center animate-on-scroll animation-delay-800">
                   <div className="bg-light-gray dark:bg-gray-800 p-3 rounded-lg mr-4">
                     <MapPin className="w-6 h-6 text-navy dark:text-navy-light" />
                   </div>
@@ -132,11 +151,11 @@ export default function Contact() {
             <img
               src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400"
               alt="Clean modern workspace with laptop and coffee"
-              className="rounded-xl shadow-lg w-full"
+              className="rounded-xl shadow-lg w-full animate-on-scroll animation-delay-900"
             />
           </div>
           
-          <div>
+          <div className="animate-on-scroll animation-delay-500">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid sm:grid-cols-2 gap-4 lg:gap-6">
                 <div>
