@@ -150,7 +150,7 @@ export default function Contact() {
                     value={formData.firstName}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-charcoal dark:text-gray-100 rounded-lg focus:ring-2 focus:ring-navy-light dark:focus:ring-blue-400 focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-charcoal dark:text-gray-100 rounded-lg focus:ring-2 focus:ring-navy-light dark:focus:ring-blue-400 focus:border-transparent transition-all duration-300 hover:border-navy-light dark:hover:border-blue-400 hover:shadow-lg hover:shadow-navy-light/20 dark:hover:shadow-blue-400/20"
                   />
                 </div>
                 <div>
@@ -164,7 +164,7 @@ export default function Contact() {
                     value={formData.lastName}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-charcoal dark:text-gray-100 rounded-lg focus:ring-2 focus:ring-navy-light dark:focus:ring-blue-400 focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-charcoal dark:text-gray-100 rounded-lg focus:ring-2 focus:ring-navy-light dark:focus:ring-blue-400 focus:border-transparent transition-all duration-300 hover:border-navy-light dark:hover:border-blue-400 hover:shadow-lg hover:shadow-navy-light/20 dark:hover:shadow-blue-400/20"
                   />
                 </div>
               </div>
@@ -180,7 +180,7 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-charcoal dark:text-gray-100 rounded-lg focus:ring-2 focus:ring-navy-light dark:focus:ring-blue-400 focus:border-transparent transition-all duration-300"
+                  className="w-full px-4 py-3 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-charcoal dark:text-gray-100 rounded-lg focus:ring-2 focus:ring-navy-light dark:focus:ring-blue-400 focus:border-transparent transition-all duration-300 hover:border-navy-light dark:hover:border-blue-400 hover:shadow-lg hover:shadow-navy-light/20 dark:hover:shadow-blue-400/20"
                 />
               </div>
               
@@ -195,7 +195,7 @@ export default function Contact() {
                   value={formData.subject}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-charcoal dark:text-gray-100 rounded-lg focus:ring-2 focus:ring-navy-light dark:focus:ring-blue-400 focus:border-transparent transition-all duration-300"
+                  className="w-full px-4 py-3 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-charcoal dark:text-gray-100 rounded-lg focus:ring-2 focus:ring-navy-light dark:focus:ring-blue-400 focus:border-transparent transition-all duration-300 hover:border-navy-light dark:hover:border-blue-400 hover:shadow-lg hover:shadow-navy-light/20 dark:hover:shadow-blue-400/20"
                 />
               </div>
               
@@ -210,14 +210,14 @@ export default function Contact() {
                   value={formData.message}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-charcoal dark:text-gray-100 rounded-lg focus:ring-2 focus:ring-navy-light dark:focus:ring-blue-400 focus:border-transparent transition-all duration-300 resize-vertical"
+                  className="w-full px-4 py-3 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-charcoal dark:text-gray-100 rounded-lg focus:ring-2 focus:ring-navy-light dark:focus:ring-blue-400 focus:border-transparent transition-all duration-300 resize-vertical hover:border-navy-light dark:hover:border-blue-400 hover:shadow-lg hover:shadow-navy-light/20 dark:hover:shadow-blue-400/20"
                 />
               </div>
               
               <Button
                 type="submit"
                 disabled={contactMutation.isPending}
-                className="w-full bg-navy dark:bg-blue-600 text-white py-4 px-6 rounded-lg hover:bg-navy-light dark:hover:bg-blue-700 transition-all duration-300 font-medium disabled:opacity-50"
+                className="w-full bg-navy dark:bg-blue-600 text-white py-4 px-6 rounded-lg hover:bg-navy-light dark:hover:bg-blue-700 transition-all duration-300 font-medium disabled:opacity-50 hover:shadow-xl hover:shadow-navy-light/30 dark:hover:shadow-blue-400/30 hover:scale-105"
               >
                 {contactMutation.isPending ? "Sending..." : "Send Message"}
               </Button>
