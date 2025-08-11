@@ -1,6 +1,26 @@
 import { GraduationCap, Award, Calendar } from "lucide-react";
+import { useEffect, useRef } from "react";
 
 export default function Education() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '50px' }
+    );
+
+    const animatedElements = sectionRef.current?.querySelectorAll('.animate-on-scroll');
+    animatedElements?.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
   const education = [
     {
       period: "Sep 2022 - Sep 2026",
@@ -78,20 +98,20 @@ export default function Education() {
   ];
 
   return (
-    <section id="education" className="py-12 lg:py-20 bg-white dark:bg-gray-900">
+    <section ref={sectionRef} id="education" className="py-12 lg:py-20 bg-white dark:bg-gray-900">
       <div className="max-w-6xl mx-auto px-4 lg:px-6">
         <div className="text-center mb-8 lg:mb-16">
-          <h2 className="text-2xl lg:text-4xl font-bold text-navy dark:text-navy-light mb-4">Education & Certifications</h2>
-          <p className="text-base lg:text-xl text-charcoal dark:text-gray-300">Academic background and professional certifications</p>
+          <h2 className="text-2xl lg:text-4xl font-bold text-navy dark:text-navy-light mb-4 animate-on-scroll">Education & Certifications</h2>
+          <p className="text-base lg:text-xl text-charcoal dark:text-gray-300 animate-on-scroll animation-delay-200">Academic background and professional certifications</p>
         </div>
         
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Education Timeline */}
           <div className="lg:col-span-2">
-            <h3 className="text-2xl font-bold text-navy dark:text-navy-light mb-8">Educational Background</h3>
+            <h3 className="text-2xl font-bold text-navy dark:text-navy-light mb-8 animate-on-scroll animation-delay-400">Educational Background</h3>
             <div className="space-y-8">
               {education.map((item, index) => (
-                <div key={index} className="bg-light-gray dark:bg-gray-800 p-6 rounded-xl hover:shadow-lg transition-shadow duration-300 border dark:border-gray-700">
+                <div key={index} className={`bg-light-gray dark:bg-gray-800 p-6 rounded-xl hover:shadow-lg transition-shadow duration-300 border dark:border-gray-700 animate-on-scroll ${index === 0 ? 'animation-delay-600' : 'animation-delay-800'}`}>
                   <div className="flex items-start">
                     <div className="bg-navy-light dark:bg-blue-600 text-white p-2 lg:p-3 rounded-lg mr-3 lg:mr-4 flex-shrink-0">
                       <GraduationCap className="w-5 h-5 lg:w-6 lg:h-6" />
@@ -163,10 +183,14 @@ export default function Education() {
           
           {/* Certifications Sidebar */}
           <div>
-            <h3 className="text-xl lg:text-2xl font-bold text-navy dark:text-navy-light mb-6 lg:mb-8">Certifications</h3>
+            <h3 className="text-xl lg:text-2xl font-bold text-navy dark:text-navy-light mb-6 lg:mb-8 animate-on-scroll animation-delay-1000">Certifications</h3>
             <div className="space-y-4 lg:space-y-6">
               {certifications.map((cert, index) => (
-                <div key={index} className="bg-navy dark:bg-gray-800 text-white p-4 lg:p-6 rounded-xl border dark:border-gray-700">
+                <div key={index} className={`bg-navy dark:bg-gray-800 text-white p-4 lg:p-6 rounded-xl border dark:border-gray-700 animate-on-scroll ${
+                  index === 0 ? 'animation-delay-1200' :
+                  index === 1 ? 'animation-delay-1400' :
+                  index === 2 ? 'animation-delay-1600' : 'animation-delay-1800'
+                }`}>
                   <div className="flex items-start mb-3 lg:mb-4">
                     <Award className="w-5 h-5 lg:w-6 lg:h-6 text-yellow-400 mr-2 lg:mr-3 flex-shrink-0 mt-1" />
                     <div>

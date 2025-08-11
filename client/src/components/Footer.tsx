@@ -1,14 +1,35 @@
 import { Linkedin, Github, Mail } from "lucide-react";
+import { useEffect, useRef } from "react";
 
 export default function Footer() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '50px' }
+    );
+
+    const animatedElements = sectionRef.current?.querySelectorAll('.animate-on-scroll');
+    animatedElements?.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <footer className="bg-navy dark:bg-gray-950 text-white py-12">
+    <footer ref={sectionRef} className="bg-navy dark:bg-gray-950 text-white py-12">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center">
-          <div className="text-3xl font-bold mb-4">FA</div>
-          <p className="text-gray-300 dark:text-gray-400 mb-8">Building secure digital solutions, one project at a time.</p>
+          <div className="text-3xl font-bold mb-4 animate-on-scroll">FA</div>
+          <p className="text-gray-300 dark:text-gray-400 mb-8 animate-on-scroll animation-delay-200">Building secure digital solutions, one project at a time.</p>
           
-          <div className="flex justify-center space-x-6 mb-8">
+          <div className="flex justify-center space-x-6 mb-8 animate-on-scroll animation-delay-400">
             <a
               href="https://www.linkedin.com/in/faridaxundov/"
               target="_blank"

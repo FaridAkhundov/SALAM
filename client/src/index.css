@@ -281,6 +281,40 @@
     animation: minimalFadeOut 0.3s linear forwards;
   }
 
+  /* Scroll animations */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+  }
+
+  .animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .animate-slide-bottom {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-out;
+  }
+
+  .animate-slide-bottom.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .card-entrance {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+    transition: all 0.6s ease-out;
+  }
+
+  .card-entrance.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
 }
 
 @keyframes fadeIn {
